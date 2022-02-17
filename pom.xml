@@ -54,6 +54,16 @@
 	</dependencies>
 
 	<build>
+		<resources>
+		<resource>
+		<directory>${basedir}/resources/assets</directory>
+		</resource>
+		</resources>
+		<testResources>
+		<testResource>
+		<directory>${basedir}/resources/assets</directory>
+		</testResource>
+		</testResources>
 		<plugins>
 			<!-- Run app through Maven -->
 			<plugin>
