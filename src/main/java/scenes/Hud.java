@@ -23,7 +23,7 @@ public class Hud {
 	 * Endrer til mer spesifikt for vårt spill når vi vet hva vi vil ha og ikke ha.
 	 */
 	private Integer worldTimer;
-	private float timeCount;
+	private float timeCount; //Countdown ikkje implimentert endå.
 	private Integer score;
 	
 	Label countdownLabel;
@@ -42,13 +42,13 @@ public class Hud {
 		Table table = new Table();
 		table.top();
 		table.setFillParent(true);
-		
+		//Gir table elementene font og farge
 		LabelStyle font = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
 		countdownLabel = new Label(String.format("%03d", worldTimer), font);
 		scoreLabel = new Label(String.format("%06d", score), font);
 		timeLabel = new Label("TIME", font);
 		scoreNameLabel = new Label("Score", font);
-		
+		//Orienterer hud elementer
 		table.add(scoreNameLabel).expandX().padTop(10);
 		table.add(timeLabel).expandX().padTop(10);
 		table.row();

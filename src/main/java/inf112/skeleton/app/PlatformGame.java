@@ -11,8 +11,8 @@ public class PlatformGame extends Game {
 	public SpriteBatch batch;
 	
 	//Definerer høyde og bredde for spillvindu.
-	public static final int V_Width = 1280;
-	public static final int V_Height = 720;
+	public static final int V_Width = 500;
+	public static final int V_Height = 408;
 	
 	
 
