@@ -3,12 +3,18 @@ package inf112.skeleton.app;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import Screens.GameScreen;
+import screens.GameScreen;
 
 
 public class PlatformGame extends Game {
 	//Sprite batches er memory intensive, så lager en felles
 	public SpriteBatch batch;
+	
+	//Definerer høyde og bredde for spillvindu.
+	public static final int V_Width = 1280;
+	public static final int V_Height = 720;
+	
+	
 
 	@Override
 	public void create() {
