@@ -13,6 +13,8 @@ public class PlatformGame extends Game {
 	//Definerer høyde og bredde for spillvindu.
 	public static final int V_Width = 500;
 	public static final int V_Height = 308;
+	//Definerer pixels per meter for Box2D
+	public static final float PPM = 100;
 	
 	
 
