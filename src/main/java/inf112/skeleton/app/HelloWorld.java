@@ -24,6 +24,7 @@ public class HelloWorld implements ApplicationListener {
     
     ShapeRenderer shapeRenderer;
     
+    //Test
     float speed = 125.0f;
     float circleX = 110;
     float circleY = 75;
