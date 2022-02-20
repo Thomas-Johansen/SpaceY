@@ -39,7 +39,7 @@ public class Player extends Sprite {
 		
 		FixtureDef fixture = new FixtureDef();
 		CircleShape shape = new CircleShape();
-		shape.setRadius(10 / PlatformGame.PPM);
+		shape.setRadius(7 / PlatformGame.PPM);
 		fixture.shape = shape;
 		Box2DBody.createFixture(fixture);
 	}
