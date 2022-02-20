@@ -1,4 +1,4 @@
-**## 1. Organisering av teamet**
+## 1. Organisering av teamet
 
 **Teamnavn**: ?
 
@@ -16,9 +16,9 @@ Det er opprettet en [Gitlab gruppe](https://git.app.uib.no/group-4-team-2) med a
 Teamet har ingen bestemte roller per dags dato. Det gir ingen mening å ha egne roller når vi er en liten team. Målet er at alle skal kunne bidra med på de ulike delene av prosjektet.
 
 
-**## 2. Prosjektprossess**
+## 2. Prosjektprossess
 
-**### (Praktisk) organisering av møter**
+### (Praktisk) organisering av møter
 Under gruppetiden tirsdag den 08.02.2022 har teamet ble enige om forløpelige faste møtetider for teamet:
 **+** I "gruppetimen" tirsdager i tidsrommet 12-14, på Høyteknologisentetet.
 **+** Hver torsdag i tidsrommet 10-14, fortrinsvis på Høyteknologisenteret.
@@ -26,27 +26,16 @@ Under gruppetiden tirsdag den 08.02.2022 har teamet ble enige om forløpelige fa
 Skulle det oppstå behov for ekstra møter utover de faste, er det rom for å avtale dette.
 
 
-**### Kommunikasjon mellom møter**
+### Kommunikasjon mellom møter
 Kommunikasjon mellom møter vil foregå på Discord. Om nødvendig, vil det være mulig å organisere "ad-hoc" møter, for eksempel digitalt - dette avtales via Discord.
 
-**## Prosjektmetodikk**
+## Prosjektmetodikk
 Ingen bestemt prosjektmetodikk følges. Fra Kanban henter vi blant annet "issues board". Rent praktisk velger vi å bruke "Issues board" i Gitlab-prosjektet som tavlen for prosjektet, som i et ledd for å holde det viktigeste på et sted (gjør det mer oversiktlig). Oppgavene velges fra TODO og teamet bestemmer seg for hvilke oppgaver de skal ta for seg i et bestemt periode. "Commit & push" skjer kontinuerlig (dvs. når oppgaven er klar til review/ferdig).
 
 Fra Scrum henter vi ideen om at teamet jobber med et bestemt sett av oppgaver i perioden (f.eks. fra en gruppemøte til en annen - hvor realistisk?) uten å endre scopet (legge / fjerne oppgaver), samt retrospektiv for hver møte, hvor vi etterstreber å justere prossesen etter hver "iterasjon" for å eliminere friksjoner og løse utfordringer (mhp. at dette er gjerne er første større gruppearbeidsprosjekt for oss alle og hvor vi må prøve oss frem).
 
-**## Arbeidsfordeling**
 
-(???)
-
-**### --> Oppfølging av arbeid**
-Programmeringsutviklingsaktiviteter / Prosjekteringsaktiviter (hvilke, når?).
-
-
-**## 3. Spesifikasjon**
-**### Overordnet mål for applikasjonen**
-TODO
-
-**-** Hvilke plattformspill skal vi bygge?
+## 3. Spesifikasjon
 
 ### Brukerhistorier
 (BX hvor B står for brukerhistorie, og X er løpende nummerering fra 1.)
@@ -78,17 +67,15 @@ Akseptansekriterie for B3:
 **B4: Som spiller, skal kameraet følge karakteren, slik at det er mulig å se omgivelsene rundt karakteren.
 
 Akseptansekriterie for B4:
-- Når spilleren beveger seg til ytterpunktet av vinduet, vil kameraet beveget seg...
+- Når spillerens karakter beveger seg, beveger kameraet sammen med karakteren.
 ****
 
 
 
 
-**## 4. Oppsummering (prosjekt-retrospektiv)**
+## 4. Oppsummering (prosjekt-retrospektiv)
 *>* Hver møte, men her blir oppsumering for hele perioden.
 *>*
-
-*>* Fra retteskjema v21: "skal inneholde beskrivelse av hva som var planlagt å bruke av metodikk, hva de faktisk bruker, og hvorfor".
 
 **Hva gikk bra? Hvorfor?**
 Gruppen kommer bra overens og alle møter opp til gruppetimene samt har arrangert eksterne tider å møte for å jobbe sammen enten fysisk eller via discord. Alle har også en bra forsåelse på hvor de ligger I forhold til kunnskap/nivå og hva som kan forbedres I fremtiden.
