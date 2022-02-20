@@ -1,6 +1,8 @@
 package Objects;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
@@ -12,10 +14,21 @@ import inf112.skeleton.app.PlatformGame;
 public class Player extends Sprite {
 	public World world;
 	public Body Box2DBody;
+	private Texture texture;
+	private TextureRegion TextureRegion;
 	
 	public Player(World world) {
+		texture = new Texture("src/main/resources/assets/mairo.png");
 		this.world = world;
 		playerAttributes();
+		TextureRegion = new TextureRegion(texture, 0, 0, 14, 20);
+		setBounds(0, 0, 14 / PlatformGame.PPM, 20 / PlatformGame.PPM);
+		setRegion(texture);
+	}
+	
+	public void update(float deltaTime) {
+		//Posisjon til texture er nedre venster hjørne av Box2d objektet
+		setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
 	}
 	
 	public void playerAttributes() {

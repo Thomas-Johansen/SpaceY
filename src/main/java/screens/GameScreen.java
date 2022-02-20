@@ -32,7 +32,6 @@ import scenes.Hud;
 
 public class GameScreen implements Screen {
 	private PlatformGame game;
-	Texture texture;
 	private OrthographicCamera gamecam;
 	private Viewport gamePort;
 	private Hud hud;
@@ -51,7 +50,6 @@ public class GameScreen implements Screen {
 	
 	public GameScreen(PlatformGame game) {
 		this.game = game;
-		//texture = new Texture("src/main/resources/assets/Doggo.jpg");
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
 		hud = new Hud(game.batch);
@@ -65,6 +63,7 @@ public class GameScreen implements Screen {
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
 		player = new Player(world);
+
 		
 		
 		//Midlertidig plassering, skal inn i egen klasse senere.
@@ -109,6 +108,11 @@ public class GameScreen implements Screen {
 	public void update(float deltaTime) {
 		inputHandler(deltaTime);
 		world.step(1/60f, 6, 2);
+		
+		player.update(deltaTime);
+		
+		gamecam.position.x = player.Box2DBody.getPosition().x;
+		
 		gamecam.update();
 		renderer.setView(gamecam);
 	}
@@ -118,11 +122,11 @@ public class GameScreen implements Screen {
 		if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
 			player.Box2DBody.applyLinearImpulse(new Vector2(0,5f), player.Box2DBody.getWorldCenter(), true);
 		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.D)) {
-			player.Box2DBody.setLinearVelocity(new Vector2(2f,0));
+		if(Gdx.input.isKeyPressed(Input.Keys.D) && player.Box2DBody.getLinearVelocity().x <= 2) {
+			player.Box2DBody.applyLinearImpulse(new Vector2(0.1f, 0), player.Box2DBody.getWorldCenter(), true);
 		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.A)) {
-			player.Box2DBody.setLinearVelocity(new Vector2(-2f,0));
+		if(Gdx.input.isKeyPressed(Input.Keys.A) && player.Box2DBody.getLinearVelocity().x >= -2) {
+			player.Box2DBody.applyLinearImpulse(new Vector2(-0.1f, 0), player.Box2DBody.getWorldCenter(), true);
 		}
 		
 		/*
@@ -152,6 +156,14 @@ public class GameScreen implements Screen {
         
         //Bedub, viser linjer rundt Box2D render
         b2dr.render(world, gamecam.combined);
+        
+        
+        //Texture render test for spiller
+        game.batch.setProjectionMatrix(gamecam.combined);
+        game.batch.begin();
+        player.draw(game.batch);
+        game.batch.end();
+        
         
         hud.stage.draw();
 	}
