@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- FIXME - set group id -->
-	<groupId>inf112.skeleton.app</groupId>
+	<groupId>Gruppe4-Team2</groupId>
 	<!-- FIXME - set artifact name -->
 	<artifactId>gdx-app</artifactId>
 	<version>1.0-SNAPSHOT</version>
@@ -51,6 +51,21 @@
 			<version>5.5.2</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.badlogicgames.gdx</groupId>
+			<artifactId>gdx-box2d</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+		
+		 <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-box2d-platform</artifactId>
+            <classifier>natives-desktop</classifier>
+            <version>1.10.0</version>
+            <scope>compile</scope>
+        </dependency>
+		
 	</dependencies>
 
 	<build>
