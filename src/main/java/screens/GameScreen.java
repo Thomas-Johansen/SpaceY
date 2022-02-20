@@ -1,5 +1,7 @@
 package screens;
 
+
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
@@ -8,6 +10,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
@@ -27,6 +32,13 @@ public class GameScreen implements Screen {
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
 	
+	//Box2d variabler
+	private World world;
+	private Box2DDebugRenderer b2dr;
+	
+	
+	
+	
 	public GameScreen(PlatformGame game) {
 		this.game = game;
 		//texture = new Texture("src/main/resources/assets/Doggo.jpg");
@@ -38,6 +50,10 @@ public class GameScreen implements Screen {
 		map = maploader.load("src/main/resources/assets/mapTest.tmx");
 		renderer = new OrthogonalTiledMapRenderer(map);
 		gamecam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
+		
+		//Box2D
+		//world = new World(new Vector2(0, 0), true);
+		b2dr = new Box2DDebugRenderer();
 	}
 
 	@Override
