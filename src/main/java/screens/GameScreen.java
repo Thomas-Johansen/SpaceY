@@ -52,7 +52,7 @@ public class GameScreen implements Screen {
 		gamecam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
 		
 		//Box2D
-		//world = new World(new Vector2(0, 0), true);
+		world = new World(new Vector2(0, 0), true);
 		b2dr = new Box2DDebugRenderer();
 	}
 
