@@ -44,6 +44,10 @@ public class GameScreen implements Screen {
 	private World world;
 	private Box2DDebugRenderer b2dr;
 	private Player player;
+	private Player player2;
+	
+	//Test camera
+	private float yAxisCamera;
 	
 	
 	
@@ -63,6 +67,11 @@ public class GameScreen implements Screen {
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
 		player = new Player(world);
+		player.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
+		player2 = new Player(world);
+		
+		//cam
+		yAxisCamera = player.Box2DBody.getPosition().y;
 
 		
 		
@@ -110,8 +119,26 @@ public class GameScreen implements Screen {
 		world.step(1/60f, 6, 2);
 		
 		player.update(deltaTime);
+		player2.update(deltaTime);
 		
-		gamecam.position.x = player.Box2DBody.getPosition().x;
+		//Kamera følger bakerste spiller
+		if (player.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
+			gamecam.position.x = player.Box2DBody.getPosition().x;
+		}
+		else {
+			gamecam.position.x = player2.Box2DBody.getPosition().x;
+		}
+		
+		
+		//Kamera beveger seg opp i inkrementer på 100 pixler
+		if (player.Box2DBody.getPosition().y < yAxisCamera - (100 / PlatformGame.PPM)) {
+			yAxisCamera -= (100 / PlatformGame.PPM);
+			gamecam.position.y = yAxisCamera;
+		}
+		if (player.Box2DBody.getPosition().y > yAxisCamera + (100 / PlatformGame.PPM)) {
+			yAxisCamera += (100 / PlatformGame.PPM);
+			gamecam.position.y = yAxisCamera;
+		}
 		
 		gamecam.update();
 		renderer.setView(gamecam);
@@ -128,6 +155,30 @@ public class GameScreen implements Screen {
 		if(Gdx.input.isKeyPressed(Input.Keys.A) && player.Box2DBody.getLinearVelocity().x >= -2) {
 			player.Box2DBody.applyLinearImpulse(new Vector2(-0.1f, 0), player.Box2DBody.getWorldCenter(), true);
 		}
+		
+		//Test player 2 controls
+		if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
+			player2.Box2DBody.applyLinearImpulse(new Vector2(0,5f), player.Box2DBody.getWorldCenter(), true);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.Box2DBody.getLinearVelocity().x <= 2) {
+			player2.Box2DBody.applyLinearImpulse(new Vector2(0.1f, 0), player.Box2DBody.getWorldCenter(), true);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.Box2DBody.getLinearVelocity().x >= -2) {
+			player2.Box2DBody.applyLinearImpulse(new Vector2(-0.1f, 0), player.Box2DBody.getWorldCenter(), true);
+		}
+		
+		//Test reverse gravity
+		if(Gdx.input.isKeyJustPressed(Input.Keys.G)) {
+			Vector2 vector2 = world.getGravity();
+			vector2.y = vector2.y * -1;
+			world.setGravity(vector2);
+			player.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player.Box2DBody.getWorldCenter(), true);
+			player2.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player.Box2DBody.getWorldCenter(), true);
+			
+		}
+		
+		
+		
 		
 		/*
 		if (Gdx.input.isKeyPressed(32)) {
@@ -162,6 +213,7 @@ public class GameScreen implements Screen {
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player.draw(game.batch);
+        player2.draw(game.batch);
         game.batch.end();
         
         
