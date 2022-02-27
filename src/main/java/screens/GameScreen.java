@@ -59,7 +59,7 @@ public class GameScreen implements Screen {
 		hud = new Hud(game.batch);
 		
 		maploader = new TmxMapLoader();
-		map = maploader.load("src/main/resources/assets/mapTest.tmx");
+		map = maploader.load("src/main/resources/assets/LabMap/LabMap1.tmx");
 		renderer = new OrthogonalTiledMapRenderer(map, 1 / PlatformGame.PPM);
 		gamecam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
 		
@@ -81,7 +81,7 @@ public class GameScreen implements Screen {
 		FixtureDef fixture = new FixtureDef();
 		Body body;
 		
-		for (MapObject object : map.getLayers().get(3).getObjects().getByType(RectangleMapObject.class)) {
+		for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
 			Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 			
 			bodyDef.type = BodyDef.BodyType.StaticBody;
@@ -94,7 +94,7 @@ public class GameScreen implements Screen {
 			body.createFixture(fixture);
 		}
 		
-		for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
+		for (MapObject object : map.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
 			Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 			
 			bodyDef.type = BodyDef.BodyType.StaticBody;
