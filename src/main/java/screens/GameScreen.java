@@ -27,6 +27,8 @@ import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Player;
+import gameLogic.Box2DCreator;
+import gameLogic.InputHandler;
 import inf112.skeleton.app.PlatformGame;
 import scenes.Hud;
 
@@ -41,10 +43,13 @@ public class GameScreen implements Screen {
 	private OrthogonalTiledMapRenderer renderer;
 	
 	//Box2d variabler
-	private World world;
+	private  World world;
 	private Box2DDebugRenderer b2dr;
-	private Player player;
+	private  Player player1;
 	private Player player2;
+	
+	//GameLogic
+	public InputHandler input;
 	
 	//Test camera
 	private float yAxisCamera;
@@ -66,46 +71,16 @@ public class GameScreen implements Screen {
 		//Box2D
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
-		player = new Player(world);
-		player.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
+		new Box2DCreator(world, map);
+		player1 = new Player(world);
+		player1.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
 		player2 = new Player(world);
 		
+		//GameLogic
+		input = new InputHandler();
+		
 		//cam
-		yAxisCamera = player.Box2DBody.getPosition().y;
-
-		
-		
-		//Midlertidig plassering, skal inn i egen klasse senere.
-		BodyDef bodyDef = new BodyDef();
-		PolygonShape shape = new PolygonShape();
-		FixtureDef fixture = new FixtureDef();
-		Body body;
-		
-		for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
-			Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
-			
-			bodyDef.type = BodyDef.BodyType.StaticBody;
-			bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / PlatformGame.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / PlatformGame.PPM);
-			
-			body = world.createBody(bodyDef);
-			
-			shape.setAsBox((rectangle.getWidth() / 2) / PlatformGame.PPM, (rectangle.getHeight() / 2) / PlatformGame.PPM);
-			fixture.shape = shape;
-			body.createFixture(fixture);
-		}
-		
-		for (MapObject object : map.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
-			Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
-			
-			bodyDef.type = BodyDef.BodyType.StaticBody;
-			bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / PlatformGame.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / PlatformGame.PPM);
-			
-			body = world.createBody(bodyDef);
-			
-			shape.setAsBox((rectangle.getWidth() / 2) / PlatformGame.PPM, (rectangle.getHeight() / 2) / PlatformGame.PPM);
-			fixture.shape = shape;
-			body.createFixture(fixture);
-		}
+		yAxisCamera = player1.Box2DBody.getPosition().y;
 	}
 
 	@Override
@@ -115,15 +90,16 @@ public class GameScreen implements Screen {
 	}
 	
 	public void update(float deltaTime) {
-		inputHandler(deltaTime);
+		InputHandler.input(deltaTime, player1, player2, world);
+		//inputHandler(deltaTime);
 		world.step(1/60f, 6, 2);
 		
-		player.update(deltaTime);
+		player1.update(deltaTime);
 		player2.update(deltaTime);
 		
 		//Kamera følger bakerste spiller
-		if (player.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
-			gamecam.position.x = player.Box2DBody.getPosition().x;
+		if (player1.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
+			gamecam.position.x = player1.Box2DBody.getPosition().x;
 		}
 		else {
 			gamecam.position.x = player2.Box2DBody.getPosition().x;
@@ -131,11 +107,11 @@ public class GameScreen implements Screen {
 		
 		
 		//Kamera beveger seg opp i inkrementer på 200 pixler
-		if (player.Box2DBody.getPosition().y < yAxisCamera - (200 / PlatformGame.PPM)) {
+		if (player1.Box2DBody.getPosition().y < yAxisCamera - (200 / PlatformGame.PPM)) {
 			yAxisCamera -= (200 / PlatformGame.PPM);
 			gamecam.position.y = yAxisCamera;
 		}
-		if (player.Box2DBody.getPosition().y > yAxisCamera + (200 / PlatformGame.PPM)) {
+		if (player1.Box2DBody.getPosition().y > yAxisCamera + (200 / PlatformGame.PPM)) {
 			yAxisCamera += (200 / PlatformGame.PPM);
 			gamecam.position.y = yAxisCamera;
 		}
@@ -144,6 +120,7 @@ public class GameScreen implements Screen {
 		renderer.setView(gamecam);
 	}
 	
+	/*
 	public void inputHandler(float deltaTime) {
 		
 		if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
@@ -176,26 +153,11 @@ public class GameScreen implements Screen {
 			player2.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player.Box2DBody.getWorldCenter(), true);
 			
 		}
-		
-		
-		
-		
-		/*
-		if (Gdx.input.isKeyPressed(32)) {
-			gamecam.position.x += 100 * deltaTime;
-		}
-		if (Gdx.input.isKeyPressed(29)) {
-			gamecam.position.x += -100 * deltaTime;
-		}
-		if (Gdx.input.isKeyPressed(51)) {
-			gamecam.position.y += 100 * deltaTime;
-		}
-		if (Gdx.input.isKeyPressed(47)) {
-			gamecam.position.y += -100 * deltaTime;
-		}
-		*/
+	
 	}
 
+	*/
+	
 	@Override
 	public void render(float delta) {
 		update(delta);
@@ -212,7 +174,7 @@ public class GameScreen implements Screen {
         //Texture render test for spiller
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
-        player.draw(game.batch);
+        player1.draw(game.batch);
         player2.draw(game.batch);
         game.batch.end();
         
@@ -246,7 +208,10 @@ public class GameScreen implements Screen {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
+		map.dispose();
+		renderer.dispose();
+		world.dispose();
+		b2dr.dispose();
 		
 	}
 
