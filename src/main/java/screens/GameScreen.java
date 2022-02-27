@@ -130,13 +130,13 @@ public class GameScreen implements Screen {
 		}
 		
 		
-		//Kamera beveger seg opp i inkrementer på 100 pixler
-		if (player.Box2DBody.getPosition().y < yAxisCamera - (100 / PlatformGame.PPM)) {
-			yAxisCamera -= (100 / PlatformGame.PPM);
+		//Kamera beveger seg opp i inkrementer på 200 pixler
+		if (player.Box2DBody.getPosition().y < yAxisCamera - (200 / PlatformGame.PPM)) {
+			yAxisCamera -= (200 / PlatformGame.PPM);
 			gamecam.position.y = yAxisCamera;
 		}
-		if (player.Box2DBody.getPosition().y > yAxisCamera + (100 / PlatformGame.PPM)) {
-			yAxisCamera += (100 / PlatformGame.PPM);
+		if (player.Box2DBody.getPosition().y > yAxisCamera + (200 / PlatformGame.PPM)) {
+			yAxisCamera += (200 / PlatformGame.PPM);
 			gamecam.position.y = yAxisCamera;
 		}
 		
