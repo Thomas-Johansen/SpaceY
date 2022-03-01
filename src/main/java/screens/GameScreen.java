@@ -72,9 +72,9 @@ public class GameScreen implements Screen {
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
 		new Box2DCreator(world, map);
-		player1 = new Player(world);
-		player1.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
 		player2 = new Player(world);
+		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
+		player1 = new Player(world);
 		
 		//GameLogic
 		input = new InputHandler();
