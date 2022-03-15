@@ -17,5 +17,6 @@ public class Player extends Actor {
 		super(world, texture);
 		// TODO Auto-generated constructor stub
 	}
-	 
+
+	
 }

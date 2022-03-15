@@ -7,11 +7,12 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
 import inf112.skeleton.app.PlatformGame;
 
-public class Actor extends Sprite {
+public abstract class Actor extends Sprite {
 	public World world;
 	public Body Box2DBody;
 	private Texture texture;
@@ -37,9 +38,9 @@ public class Actor extends Sprite {
 		Box2DBody = world.createBody(bodyDef);
 		
 		FixtureDef fixture = new FixtureDef();
-		CircleShape shape = new CircleShape();
-		shape.setRadius(7 / PlatformGame.PPM);
-		fixture.shape = shape;
+		PolygonShape poly = new PolygonShape();
+		poly.setAsBox(7 / PlatformGame.PPM, 7 / PlatformGame.PPM);
+		fixture.shape = poly;
 		Box2DBody.createFixture(fixture);
 	}
 	 

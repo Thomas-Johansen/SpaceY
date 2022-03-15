@@ -73,7 +73,7 @@ public class GameScreen implements Screen {
 		b2dr = new Box2DDebugRenderer();
 		new Box2DCreator(world, map);
 		player2 = new Player(world, new Texture("src/main/resources/assets/mairo.png"));
-		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
+		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 0);
 		player1 = new Player(world, new Texture("src/main/resources/assets/mairo.png"));
 		
 		//GameLogic
