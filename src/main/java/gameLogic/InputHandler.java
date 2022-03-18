@@ -9,6 +9,8 @@ import Objects.Player;
 import screens.GameScreen;
 
 public class InputHandler {
+	//Test Quicksave
+		public static World savepoint;
 
 	
 	public static void input(float deltaTime, Player player1, Player player2, World world) {
@@ -42,5 +44,16 @@ public class InputHandler {
 			player2.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player2.Box2DBody.getWorldCenter(), true);
 			
 		}
+		
+		//Save/Load test
+		if(Gdx.input.isKeyJustPressed(Input.Keys.K)) {
+			savepoint = world;
+			
+		}
+		if(Gdx.input.isKeyJustPressed(Input.Keys.L)) {
+			world = savepoint;
+		}
+		
+		
 	}
 }
