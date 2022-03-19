@@ -15,7 +15,7 @@ import inf112.skeleton.app.PlatformGame;
 public class Box2DCreator {
 	
 	public Box2DCreator(World world, TiledMap map) {
-		//Midlertidig plassering, skal inn i egen klasse senere.
+		//Generer elementer basert på tmx map filen
 				BodyDef bodyDef = new BodyDef();
 				PolygonShape shape = new PolygonShape();
 				FixtureDef fixture = new FixtureDef();
@@ -35,6 +35,19 @@ public class Box2DCreator {
 				}
 				
 				for (MapObject object : map.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
+					Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
+					
+					bodyDef.type = BodyDef.BodyType.StaticBody;
+					bodyDef.position.set((rectangle.getX() + rectangle.getWidth() / 2) / PlatformGame.PPM, (rectangle.getY() + rectangle.getHeight() / 2) / PlatformGame.PPM);
+					
+					body = world.createBody(bodyDef);
+					
+					shape.setAsBox((rectangle.getWidth() / 2) / PlatformGame.PPM, (rectangle.getHeight() / 2) / PlatformGame.PPM);
+					fixture.shape = shape;
+					body.createFixture(fixture);
+				}
+				
+				for (MapObject object : map.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
 					Rectangle rectangle = ((RectangleMapObject) object).getRectangle();
 					
 					bodyDef.type = BodyDef.BodyType.StaticBody;

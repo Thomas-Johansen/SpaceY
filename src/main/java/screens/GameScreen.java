@@ -50,6 +50,7 @@ public class GameScreen implements Screen {
 	
 	//GameLogic
 	public InputHandler input;
+	public  World savepoint;
 	
 	//Test camera
 	private float yAxisCamera;
@@ -90,8 +91,20 @@ public class GameScreen implements Screen {
 	}
 	
 	public void update(float deltaTime) {
-		InputHandler.input(deltaTime, player1, player2, world);
-		//inputHandler(deltaTime);
+		world = InputHandler.input(deltaTime, player1, player2, world);
+		
+		//Save/Load test
+		if(Gdx.input.isKeyPressed(Input.Keys.K)) {
+			savepoint = world;
+			
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.L)) {
+			world = savepoint;
+		}
+		
+		
+		
+		
 		world.step(1/60f, 6, 2);
 		
 		player1.update(deltaTime);
