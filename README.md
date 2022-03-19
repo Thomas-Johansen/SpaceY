@@ -1,7 +1,12 @@
 # Credits
 
 #### Assets:
-##### New Super Mario Bros Tileset:
-###### *https://www.spriters-resource.com/ds_dsi/newsupermariobros/*
-##### Converted to map assets using Tiled:
+##### Level background generator:
+###### *https://deep-fold.itch.io/space-background-generator*
+
+##### Map created using Tiled:
 ###### *https://www.mapeditor.org/*
+
+##### Map laboratory assets:
+###### *https://exceptrea.itch.io/2d-platformer-tileset-laboratory*
+
