@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import gameLogic.InputHandler;
 import inf112.skeleton.app.PlatformGame;
 
 public abstract class Actor extends Sprite {
@@ -29,6 +30,21 @@ public abstract class Actor extends Sprite {
 	public void update(float deltaTime) {
 		//Posisjon til texture er nedre venster hjørne av Box2d objektet
 		setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
+		
+		switch (InputHandler.gravityDirection) {
+		case 0:
+			setRotation(0);
+			break;
+		case 1:
+			setRotation(180);
+			break;
+		case 2:
+			setRotation(280);
+			break;
+		case 4:
+			setRotation(90);
+			break;
+		}
 	}
 	
 	public void actorAttributes() {
@@ -39,7 +55,7 @@ public abstract class Actor extends Sprite {
 		
 		FixtureDef fixture = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(7 / PlatformGame.PPM, 7 / PlatformGame.PPM);
+		poly.setAsBox(6 / PlatformGame.PPM, 6 / PlatformGame.PPM);
 		fixture.shape = poly;
 		Box2DBody.createFixture(fixture);
 	}
