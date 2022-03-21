@@ -91,9 +91,9 @@ public class InputHandler {
 	
 	
 	
-	
+	//Trenger å endres slik at maks hastighet i x og y retning reguleres basert på gravitasjons retningen
 	public static World input(float deltaTime, Player player1, Player player2, World world) {
-		if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
+		if(Gdx.input.isKeyJustPressed(Input.Keys.W) ) {
 			player1.Box2DBody.applyLinearImpulse(getUp(), player1.Box2DBody.getWorldCenter(), true);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.D) && player1.Box2DBody.getLinearVelocity().x <= 2) {
