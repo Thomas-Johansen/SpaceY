@@ -41,7 +41,7 @@ public abstract class Actor extends Sprite {
 		case 2:
 			setRotation(280);
 			break;
-		case 4:
+		case 3:
 			setRotation(90);
 			break;
 		}
