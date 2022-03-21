@@ -93,17 +93,7 @@ public class GameScreen implements Screen {
 	public void update(float deltaTime) {
 		world = InputHandler.input(deltaTime, player1, player2, world);
 		
-		//Save/Load test
-		if(Gdx.input.isKeyPressed(Input.Keys.K)) {
-			savepoint = world;
-			
-		}
-		if(Gdx.input.isKeyPressed(Input.Keys.L)) {
-			world = savepoint;
-		}
-		
-		
-		
+
 		
 		world.step(1/60f, 6, 2);
 		
@@ -128,6 +118,39 @@ public class GameScreen implements Screen {
 			yAxisCamera += (200 / PlatformGame.PPM);
 			gamecam.position.y = yAxisCamera;
 		}
+		
+		//Kamera rotasjon test
+		switch (InputHandler.gravityDirection) {
+		case 0:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			break;
+		case 1:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			gamecam.rotate(180);
+			break;
+		case 2:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			gamecam.rotate(90);
+			break;
+		case 3:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			gamecam.rotate(270);
+			break;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		gamecam.update();
 		renderer.setView(gamecam);
