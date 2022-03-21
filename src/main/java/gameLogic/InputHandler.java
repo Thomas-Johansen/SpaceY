@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 
+import Objects.Actor;
 import Objects.Player;
 
 public class InputHandler {
@@ -88,29 +89,64 @@ public class InputHandler {
 		}
 		return vector;
 	}
+	//isFalling and isMovingMax is used to stop the player from moving/jumping while falling, and to set a max speed left or right
+	public static Boolean isFalling(Actor actor) {
+		switch(gravityDirection) {
+		case 0:
+		case 1:
+			if (actor.Box2DBody.getLinearVelocity().y == 0) {
+				//System.out.println(actor.Box2DBody.getLinearVelocity().y);
+				return false;
+			}
+		case 2:
+		case 3:
+			if (actor.Box2DBody.getLinearVelocity().x == 0) {
+				return false;
+			}	
+		}
+		return true;
+	}
+	public static Boolean isMovingMax(Actor actor) {
+		switch(gravityDirection) {
+		case 0:
+		case 1:
+			if (actor.Box2DBody.getLinearVelocity().x > 2 || actor.Box2DBody.getLinearVelocity().x < -2) {
+				return true;
+			}
+		case 2:
+		case 3:
+			if (actor.Box2DBody.getLinearVelocity().y > 2 || actor.Box2DBody.getLinearVelocity().y < -2) {
+				return true;
+			}	
+		}
+		return false;
+	}
 	
 	
 	
 	//Trenger å endres slik at maks hastighet i x og y retning reguleres basert på gravitasjons retningen
 	public static World input(float deltaTime, Player player1, Player player2, World world) {
-		if(Gdx.input.isKeyJustPressed(Input.Keys.W) ) {
-			player1.Box2DBody.applyLinearImpulse(getUp(), player1.Box2DBody.getWorldCenter(), true);
+		if (!isFalling(player1)) {
+			if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
+				player1.Box2DBody.applyLinearImpulse(getUp(), player1.Box2DBody.getWorldCenter(), true);
+			}
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.D) && player1.Box2DBody.getLinearVelocity().x <= 2) {
+		
+		if(Gdx.input.isKeyPressed(Input.Keys.D) && !isMovingMax(player1)) {
 			player1.Box2DBody.applyLinearImpulse(getRight(), player1.Box2DBody.getWorldCenter(), true);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.A) && player1.Box2DBody.getLinearVelocity().x >= -2) {
+		if(Gdx.input.isKeyPressed(Input.Keys.A) && !isMovingMax(player1)) {
 			player1.Box2DBody.applyLinearImpulse(getLeft(), player1.Box2DBody.getWorldCenter(), true);
 		}
 		
 		//Test player 2 controls
-		if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
+		if(Gdx.input.isKeyJustPressed(Input.Keys.UP) && !isFalling(player2) ) {
 			player2.Box2DBody.applyLinearImpulse(getUp(), player2.Box2DBody.getWorldCenter(), true);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player2.Box2DBody.getLinearVelocity().x <= 2) {
+		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && !isMovingMax(player2)) {
 			player2.Box2DBody.applyLinearImpulse(getRight(), player2.Box2DBody.getWorldCenter(), true);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player2.Box2DBody.getLinearVelocity().x >= -2) {
+		if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && !isMovingMax(player2)) {
 			player2.Box2DBody.applyLinearImpulse(getLeft(), player2.Box2DBody.getWorldCenter(), true);
 		}
 		
