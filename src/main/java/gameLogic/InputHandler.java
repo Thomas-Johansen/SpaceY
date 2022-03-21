@@ -97,12 +97,14 @@ public class InputHandler {
 			if (actor.Box2DBody.getLinearVelocity().y == 0) {
 				//System.out.println(actor.Box2DBody.getLinearVelocity().y);
 				return false;
-			}
+			} 
+			break;
 		case 2:
 		case 3:
 			if (actor.Box2DBody.getLinearVelocity().x == 0) {
 				return false;
-			}	
+			}
+			break;
 		}
 		return true;
 	}
