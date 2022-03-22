@@ -1,4 +1,4 @@
-## 1. Organisering av teamet
+## Oblig 1 | Organisering av teamet
 
 **Teamnavn**: ?
 

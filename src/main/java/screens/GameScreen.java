@@ -50,6 +50,7 @@ public class GameScreen implements Screen {
 	
 	//GameLogic
 	public InputHandler input;
+	public  World savepoint;
 	
 	//Test camera
 	private float yAxisCamera;
@@ -72,9 +73,9 @@ public class GameScreen implements Screen {
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
 		new Box2DCreator(world, map);
-		player2 = new Player(world);
-		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 90);
-		player1 = new Player(world);
+		player2 = new Player(world, new Texture("src/main/resources/assets/mairo.png"));
+		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 0);
+		player1 = new Player(world, new Texture("src/main/resources/assets/mairo.png"));
 		
 		//GameLogic
 		input = new InputHandler();
@@ -90,8 +91,20 @@ public class GameScreen implements Screen {
 	}
 	
 	public void update(float deltaTime) {
-		InputHandler.input(deltaTime, player1, player2, world);
-		//inputHandler(deltaTime);
+		world = InputHandler.input(deltaTime, player1, player2, world);
+		
+		//Save/Load test
+		if(Gdx.input.isKeyPressed(Input.Keys.K)) {
+			savepoint = world;
+			
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.L)) {
+			world = savepoint;
+		}
+		
+		
+		
+		
 		world.step(1/60f, 6, 2);
 		
 		player1.update(deltaTime);
@@ -173,8 +186,6 @@ public class GameScreen implements Screen {
 		map.dispose();
 		renderer.dispose();
 		world.dispose();
-		b2dr.dispose();
-		
+		b2dr.dispose();	
 	}
-
 }
