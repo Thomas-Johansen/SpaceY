@@ -13,8 +13,8 @@ import inf112.skeleton.app.PlatformGame;
 
 public class Player extends Actor {
 
-	public Player(World world, Texture texture) {
-		super(world, texture);
+	public Player(World world) {
+		super(world, new Texture("src/main/resources/assets/mairo.png"));
 		// TODO Auto-generated constructor stub
 	}
 

@@ -158,6 +158,7 @@ public class InputHandler {
 			if (gravityDirection > 3) gravityDirection = 0; 
 			
 			world.setGravity(getGravityVector());
+			player1.Box2DBody.setGravityScale(0);
 			//Physics objects need a little push to get their gravity updated.
 			player1.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player1.Box2DBody.getWorldCenter(), true);
 			player2.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player2.Box2DBody.getWorldCenter(), true);

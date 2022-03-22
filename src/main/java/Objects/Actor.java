@@ -28,23 +28,27 @@ public abstract class Actor extends Sprite {
 	}
 	
 	public void update(float deltaTime) {
-		//Posisjon til texture er nedre venster hjørne av Box2d objektet
-		setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
-		
+		//Texture position og rotation varierer basert på gravitasjons-retningen
 		switch (InputHandler.gravityDirection) {
 		case 0:
 			setRotation(0);
+			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
 			break;
 		case 1:
 			setRotation(180);
+			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 2);
 			break;
 		case 2:
 			setRotation(270);
+			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 3 );
 			break;
 		case 3:
 			setRotation(90);
+			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 3 );
 			break;
 		}
+		
+		
 	}
 	
 	public void actorAttributes() {
