@@ -116,6 +116,7 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void dispose() {
+		menuMusic.dispose();
 		// TODO Auto-generated method stub
 		
 	}
