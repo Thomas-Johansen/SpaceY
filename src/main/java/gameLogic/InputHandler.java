@@ -9,7 +9,7 @@ import Objects.Actor;
 import Objects.Player;
 
 public class InputHandler {
-	//Gravity handling should be moved in it's own class in time, since non input reliant actors depend on it as well
+	//Gravity handling shall be moved in it's own class in time, since non input reliant actors depend on it as well
 	public static int gravityDirection = 0;
 	
 	//Returns the gravity vector for changing box2d world gravity
@@ -125,7 +125,7 @@ public class InputHandler {
 	
 	
 	
-	//Trenger å endres slik at maks hastighet i x og y retning reguleres basert på gravitasjons retningen
+	//Input skal ha en egen case for bare en spiller, ikke implementert enda.
 	public static World input(float deltaTime, Player player1, Player player2, World world) {
 		if (!isFalling(player1)) {
 			if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
