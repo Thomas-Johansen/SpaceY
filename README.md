@@ -4,7 +4,7 @@
 Join Elon Musk as he tests out SpaceY<sup>2</sup> latest invention, gravity shifting technology.  
 Entering the brand-new testing facility, it is your job to guide Elon trough the various test chambers, switching gravity to navigate, solve puzzles and defeat enemies. 
 
-Or play the multiplayer mode, where you and a friend square up against each other in an arena style gamemode, trying to outsmart and end eachother.   
+Or play the multiplayer mode, where you and a friend square off against each other in an arena style gamemode, trying to outsmart and end eachother.   
 (To be implemented)   
 
 
