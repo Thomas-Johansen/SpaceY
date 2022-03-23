@@ -165,7 +165,7 @@ public class GameScreen implements Screen {
 		
         renderer.render();
         
-        //Bedub, viser linjer rundt Box2D render
+        //Viser linjer rundt Box2D render, skal fjernes når spillet er ferdig
         b2dr.render(world, gamecam.combined);
         
         
@@ -205,6 +205,7 @@ public class GameScreen implements Screen {
 	}
 
 	@Override
+	//Litt usikker på nøyaktig hva som skal og ikke skal disposes
 	public void dispose() {
 		map.dispose();
 		renderer.dispose();
