@@ -1,17 +1,17 @@
 # Oblig 2
 
-**GameName:** *SpaceY <sup>2<sup/> - ???*
+**GameName:** *SpaceY <sup>2<sup/>*
 
 **Team:** *Alle Gode Ting er Tre* (Gruppe 4): *Daniel Sandhaug, Thomas Lande, Thomas S. Johansen*
 
 ### Brukerhistorier: 
-Brukerhistorier for prosjektet finnder du her: [Brukerhistorier](Brukerhistorier.md)
+Brukerhistorier for prosjektet finner du her: [Brukerhistorier](Brukerhistorier.md)
 
 ### Beskrivelse av spill/prosjekt
 Intro/handling til spill er beskrevet i README.md
 
 ### Klassediagram
-Klassedigram for prosjekt inner du her: [Klassedigram](Klassediagram.png)f
+Klassedigram for prosjekt finner du her: [Klassedigram](Klassediagram.png)f
 
 ### Project board
 Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf112.22v.libgdx-template/-/boards) 
