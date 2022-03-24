@@ -16,6 +16,8 @@ public class Box2DCreator {
 	
 	public Box2DCreator(World world, TiledMap map) {
 		//Generer elementer basert på tmx map filen
+		//For øyeblikket genereres kun statisce "vegg" objecter
+		// Er meningen at autoplassering av ting som items og enemies skal legges til her senere.
 				BodyDef bodyDef = new BodyDef();
 				PolygonShape shape = new PolygonShape();
 				FixtureDef fixture = new FixtureDef();

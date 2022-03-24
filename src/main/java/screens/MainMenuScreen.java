@@ -2,6 +2,7 @@ package screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.Texture;
 
@@ -24,6 +25,7 @@ public class MainMenuScreen implements Screen {
 	Texture exitInactive;
 	Texture background;
 	
+	Music menuMusic; 
 	
 	public MainMenuScreen (PlatformGame game) {
 		this.game = game;
@@ -32,6 +34,11 @@ public class MainMenuScreen implements Screen {
 		exitActive = new Texture("src/main/resources/assets/exit_button_active.png");
 		exitInactive = new Texture("src/main/resources/assets/exit_button_inactive.png");
 		background = new Texture("src/main/resources/assets/space_background.png");
+		
+		//Music Test
+		menuMusic = Gdx.audio.newMusic(Gdx.files.internal("src/main/resources/assets/Space.mp3"));
+		//menuMusic.setLooping(true);
+		menuMusic.play();
 	}
 	
 	@Override
@@ -109,6 +116,7 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void dispose() {
+		menuMusic.dispose();
 		// TODO Auto-generated method stub
 		
 	}

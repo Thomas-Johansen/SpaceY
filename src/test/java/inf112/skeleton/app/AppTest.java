@@ -6,6 +6,9 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+
 public class AppTest {
 	/**
 	 * Static method run before everything else
@@ -22,37 +25,15 @@ public class AppTest {
 	}
 
 	/**
-	 * Simple test case
+	 * Simple test case to see if a test can start the application
 	 */
 	@Test
-	void dummy1() {
-		// Expected result is the first argument, value to be tested is the second.
-		// The message is optional.
-		assertEquals("foo", "f".concat("oo"), "fooo?");
+	void test1() {
+		 Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
+	        
+	        cfg.setTitle("GameTest");
+	        cfg.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
+	        new Lwjgl3Application(new TestGame(), cfg);
 	}
 
-	/**
-	 * Simple test case
-	 */
-	@Test
-	void dummy2() {
-		// For floats and doubles it's best to use assertEquals with a delta, since
-		// floating-point numbers are imprecise
-		float a = 100000;
-		a = a + 0.1f;
-		assertEquals(100000.1, a, 0.01);
-	}
-
-	/**
-	 * Parameterized test case, reading arguments from comma-separated strings
-	 * 
-	 * @param a
-	 * @param b
-	 * @param c
-	 */
-	@CsvSource(value = { "1,1,2", "1,2,3", "2,3,5", "3,5,8", "5,8,13", "8,13,21" })
-	@ParameterizedTest(name = "{0}+{1} == {2}")
-	void addTest(int a, int b, int c) {
-		assertEquals(c, a + b);
-	}
 }
