@@ -14,6 +14,14 @@ Use G to switch gravity, circulating between Down, Up, Left, Right
 
 
 
+# Info
+Prosjektet er skrevet i Java 15   
+
+Kjøring av spillet gjøres med å kjøre Main.java   
+Testing gjøres ved å kjøre AppTest.java som JUnit test.   
+   
+   
+
 # Credits
 
 #### Assets:
