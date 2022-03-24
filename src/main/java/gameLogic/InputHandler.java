@@ -10,6 +10,7 @@ import Objects.Player;
 
 public class InputHandler {
 	//Gravity handling shall be moved in it's own class in time, since non input reliant actors depend on it as well
+	//Gravity direction muligens endres til enum?
 	public static int gravityDirection = 0;
 	
 	//Returns the gravity vector for changing box2d world gravity
@@ -60,7 +61,7 @@ public class InputHandler {
 			vector = new Vector2(-0.1f,0);
 			break;
 		case 1:
-			vector = new Vector2(-0.1f,0);
+			vector = new Vector2(0.1f,0);
 			break;
 		case 2:
 			vector = new Vector2(0,0.1f);
@@ -78,7 +79,7 @@ public class InputHandler {
 			vector = new Vector2(0.1f,0);
 			break;
 		case 1:
-			vector = new Vector2(0.1f,0);
+			vector = new Vector2(-0.1f,0);
 			break;
 		case 2:
 			vector = new Vector2(0,-0.1f);
