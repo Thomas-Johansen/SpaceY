@@ -33,7 +33,7 @@ public class AppTest {
 	        
 	        cfg.setTitle("GameTest");
 	        cfg.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
-	        new Lwjgl3Application(new PlatformGame(), cfg);
+	        new Lwjgl3Application(new TestGame(), cfg);
 	}
 
 }
