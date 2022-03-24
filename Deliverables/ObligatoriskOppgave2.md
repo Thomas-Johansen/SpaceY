@@ -19,7 +19,7 @@ Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf1
 ## Deloppgave 1: Team og prosjekt
 
 **Roller i teamet**
-Roller i teamet Som sist konkludert har vi ingen fastskrevene/bestemte roller i teamet. Ettersom vi er et lite team på tre med mye å gjøre har vi valgt å ikke fokuser på bestemte roller. En utdeling av bestemte roller vil i liten gard bli praktisert. Målet i gruppen er at alle skal bidra på de ulike delene av prosjektet. Likevel oppfylles preferanser på hva en måtte ønsker å se litt ekstra på. Dette gjør at enkelte i gruppen jobber litt ekstra med spesifikke deler av prosjektet. Under er en oversikt over den nåværende arbeidsfordelingen.
+Som sist konkludert har vi ingen fastskrevene/bestemte roller i teamet. Ettersom vi er et lite team på tre med mye å gjøre har vi valgt å ikke fokuser på bestemte roller. En utdeling av bestemte roller vil i liten gard bli praktisert. Målet i gruppen er at alle skal bidra på de ulike delene av prosjektet. Likevel oppfylles preferanser på hva en måtte ønsker å se litt ekstra på. Dette gjør at enkelte i gruppen jobber litt ekstra med spesifikke deler av prosjektet. Under er en oversikt over den nåværende arbeidsfordelingen.
 
 Thomas J - Jobber mye med koden og har en god oversikt over implementeringen samt planene om videre utvikling av spillet.
 
