@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import screens.GameScreen;
 
 
-/*
+/**
  * TestGame is a special case of PlatformGame that forgoes the main menu for testing purposes.
  * 
  * 
