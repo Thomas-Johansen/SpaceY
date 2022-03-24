@@ -36,4 +36,3 @@ Akseptansekriterie for B4:
 
 ##Oblig2
 
-
