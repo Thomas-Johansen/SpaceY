@@ -63,18 +63,18 @@ Over er det listet de større tingene vi har jobbet med / kodet siden sits innle
 
 Vi har ikke loggført møtene våre for denne obligen.
 
-01.03.2022 -
+01.03.2022 - Alle møtte opp
 
-03.03.2022 -
+03.03.2022 - Alle møtte opp
 
-05.03.2022 - 
+05.03.2022 - Alle møtte opp
 
-08.03.2022 -
+08.03.2022 - Alle møtte opp
 
-17.03.2022 -
+17.03.2022 - Alle møtte opp
 
-22.03.2022 -
+22.03.2022 - Alle møtte opp
 
-24.03.2022 -
+24.03.2022 - Alle møtte opp
 
 
