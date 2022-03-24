@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
         
-        cfg.setTitle("GameTest");
+        cfg.setTitle("SpaceY");
         cfg.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
         new Lwjgl3Application(new PlatformGame(), cfg);
     }

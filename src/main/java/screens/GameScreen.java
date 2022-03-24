@@ -73,9 +73,9 @@ public class GameScreen implements Screen {
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
 		new Box2DCreator(world, map);
-		player2 = new Player(world, new Texture("src/main/resources/assets/mairo.png"));
+		player2 = new Player(world);
 		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 0);
-		player1 = new Player(world, new Texture("src/main/resources/assets/mairo.png"));
+		player1 = new Player(world);
 		
 		//GameLogic
 		input = new InputHandler();
@@ -93,17 +93,7 @@ public class GameScreen implements Screen {
 	public void update(float deltaTime) {
 		world = InputHandler.input(deltaTime, player1, player2, world);
 		
-		//Save/Load test
-		if(Gdx.input.isKeyPressed(Input.Keys.K)) {
-			savepoint = world;
-			
-		}
-		if(Gdx.input.isKeyPressed(Input.Keys.L)) {
-			world = savepoint;
-		}
-		
-		
-		
+
 		
 		world.step(1/60f, 6, 2);
 		
@@ -129,6 +119,39 @@ public class GameScreen implements Screen {
 			gamecam.position.y = yAxisCamera;
 		}
 		
+		//Kamera rotasjon test
+		switch (InputHandler.gravityDirection) {
+		case 0:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			break;
+		case 1:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			gamecam.rotate(180);
+			break;
+		case 2:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			gamecam.rotate(90);
+			break;
+		case 3:
+			gamecam.up.set(0,1,0);
+			//gamecam.direction.set(0, 0, 1);
+			gamecam.rotate(270);
+			break;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		gamecam.update();
 		renderer.setView(gamecam);
 	}
@@ -142,7 +165,7 @@ public class GameScreen implements Screen {
 		
         renderer.render();
         
-        //Bedub, viser linjer rundt Box2D render
+        //Viser linjer rundt Box2D render, skal fjernes når spillet er ferdig
         b2dr.render(world, gamecam.combined);
         
         
@@ -182,6 +205,7 @@ public class GameScreen implements Screen {
 	}
 
 	@Override
+	//Litt usikker på nøyaktig hva som skal og ikke skal disposes
 	public void dispose() {
 		map.dispose();
 		renderer.dispose();
