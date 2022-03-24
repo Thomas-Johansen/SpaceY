@@ -28,6 +28,7 @@ Daniel - hjelper Thomas J med hjelpe metoder samt rydder litt i strukturen (må 
 Den er bra, vi har ikke møtt noen problemer så langt. Var selvfølgelig litt kjipt å miste en person slik at det blir mer arbeid på resten,
 men vi føler vi fortsatt fungerer bra sammen og har bra progresjon.
 
+
 **Kommunikasjonen i gruppen**
 Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøter i uken (tirsdag og torsdag). Under de fysiske møtene legger vi frem ting vi har jobbet med samt foreslår nye ting vi kan jobbe med videre. Utenom de fysiske gruppemøtene foregår kommunikasjonen over discord. Her legger vi ofte ut statuser på det vi jobber med samt planlegger de fysiske gruppemøtene.
 
