@@ -36,7 +36,6 @@ Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøte
 
 
 
-
 ## 3. Spesifikasjon
 
 ### Brukerhistorier
