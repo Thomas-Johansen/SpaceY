@@ -18,13 +18,13 @@ Use G to switch gravity, circulating between Down, Up, Left, Right
 Prosjektet er skrevet i Java 15   
 
 
-*Kjøring av spillet gjennom en IDE som eclipse*  
+**Kjøring av spillet gjennom en IDE som eclipse** 
 Klon spillet fra git enten via commandolinje eller via Eclipse import funksjon.
 Naviger til src/main/java/inf122.skeleton.app/Main.java
 Kjør Main.java   
 Testing gjøres ved å kjøre src/test/java/AppTest.java som JUnit test.   
    
-*Kjøring av spillet gjennom kommandolinjen*  
+**Kjøring av spillet gjennom kommandolinjen**
    
 
 # Credits
