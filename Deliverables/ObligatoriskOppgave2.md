@@ -11,7 +11,7 @@ Brukerhistorier for prosjektet finner du her: [Brukerhistorier](Brukerhistorier.
 Intro/handling til spill er beskrevet i README.md
 
 ### Klassediagram
-Klassedigram for prosjekt finner du her: [Klassedigram](Klassediagram.png)f
+Klassedigram for prosjekt finner du her: [Klassedigram](Diagramavmain.png)
 
 ### Project board
 Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf112.22v.libgdx-template/-/boards) 
