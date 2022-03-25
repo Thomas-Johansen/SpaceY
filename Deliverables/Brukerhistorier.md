@@ -36,7 +36,7 @@ Akseptansekriterie for B4:
 
 ## Oblig2
 
-**B5: Når jeg starter spillet, skal det vises en main menue med fungerende knapper man kan klikke på.**
+**B5: Når jeg starter spillet, skal det vises en main menu med fungerende knapper man kan klikke på.**
 
 Akseptansekriterie for B5:
 - Main menu dukker opp i GUI når spillet kjøres.
@@ -45,3 +45,13 @@ Akseptansekriterie for B5:
 
 Arbeidsoppgaver:
 - Implementere en ny gamescreen som fungerer som main menu.
+
+**B6: Som spiller skal jeg kunne skifte gravitasjoen på spiller ved å klikke G på tastaturet.**
+
+Akseptansekriterie for B6:
+- Garvitasjoen for player objektet kan skiftest mellom de fire ulike himmelretningen.
+- Kameraet roter med spiller når gravitasjonen skiftes.
+
+Arbeidsoppgaver:
+- Implementere fire caser med gravitasjon, en for hver himmelretningen.
+
