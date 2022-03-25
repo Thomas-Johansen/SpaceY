@@ -55,3 +55,13 @@ Akseptansekriterie for B6:
 Arbeidsoppgaver:
 - Implementere fire caser med gravitasjon, en for hver himmelretningen.
 
+**B7: Som utvikler ønsker jeg å ha dokumentasjon på deler av koden for å letter forstå hva koden gjør.**
+
+Akseptansekriterie for B7:
+- Klassene har dokumentasjon med nyttig infromasjon. 
+- metoder er dokumentert med nyttig informasjon.
+
+Arbeidsoppgaver:
+- Aktivt dokumentere kode og klasser (JavaDoc).
+
+
