@@ -59,22 +59,22 @@ Over er det listet de større tingene vi har jobbet med / kodet siden sits innle
 3) Skrive møtereferat. Møtene våre har både vært nyttige og effektive, men mangler loggføring.
 
 
-**Implementasjoner vi ønsket skulle være klare til denne innleveringen**
-Hovedmenyen kan ikke for øyeblikket ikke forstørres, mens spillvinduet kan.
-Starten på en fiende Actor og død for spillerfiguren dersom de kolliderer med fiender.
-Interaktive objekter som kuber og "knapper" å flytte disse kubene på.
-Flere/faktisk skikkelige tester
-
-
-**Implementasjoner vi ønsker skal være klare til neste innlevering**
-De ovenfornevte punktene. (Forhåpentligvis ferdig implimenterte fiender med basic AI)
-Separat multiplayer fra singleplayer mode.
-Fullført innputhandling. (En eller to spillere fører til forkjellig controller layout)
-Sepparat klasse for å håndtere gravitasjon.
-Starten på ulike kart man kan progresse gjennom. 
-Andre interaktible map objects.
-
-
+**Implementasjoner vi ønsket skulle være klare til denne innleveringen**   
+Hovedmenyen kan ikke for øyeblikket ikke forstørres, mens spillvinduet kan.   
+Starten på en fiende Actor og død for spillerfiguren dersom de kolliderer med fiender.   
+Interaktive objekter som kuber og "knapper" å flytte disse kubene på.   
+Flere/faktisk skikkelige tester   
+   
+   
+**Implementasjoner vi ønsker skal være klare til neste innlevering**   
+De ovenfornevte punktene. (Forhåpentligvis ferdig implimenterte fiender med basic AI)   
+Separat multiplayer fra singleplayer mode.   
+Fullført innputhandling. (En eller to spillere fører til forkjellig controller layout)   
+Sepparat klasse for å håndtere gravitasjon.   
+Starten på ulike kart man kan progresse gjennom.    
+Andre interaktible map objects.   
+   
+   
 ## Referat fra møter
 
 Vi har ikke loggført møtene våre for denne obligen.
