@@ -2,7 +2,7 @@
 
 (BX hvor B står for brukerhistorie, og X er løpende nummerering fra 1.)
 
-##Oblig1
+## Oblig1
 
 **B1: Når jeg starter spillet, skal det vises et grafisk vindu med spillelementer, slik at det er mulig for meg å finne ut hvor jeg skal bevege min karakter**
 
@@ -28,11 +28,20 @@ Akseptansekriterie for B3:
 - Spilleren dukker opp på et fornuftig startposisjon.
 - Spilleren kan beveges på.
 
-**B4: Som spiller, skal kameraet følge karakteren, slik at det er mulig å se omgivelsene rundt karakteren.
+**B4: Som spiller, skal kameraet følge karakteren, slik at det er mulig å se omgivelsene rundt karakteren.**
 
 Akseptansekriterie for B4:
 - Når spillerens karakter beveger seg, beveger kameraet sammen med karakteren.
 
 
-##Oblig2
+## Oblig2
 
+**B5: Når jeg starter spillet, skal det vises en main menue med fungerende knapper man kan klikke på.**
+
+Akseptansekriterie for B5:
+- Main menu dukker opp i GUI når spillet kjøres.
+- Grafikken vises (bakgrunnsbilde, grafiske elementer, etc).
+- Knappene fungerer å respondere på klikk.
+
+Arbeidsoppgaver:
+- Implementere en ny gamescreen som fungerer som main menu.
