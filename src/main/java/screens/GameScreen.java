@@ -26,8 +26,10 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import Objects.Cube;
 import Objects.Player;
 import gameLogic.Box2DCreator;
+import gameLogic.GameContactListener;
 import gameLogic.InputHandler;
 import inf112.skeleton.app.PlatformGame;
 import scenes.Hud;
@@ -47,6 +49,8 @@ public class GameScreen implements Screen {
 	private Box2DDebugRenderer b2dr;
 	private  Player player1;
 	private Player player2;
+	
+	private Cube cube;
 	
 	//GameLogic
 	public InputHandler input;
@@ -73,9 +77,10 @@ public class GameScreen implements Screen {
 		world = new World(new Vector2(0, (float) -9.81), true);
 		b2dr = new Box2DDebugRenderer();
 		new Box2DCreator(world, map);
-		player2 = new Player(world);
-		player2.Box2DBody.setTransform(200 / PlatformGame.PPM,100 / PlatformGame.PPM, 0);
-		player1 = new Player(world);
+		world.setContactListener(new GameContactListener());
+		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
+		player2 = new Player(world, new Vector2(200 / PlatformGame.PPM, 100 / PlatformGame.PPM));
+		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		
 		//GameLogic
 		input = new InputHandler();
@@ -91,6 +96,15 @@ public class GameScreen implements Screen {
 	}
 	
 	public void update(float deltaTime) {
+		if (player1.Box2DBody.getPosition().x > 1260 / PlatformGame.PPM && player1.Box2DBody.getPosition().y < 32) {
+			System.out.println("Level complete");
+			game.setScreen(new MainMenuScreen(game));
+			/*Testcase for completing a level, 
+			 * in this case reaching the nuclear colored square at the far right of the map takes you back to the main menu
+			 * The idea being that each map will have a predefined area the player must reach to complete that map
+			 * */
+		} else
+		
 		world = InputHandler.input(deltaTime, player1, player2, world);
 		
 
@@ -99,6 +113,7 @@ public class GameScreen implements Screen {
 		
 		player1.update(deltaTime);
 		player2.update(deltaTime);
+		cube.update(deltaTime);
 		
 		//Kamera følger bakerste spiller
 		if (player1.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
@@ -174,6 +189,7 @@ public class GameScreen implements Screen {
         game.batch.begin();
         player1.draw(game.batch);
         player2.draw(game.batch);
+        cube.draw(game.batch);
         game.batch.end();
         
         
@@ -212,4 +228,5 @@ public class GameScreen implements Screen {
 		world.dispose();
 		b2dr.dispose();	
 	}
+
 }
