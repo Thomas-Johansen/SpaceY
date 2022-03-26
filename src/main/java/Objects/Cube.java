@@ -12,5 +12,6 @@ public class Cube extends Actor {
 
 	public Cube(World world, Vector2 spawn) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Cube.png"), spawn);
+		fixture.setUserData(this);
 	}
 }
