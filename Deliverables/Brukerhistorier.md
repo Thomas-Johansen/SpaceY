@@ -73,3 +73,15 @@ Akseptansekriterie for B8:
 Arbeidsoppgaver:
 - Implementere et målområde på spillbrettet.
 - Definere vilkår om seier når målområde blir passert.
+
+**B9: Som spiller ønsker jeg å kunne spille sammen med min kompis når han er på besøk.**
+
+Akseptansekriterie for B8:
+- Spillbrettet viser to spillere som kan styres med ulike key inputs (awd og left,up,rigth).
+- Spillere kan interaktere med hverandre.
+- Kamerate følger bakerste spiller.
+
+Arbeidsoppgaver:
+- Leggt til et nytt spiller objekt med andre key inputs.
+- Oppdatere kameraet slik at det følger den bakerste spilleren.
+
