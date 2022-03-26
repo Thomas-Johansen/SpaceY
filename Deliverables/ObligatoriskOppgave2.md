@@ -50,6 +50,15 @@ Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøte
 
 Over er det listet de større tingene vi har jobbet med / kodet siden sits innlevering. Når det kommer til prosjektstrukturen, har vi begynt å bruke project board mer aktiv. Dette var noe vi ikke fokuserte så mye på i første oblig. Ellers har vi oppretthold den gode flyten og arbeidsmoral. En ting vi har vært spesielt flinke til er jevn jobbing. Den jevne jobbingen har is stor gard kommet av de regelmessige møtene vi arrangerer.
 
+**Vurdering av MPV kravene**
+- Krav 1-4 og 11 var klart til forrige innlevering. 
+- Krav 10 er nå implimentert for oppstart, men ikke game over.   
+- Krav 5 har vi valgt å gå bort fra, i den grad at vi ikke har planer om å ha noen direkte "poeng" system spilleren må samle inn.   
+- Krav 6 er ikke fullført enda, med mindre man regner spiller 2, eller den flyttbare boksen som en fiende man interagerer med, ettersom boksen "dreper" spilleren.   
+- Krav 7 og 8 har veldig tidlige implimentasjoner, for øyeblikket kun i form av print lines i console. 
+- Krav 9 er ikke fullført, ettersom vi ønsker å ha flere spillets funksjoner og actors klare før vi lager faktiske levels/kart.
+
+
 **Forbedringspunkter**
 
 1) Skrive Javadocs og dokumentasjon til koden slik at det er lettere for gruppen å skjønne hverandres kode.
@@ -61,8 +70,7 @@ Over er det listet de større tingene vi har jobbet med / kodet siden sits innle
 
 **Implementasjoner som ikke ble klare til denne innleveringen**   
 Hovedmenyen kan ikke for øyeblikket ikke forstørres, mens spillvinduet kan.   
-Starten på en fiende Actor og død for spillerfiguren dersom de kolliderer med fiender.   
-Interaktive objekter som kuber og "knapper" å flytte disse kubene på.   
+Starten på en fiende Actor og død for spillerfiguren dersom de kolliderer med fiender.     
 Flere/faktisk skikkelige tester   
    
    
