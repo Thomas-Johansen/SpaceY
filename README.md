@@ -42,3 +42,9 @@ Testing gjøres ved å kjøre src/test/java/AppTest.java som JUnit test.
 Mario character png is form a simple "Mario bit png" search on google, and will be changed for future releases
 
 Cube asset created by Thomas.S.Johansen
+
+##### Play and Exit buttons:
+###### Artwork by Nathanael Maher
+###### https://github.com/hollowbit/libgdx-2d-tutorial/blob/master/android/assets/play_button_inactive.png
+###### https://github.com/hollowbit/libgdx-2d-tutorial/blob/master/android/assets/exit_button_inactive.png
+
