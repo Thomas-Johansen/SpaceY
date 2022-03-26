@@ -69,7 +69,7 @@ Over er det listet de større tingene vi har jobbet med / kodet siden sits innle
 
 
 **Implementasjoner som ikke ble klare til denne innleveringen**   
-Hovedmenyen kan ikke for øyeblikket ikke forstørres, mens spillvinduet kan.   
+Hovedmenyen kan for øyeblikket ikke forstørres, mens spillvinduet kan.   
 Starten på en fiende Actor og død for spillerfiguren dersom de kolliderer med fiender.     
 Flere/faktisk skikkelige tester   
    
