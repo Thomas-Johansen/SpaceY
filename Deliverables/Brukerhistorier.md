@@ -64,4 +64,12 @@ Akseptansekriterie for B7:
 Arbeidsoppgaver:
 - Aktivt dokumentere kode og klasser (JavaDoc).
 
+**B8: Som spiller trenger jeg et avgrenset målområde som registrerer at jeg har seiret i spillet.**
 
+Akseptansekriterie for B8:
+- Et målområde på spillbrettet vises.
+- Level/spill registreses som ferdig når spiller krysser målområde.
+
+Arbeidsoppgaver:
+- Implementere et målområde på spillbrettet.
+- Definere vilkår om seier når målområde blir passert.
