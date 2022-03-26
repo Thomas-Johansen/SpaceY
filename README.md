@@ -40,3 +40,5 @@ Testing gjøres ved å kjøre src/test/java/AppTest.java som JUnit test.
 ###### *https://exceptrea.itch.io/2d-platformer-tileset-laboratory*
 
 Mario character png is form a simple "Mario bit png" search on google, and will be changed for future releases
+
+Cube asset created by Thomas.S.Johansen
