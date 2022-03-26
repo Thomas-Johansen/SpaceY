@@ -95,7 +95,7 @@ Vi har ikke loggført møtene våre for denne obligen.
 
 
 #### NB til gruppelederne:
-Som dere kanskje oppdager er vi to Thomas-er på denne gruppen, og det er commits fra sånn minst 5 ulike Thomas profiler   
-Thomas.S.Johansen og Thomas med grå/hvit icon tilhører Thomas Sandvik Johansen
-De mange profilene som heter thoma som har hvit og ulike farger som icon tilhører Thomas Lande
+Som dere kanskje oppdager er vi to Thomas-er på denne gruppen, og det er commits fra sånn minst 5 ulike Thomas profiler      
+Thomas.S.Johansen og Thomas med grå/hvit icon tilhører Thomas Sandvik Johansen   
+Thomas.Lande i tillegg til de mange profilene som heter thoma som har hvit og ulike farger som icon tilhører Thomas Lande   
 Skal prøve å få fikset dette for nye commits.
