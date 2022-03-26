@@ -76,7 +76,7 @@ Arbeidsoppgaver:
 
 **B9: Som spiller ønsker jeg å kunne spille sammen med min kompis når han er på besøk.**
 
-Akseptansekriterie for B8:
+Akseptansekriterie for B9:
 - Spillbrettet viser to spillere som kan styres med ulike key inputs (awd og left,up,rigth).
 - Spillere kan interaktere med hverandre.
 - Kamerate følger bakerste spiller.
@@ -84,4 +84,14 @@ Akseptansekriterie for B8:
 Arbeidsoppgaver:
 - Leggt til et nytt spiller objekt med andre key inputs.
 - Oppdatere kameraet slik at det følger den bakerste spilleren.
+
+**B10: Som spiller ønsker jeg at det er interaksjon mellom min brikk og elementer på spillbrettet.**
+
+Akseptansekriterie for B10:
+- Spiller kan flytte/dytte elementer rundt på spillbrettet.
+- Spiler kan ta skade av elementer på spillbrettet.
+
+Arbeidsoppgaver:
+- Legge til elementer på spillbrett som kan dyttes av spiller.
+- Legge til at elementer tar skade av spiller.
 
