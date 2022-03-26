@@ -59,7 +59,7 @@ Over er det listet de større tingene vi har jobbet med / kodet siden sits innle
 3) Skrive møtereferat. Møtene våre har både vært nyttige og effektive, men mangler loggføring.
 
 
-**Implementasjoner vi ønsket skulle være klare til denne innleveringen**   
+**Implementasjoner som ikke ble klare til denne innleveringen**   
 Hovedmenyen kan ikke for øyeblikket ikke forstørres, mens spillvinduet kan.   
 Starten på en fiende Actor og død for spillerfiguren dersom de kolliderer med fiender.   
 Interaktive objekter som kuber og "knapper" å flytte disse kubene på.   
