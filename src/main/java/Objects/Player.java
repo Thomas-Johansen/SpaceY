@@ -38,7 +38,7 @@ public class Player extends Actor {
 		
 		//Sensor for head collision detection
 		EdgeShape head = new EdgeShape();
-		head.set(new Vector2(-2 / PlatformGame.PPM, 7 / PlatformGame.PPM), new Vector2(2 / PlatformGame.PPM, 7 / PlatformGame.PPM));
+		head.set(new Vector2(-2 / PlatformGame.PPM, 10 / PlatformGame.PPM), new Vector2(2 / PlatformGame.PPM, 10 / PlatformGame.PPM));
 		fixtureDef.shape = head;
 		Box2DBody.createFixture(fixtureDef).setUserData("head");
 	}

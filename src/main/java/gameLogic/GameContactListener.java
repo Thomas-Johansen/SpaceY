@@ -28,11 +28,17 @@ public class GameContactListener implements ContactListener {
 			//Checks if the head has collided with a cube spesifically
 			if(object.getUserData() != null &&  Cube.class.isAssignableFrom(object.getUserData().getClass())) {
 				System.out.println("Player has died");
+				if(fixA.getUserData() == "head") {
+				System.out.println();
+				}
+					/*
+					((Player)fixA.getUserData()).onHeadHit();
+				} else ((Player)fixB.getUserData()).onHeadHit();
+				*/
 				//At the moment, getting a box on the head only prints player has died, as an actual death mechanic is not yet implemented.
 				
 			}
 		}
-
 	}
 
 	@Override
