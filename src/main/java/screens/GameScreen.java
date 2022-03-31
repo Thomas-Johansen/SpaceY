@@ -96,7 +96,7 @@ public class GameScreen implements Screen {
 	}
 	
 	public void update(float deltaTime) {
-		if (player1.Box2DBody.getPosition().x > 1260 / PlatformGame.PPM && player1.Box2DBody.getPosition().y < 32) {
+		if (player1.Box2DBody.getPosition().x > 1260 / PlatformGame.PPM && player1.Box2DBody.getPosition().y < 64 / PlatformGame.PPM) {
 			System.out.println("Level complete");
 			game.setScreen(new MainMenuScreen(game));
 			/*Testcase for completing a level, 
