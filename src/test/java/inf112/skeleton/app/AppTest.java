@@ -39,8 +39,44 @@ public class AppTest {
 	        
 	        cfg.setTitle("GameTest");
 	        cfg.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
-	        new Lwjgl3Application(new TestGame(), cfg);
-
+	        
+	        Thread test = new Thread() {
+	        	@Override
+	        	public void run() {
+	        		new Lwjgl3Application(new TestGame(), cfg);
+	        	}
+	        };
+	        Robot robot = new Robot();
+	        Thread test2 = new Thread() {
+	        	@Override
+	        	public void run() {
+	        	   
+	     	       System.out.println("Start Test:");
+	     	       robot.delay(5000);
+	     	       robot.keyPress(71);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(71);
+	     	       robot.delay(2000);
+	     	       robot.keyPress(71);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(71);
+	     	       robot.delay(2000);
+	     	       robot.keyPress(71);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(71);
+	     	       robot.delay(2000);
+	     	       robot.keyPress(71);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(71);
+	     	       System.out.println("Stop Test:");
+	        	}
+	        };
+	       test.start();
+	       test2.start();
+	       
+	       test.join();
+	       test2.join();
+	    
 	}
 	
 }

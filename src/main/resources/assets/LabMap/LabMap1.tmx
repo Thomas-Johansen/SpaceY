@@ -142,13 +142,9 @@
   <object id="2" x="0" y="448" width="1280" height="32"/>
   <object id="9" x="704" y="288" width="576" height="32"/>
   <object id="21" x="1184" y="416" width="64" height="64"/>
- </objectgroup>
- <objectgroup id="6" name="Platform">
   <object id="3" x="464" y="288" width="128" height="32"/>
   <object id="4" x="576" y="352" width="96" height="32"/>
   <object id="5" x="448" y="400" width="192" height="32"/>
- </objectgroup>
- <objectgroup id="8" name="WorldBorder">
   <object id="13" x="1" y="0.5" height="448"/>
   <object id="14" x="0" y="0" width="672"/>
   <object id="15" x="672" y="0" width="528"/>
