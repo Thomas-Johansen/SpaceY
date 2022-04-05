@@ -13,6 +13,8 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import enums.Gravity;
+import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
 import inf112.skeleton.app.PlatformGame;
 
@@ -46,25 +48,27 @@ public abstract class Actor extends Sprite {
 		
 	}
 	
-	public void update(float deltaTime) {
+	public void update(float deltaTime, GravityHandler gravity) {
 		//Texture & Box2D Object position og rotation varierer basert på gravitasjons-retningen
-		switch (InputHandler.gravityDirection) {
-		case 0:
+		Gravity switchGrav;
+		if (gravity.playerToggle) switchGrav = gravity.playerGravity; else switchGrav = gravity.worldGravity;
+		switch (switchGrav) {
+		case DOWN:
 			setRotation(0);
 			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
 			Box2DBody.setTransform(Box2DBody.getPosition(), 0);
 			break;
-		case 1:
+		case UP:
 			setRotation(180);
 			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 2);
 			Box2DBody.setTransform(Box2DBody.getPosition(), (float) PI);
 			break;
-		case 2:
+		case LEFT:
 			setRotation(270);
 			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 3 );
 			Box2DBody.setTransform(Box2DBody.getPosition(), (float) ((3*PI)/2));
 			break;
-		case 3:
+		case RIGHT:
 			setRotation(90);
 			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 3 );
 			Box2DBody.setTransform(Box2DBody.getPosition(), (float) (PI/2));

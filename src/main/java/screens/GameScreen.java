@@ -30,6 +30,7 @@ import Objects.Cube;
 import Objects.Player;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
+import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
 import inf112.skeleton.app.PlatformGame;
 import scenes.Hud;
@@ -54,7 +55,8 @@ public class GameScreen implements Screen {
 	
 	//GameLogic
 	public InputHandler input;
-	public  World savepoint;
+	public GravityHandler gravity;
+	public World savepoint;
 	
 	//Test camera
 	private float yAxisCamera;
@@ -84,6 +86,7 @@ public class GameScreen implements Screen {
 		
 		//GameLogic
 		input = new InputHandler();
+		gravity = new GravityHandler();
 		
 		//cam
 		yAxisCamera = player1.Box2DBody.getPosition().y;
@@ -105,15 +108,15 @@ public class GameScreen implements Screen {
 			 * */
 		} else
 		
-		world = InputHandler.input(deltaTime, player1, player2, world);
+		world = InputHandler.input(deltaTime, player1, player2, world, gravity);
 		
 
 		
 		world.step(1/60f, 6, 2);
 		
-		player1.update(deltaTime);
-		player2.update(deltaTime);
-		cube.update(deltaTime);
+		player1.update(deltaTime,gravity);
+		player2.update(deltaTime,gravity);
+		cube.update(deltaTime,gravity);
 		
 		//Kamera følger bakerste spiller
 		if (player1.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
@@ -135,22 +138,22 @@ public class GameScreen implements Screen {
 		}
 		
 		//Kamera rotasjon test
-		switch (InputHandler.gravityDirection) {
-		case 0:
+		switch (gravity.playerGravity) {
+		case DOWN:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			break;
-		case 1:
+		case UP:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(180);
 			break;
-		case 2:
+		case LEFT:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(90);
 			break;
-		case 3:
+		case RIGHT:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(270);
