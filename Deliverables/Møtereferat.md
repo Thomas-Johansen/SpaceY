@@ -12,3 +12,10 @@ Etter innleveringen av oblig2 ble vi oppmerksom på en god del ting vi trengte �
 Thomas J - Kolisjonsoppdagelse og ordentlige metoder for drap av spiller og fullføring av kart.  
 Thomas L - Fikse main menu samt legge til knapper som skiller mellom 1-player og 2-player.  
 Daniel S - Starte implementeringen av enemies.  
+
+### Møte - 31/03/2022  
+Digitalt  
+**Deltagelse:** Thomas L, Thomas J, Daniel  
+
+### Møte - 05/04/2022  
+**Deltagelse:** Thomas J, Daniel  (Thomas L kom etter en time)  
