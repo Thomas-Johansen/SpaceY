@@ -44,8 +44,6 @@ public abstract class Actor extends Sprite {
 		poly.setAsBox(6 / PlatformGame.PPM, 6 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
 		fixture = Box2DBody.createFixture(fixtureDef);
-		
-		
 	}
 	
 	public void update(float deltaTime, GravityHandler gravity) {

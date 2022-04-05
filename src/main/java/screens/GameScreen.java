@@ -107,9 +107,10 @@ public class GameScreen implements Screen {
 			 * The idea being that each map will have a predefined area the player must reach to complete that map
 			 * */
 		} else
-		
-		world = InputHandler.input(deltaTime, player1, player2, world, gravity);
-		
+			
+		input.input(deltaTime, player1, world, gravity);
+		//input.input(deltaTime, player1, player2, world, gravity);
+		gravity.update(player1);
 
 		
 		world.step(1/60f, 6, 2);
