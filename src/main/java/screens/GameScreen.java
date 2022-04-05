@@ -2,6 +2,8 @@ package screens;
 
 
 
+
+import Objects.Alien;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -28,6 +30,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Cube;
 import Objects.Player;
+import Objects.Enemy;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
 import gameLogic.InputHandler;
@@ -49,6 +52,7 @@ public class GameScreen implements Screen {
 	private Box2DDebugRenderer b2dr;
 	private  Player player1;
 	private Player player2;
+	private Enemy enemy;
 	
 	private Cube cube;
 	
@@ -81,7 +85,8 @@ public class GameScreen implements Screen {
 		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		player2 = new Player(world, new Vector2(200 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
-		
+		//enemy = new Enemy(world, new Texture(""));
+		enemy = new Alien(world, new Texture("src/main/resources/assets/pngegg.png"));
 		//GameLogic
 		input = new InputHandler();
 		
