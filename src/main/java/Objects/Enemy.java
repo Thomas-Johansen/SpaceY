@@ -21,6 +21,8 @@ public abstract class Enemy extends Sprite{
         this.world = world;
         this.texture = texture;
         setPosition(x,y);
+        setBounds(0, 0, 14 / PlatformGame.PPM, 20 / PlatformGame.PPM);
+        setRegion(texture);
     }
 
     public Enemy(World world, Texture texture) {
