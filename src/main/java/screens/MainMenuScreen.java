@@ -82,7 +82,7 @@ public class MainMenuScreen implements Screen {
         	//Play singleplayer when clicking button
         	if (Gdx.input.isTouched()) {
         		this.dispose();
-        		game.setScreen(new SinglePlayer(game));
+        		game.setScreen(new GameScreen(game));
         	}
         } else {
         	game.batch.draw(playInactive, x, PLAY_Y, PLAY_WIDTH, PLAY_HEIGHT);
@@ -96,7 +96,7 @@ public class MainMenuScreen implements Screen {
         	//Play multiplayer when clicking button
         	if (Gdx.input.isTouched()) {
         		this.dispose();
-        		game.setScreen(new GameScreen(game));
+        		game.setScreen(new Multiplayer(game));
         	}
         } else {
         	game.batch.draw(multiPlayerInactive, x, MULT_Y, MULT_WIDTH, MULT_HEIGHT);
