@@ -5,8 +5,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import screens.GameScreen;
 import screens.MainMenuScreen;
-import screens.MenuScreen;
-import screens.TestScreen;
 
 
 public class PlatformGame extends Game {

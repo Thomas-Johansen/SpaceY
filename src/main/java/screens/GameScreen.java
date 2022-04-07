@@ -2,33 +2,21 @@ package screens;
 
 
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
 import Objects.Enemy;
@@ -53,7 +41,6 @@ public class GameScreen implements Screen {
 	private  World world;
 	private Box2DDebugRenderer b2dr;
 	private  Player player1;
-	private Player player2;
 	private Enemy enemy;
 	
 	private Cube cube;
@@ -86,7 +73,6 @@ public class GameScreen implements Screen {
 		new Box2DCreator(world, map);
 		world.setContactListener(new GameContactListener());
 		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
-		player2 = new Player(world, new Vector2(200 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		//enemy = new Enemy(world, new Texture(""));
 		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
@@ -115,23 +101,16 @@ public class GameScreen implements Screen {
 		} else
 			
 		input.input(deltaTime, player1, world, gravity);
-		//input.input(deltaTime, player1, player2, world, gravity);
 		gravity.update(player1);
 
 		
 		world.step(1/60f, 6, 2);
 		
 		player1.update(deltaTime,gravity);
-		player2.update(deltaTime,gravity);
 		cube.update(deltaTime,gravity);
 		
-		//Kamera følger bakerste spiller
-		if (player1.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
-			gamecam.position.x = player1.Box2DBody.getPosition().x;
-		}
-		else {
-			gamecam.position.x = player2.Box2DBody.getPosition().x;
-		}
+		//Kamera skal i egen klasse
+		gamecam.position.x = player1.Box2DBody.getPosition().x;
 		
 		
 		//Kamera beveger seg opp i inkrementer på 200 pixler
@@ -198,7 +177,6 @@ public class GameScreen implements Screen {
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player1.draw(game.batch);
-        player2.draw(game.batch);
         cube.draw(game.batch);
         game.batch.end();
         
