@@ -124,7 +124,22 @@ public class InputHandler {
 		return false;
 	}
 	
-	
+	//Input for singleplayer.
+	public static World input(float deltaTime, Player player1, World world) {
+		if (!isFalling(player1)) {
+			if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
+				player1.Box2DBody.applyLinearImpulse(getUp(), player1.Box2DBody.getWorldCenter(), true);
+			}
+		}
+		
+		if(Gdx.input.isKeyPressed(Input.Keys.D) && !isMovingMax(player1)) {
+			player1.Box2DBody.applyLinearImpulse(getRight(), player1.Box2DBody.getWorldCenter(), true);
+		}
+		if(Gdx.input.isKeyPressed(Input.Keys.A) && !isMovingMax(player1)) {
+			player1.Box2DBody.applyLinearImpulse(getLeft(), player1.Box2DBody.getWorldCenter(), true);
+		}
+		return world;
+	}
 	
 	//Input skal ha en egen case for bare en spiller, ikke implementert enda.
 	public static World input(float deltaTime, Player player1, Player player2, World world) {
