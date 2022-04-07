@@ -33,3 +33,21 @@ Gruppen kommer godt overens. Vi har enda ikke møtt på noen enorme utfordringer
 
 **Kommunikasjonen i gruppen**  
 Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøter i uken (tirsdag og torsdag). Under de fysiske møtene legger vi frem ting vi har jobbet med samt foreslår nye ting vi kan jobbe med videre. Utenom de fysiske gruppemøtene foregår kommunikasjonen over discord. Her legger vi ofte ut statuser på det vi jobber med samt planlegger de fysiske gruppemøtene.  
+
+## Oppsummering (prosjekt-retrospektiv)  
+
+**Forandringer/fremgang fra sist innlevering**  
+
+**Vurdering av MPV kravene**  
+
+**Forbedringspunkter**  
+
+1)  
+
+2)  
+
+3)   
+
+**Implementasjoner som ikke ble klare til denne innleveringen**  
+   
+**Implementasjoner vi ønsker skal være klare til neste innlevering**   
