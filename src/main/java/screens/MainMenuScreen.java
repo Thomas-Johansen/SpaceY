@@ -7,7 +7,9 @@ import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -43,7 +45,6 @@ public class MainMenuScreen implements Screen {
 	
 	private OrthographicCamera cam;
 	private Viewport viewport;
-	private Stage stage;
 	
 	public MainMenuScreen (PlatformGame game) {
 		this.game = game;
@@ -56,9 +57,7 @@ public class MainMenuScreen implements Screen {
 		background = new Texture("src/main/resources/assets/space_background.png");
 		
 		cam = new OrthographicCamera();
-		viewport = new StretchViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, cam);
-		//cam.position.set(viewport.getWorldWidth() / 2, viewport.getWorldHeight() / 2, 0);
-		stage = new Stage(viewport);
+		viewport = new FillViewport(PlatformGame.V_Width, PlatformGame.V_Height, cam);
 		
 		//Music Test
 		menuMusic = Gdx.audio.newMusic(Gdx.files.internal("src/main/resources/assets/Space.mp3"));
@@ -130,9 +129,7 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-        stage.getViewport().update(PlatformGame.V_Width, PlatformGame.V_Height);
-        //cam.setToOrtho(false, PlatformGame.V_Width, PlatformGame.V_Height);
-		
+        viewport.update(PlatformGame.V_Width, PlatformGame.V_Height);
 	}
 
 	@Override

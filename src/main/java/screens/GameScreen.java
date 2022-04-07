@@ -60,10 +60,10 @@ public class GameScreen implements Screen {
 	private float yAxisCamera;
 	
 	
-	
-	
 	public GameScreen(PlatformGame game) {
 		this.game = game;
+		Gdx.graphics.setResizable(true);
+		
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
 		hud = new Hud(game.batch);

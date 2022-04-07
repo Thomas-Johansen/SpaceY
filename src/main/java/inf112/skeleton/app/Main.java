@@ -1,5 +1,6 @@
 package inf112.skeleton.app;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
@@ -9,6 +10,7 @@ public class Main {
         
         cfg.setTitle("SpaceY");
         cfg.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
+        cfg.setResizable(false);
         new Lwjgl3Application(new PlatformGame(), cfg);
     }
 }
