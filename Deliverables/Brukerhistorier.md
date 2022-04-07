@@ -93,5 +93,18 @@ Akseptansekriterie for B10:
 
 Arbeidsoppgaver:
 - Legge til elementer på spillbrett som kan dyttes av spiller.
-- Legge til at elementer tar skade av spiller.
+- Legge til at elementer tar skade av spiller.  
 
+## Oblig2  
+
+**B11: **  
+
+Akseptansekriterie for B11:  
+
+Arbeidsoppgaver: 
+
+**B12: **  
+
+Akseptansekriterie for B12:  
+
+Arbeidsoppgaver: 
