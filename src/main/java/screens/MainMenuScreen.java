@@ -31,8 +31,6 @@ public class MainMenuScreen implements Screen {
 	Texture exitInactive;
 	Texture background;
 	
-	Texture test;
-	
 	Music menuMusic;
 	
 	public MainMenuScreen (PlatformGame game) {
