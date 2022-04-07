@@ -17,7 +17,7 @@ Daniel S - Starte implementeringen av enemies.
 Digitalt  
 **Deltagelse:** Thomas L, Thomas J, Daniel  
 
-**Diskusjon og progresjon under møte** 
+**Diskusjon og progresjon under møte**  
 Startet litt på utviklingen av maps både for singleplayer og multiplayer (work in progress). Dette blir nok ikke lagt til før siste innlevering.
 
 ### Møte - 05/04/2022   
