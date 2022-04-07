@@ -17,5 +17,15 @@ Daniel S - Starte implementeringen av enemies.
 Digitalt  
 **Deltagelse:** Thomas L, Thomas J, Daniel  
 
-### Møte - 05/04/2022  
-**Deltagelse:** Thomas J, Daniel  (Thomas L kom etter en time)  
+**Diskusjon og progresjon under møte**   
+
+### Møte - 05/04/2022   
+**Deltagelse:** Thomas J, Daniel  (Thomas L en time forsinket)  
+  
+**Diskusjon og progresjon under møte**  
+
+### Møte - 07/04/2022  
+Digitalt  
+**Deltagelse:** Thomas L, Thomas J, Daniel  
+
+**Diskusjon og progresjon under møte**  
