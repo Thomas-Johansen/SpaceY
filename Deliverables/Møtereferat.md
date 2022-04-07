@@ -23,10 +23,11 @@ Digitalt
 **Deltagelse:** Thomas J, Daniel  (Thomas L en time forsinket)  
   
 **Diskusjon og progresjon under møte**  
+ Jobbet viderer med implementeringen av enemies og MainMenuScreen. Vi fant ut hvordan koden kan kjøres på mac (ReadMe oppdatert med instrukser).
 
 ### Møte - 07/04/2022  
 Digitalt  
 **Deltagelse:** Thomas L, Thomas J, Daniel  
 
 **Diskusjon og progresjon under møte**  
-MainMenuScreen er nå oppdatert med nye knapper (singleplayer, multiplayer og exit). Problemet med resizing av MainMenuScreen fikset etter og ha satt MainMenuScrren til en fixed size. Enemies har delevis blitt implementert (en god del som mangler, men et godt utgangspunkt). Ellers har kode blitt flyttet og ryddet på (egen klasse for gravity etc…).
+MainMenuScreen er nå oppdatert med nye knapper (singleplayer, multiplayer og exit). Problemet med resizing av MainMenuScreen fikset etter og ha satt MainMenuScrren til en fixed size. Enemies har delevis blitt implementert (en god del som mangler, men et godt utgangspunkt). Ellers har noe kode blitt flyttet på til eksterne klasser og noe av tilesettet blitt oppdatert. Vider mot innlevering trengs det og finpusses på noe kode samt oppdatere tekstdokumentet for oblig 3
