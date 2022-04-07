@@ -86,7 +86,7 @@ public class GameScreen implements Screen {
 		player2 = new Player(world, new Vector2(200 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		//enemy = new Enemy(world, new Texture(""));
-		enemy = new Alien(world, new Vector2(700/ PlatformGame.PPM, 100/PlatformGame.PPM));
+		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
 		//GameLogic
 		input = new InputHandler();
 		

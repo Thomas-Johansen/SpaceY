@@ -14,19 +14,17 @@ public class Alien extends Enemy {
         super(world,new Texture("src/main/resources/assets/pngegg.png"),spawn);
     }
 
-
     @Override
-    public void defineEnemy() {
+    public void defineEnemy(Vector2 spawn) {
         BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(100 / PlatformGame.PPM,100 / PlatformGame.PPM);
+        bodyDef.position.set(spawn);
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         Box2DBody = world.createBody(bodyDef);
 
-        FixtureDef fixture = new FixtureDef();
+        FixtureDef fixtureDef = new FixtureDef();
         PolygonShape poly = new PolygonShape();
         poly.setAsBox(6 / PlatformGame.PPM, 6 / PlatformGame.PPM);
-        fixture.shape = poly;
-        Box2DBody.createFixture(fixture);
-
+        fixtureDef.shape = poly;
+        Box2DBody.createFixture(fixtureDef);
     }
 }
