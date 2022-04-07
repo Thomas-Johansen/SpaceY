@@ -17,13 +17,14 @@ Daniel S - Starte implementeringen av enemies.
 Digitalt  
 **Deltagelse:** Thomas L, Thomas J, Daniel  
 
-**Diskusjon og progresjon under møte**   
+**Diskusjon og progresjon under møte** 
+Startet litt på utviklingen av maps både for singleplayer og multiplayer (work in progress). Dette blir nok ikke lagt til før siste innlevering.
 
 ### Møte - 05/04/2022   
 **Deltagelse:** Thomas J, Daniel  (Thomas L en time forsinket)  
   
 **Diskusjon og progresjon under møte**  
- Jobbet viderer med implementeringen av enemies og MainMenuScreen. Vi fant ut hvordan koden kan kjøres på mac (ReadMe oppdatert med instrukser).
+Jobbet viderer med implementeringen av enemies og MainMenuScreen. Vi fant ut hvordan koden kan kjøres på mac (ReadMe oppdatert med instrukser).
 
 ### Møte - 07/04/2022  
 Digitalt  
