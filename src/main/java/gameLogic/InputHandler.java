@@ -2,10 +2,7 @@ package gameLogic;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
-
-import Objects.Actor;
 import Objects.Player;
 import enums.Gravity;
 
@@ -34,6 +31,8 @@ public class InputHandler {
 		if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) gravity.setPlayerGravity(Gravity.LEFT, player1);
 		if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) gravity.setPlayerGravity(Gravity.RIGHT, player1);
 		
+		//Temp
+		tempGravityChange( gravity, world);
 	}
 	
 	//Input for multiplayer
@@ -62,18 +61,20 @@ public class InputHandler {
 			player2.Box2DBody.applyLinearImpulse(gravity.getLeft(), player2.Box2DBody.getWorldCenter(), true);
 		}
 		
+		//Temp
+		tempGravityChange( gravity, world);
+		
 	}
-		/*
-		if(Gdx.input.isKeyJustPressed(Input.Keys.G)) {
-			gravityDirection ++;
-			if (gravityDirection > 3) gravityDirection = 0; 
-			
-			world.setGravity(getGravityVector());
-			//Physics objects need a little push to get their gravity updated.
-			player1.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player1.Box2DBody.getWorldCenter(), true);
-			player2.Box2DBody.applyLinearImpulse(new Vector2(-0.01f, 0), player2.Box2DBody.getWorldCenter(), true);
-			
-		}
-		*/
+	
+	/**
+	 * Temporary method for changing world gravity for testing purposes
+	 * */
+	
+	public void tempGravityChange(GravityHandler gravity, World world){
+		if(Gdx.input.isKeyJustPressed(Input.Keys.K)) gravity.setWorldGravity(Gravity.UP, world);
+		if(Gdx.input.isKeyJustPressed(Input.Keys.I)) gravity.setWorldGravity(Gravity.DOWN, world);
+		if(Gdx.input.isKeyJustPressed(Input.Keys.J)) gravity.setWorldGravity(Gravity.LEFT, world);
+		if(Gdx.input.isKeyJustPressed(Input.Keys.L)) gravity.setWorldGravity(Gravity.RIGHT, world);
+	}
 
 }
