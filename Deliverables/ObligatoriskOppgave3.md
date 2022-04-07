@@ -19,6 +19,10 @@ Klassedigram for prosjekt finner du her: [Klassedigram](Diagramavmain.png)
 ### Project board
 Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf112.22v.libgdx-template/-/boards)  
 
+## Deloppgave 1: Team og prosjekt  
+
+Pga lite tid mellom oblig2 og oblig3 har det skjedd lite foradringer i gruppen og på fremgangsmetodene. Derfor vil deler av svarene under vil være like svarene fra oblig2.  
+
 **Roller i teamet** - ingen forandring  
 
 **Erfaringer så langt**  
