@@ -4,15 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL30;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Matrix4;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.viewport.FillViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 
 import inf112.skeleton.app.PlatformGame;
 
@@ -43,11 +35,9 @@ public class MainMenuScreen implements Screen {
 	
 	Music menuMusic;
 	
-	private OrthographicCamera cam;
-	private Viewport viewport;
-	
 	public MainMenuScreen (PlatformGame game) {
 		this.game = game;
+		
 		//MainMenuScreen can't be resized and will always open in the fixed size 
 		Gdx.graphics.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
 		Gdx.graphics.setResizable(false);
@@ -59,9 +49,6 @@ public class MainMenuScreen implements Screen {
 		exitActive = new Texture("src/main/resources/assets/exitA.png");
 		exitInactive = new Texture("src/main/resources/assets/exitIn.png");
 		background = new Texture("src/main/resources/assets/space_background.png");
-		
-		cam = new OrthographicCamera();
-		viewport = new FillViewport(PlatformGame.V_Width, PlatformGame.V_Height, cam);
 		
 		//Music Test
 		menuMusic = Gdx.audio.newMusic(Gdx.files.internal("src/main/resources/assets/Space.mp3"));
@@ -133,7 +120,8 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-        viewport.update(PlatformGame.V_Width, PlatformGame.V_Height);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override

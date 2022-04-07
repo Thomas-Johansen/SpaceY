@@ -93,6 +93,7 @@ public class SinglePlayer implements Screen {
 		
 	}
 	
+	
 	public void update(float deltaTime) {
 		if (player1.Box2DBody.getPosition().x > 1260 / PlatformGame.PPM && player1.Box2DBody.getPosition().y < 64 / PlatformGame.PPM) {
 			System.out.println("Level complete");
@@ -114,7 +115,6 @@ public class SinglePlayer implements Screen {
 		
 		//Kamera følger spiller
 		gamecam.position.x = player1.Box2DBody.getPosition().x;
-		
 		
 		//Kamera beveger seg opp i inkrementer på 200 pixler
 		if (player1.Box2DBody.getPosition().y < yAxisCamera - (200 / PlatformGame.PPM)) {
