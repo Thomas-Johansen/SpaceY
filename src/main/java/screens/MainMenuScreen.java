@@ -48,6 +48,10 @@ public class MainMenuScreen implements Screen {
 	
 	public MainMenuScreen (PlatformGame game) {
 		this.game = game;
+		//MainMenuScreen can't be resized and will always open in the fixed size 
+		Gdx.graphics.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
+		Gdx.graphics.setResizable(false);
+		
 		playActive = new Texture("src/main/resources/assets/singleplayerA.png");
 		playInactive = new Texture("src/main/resources/assets/singleplayerIn.png");
 		multiPlayerActive = new Texture("src/main/resources/assets/multiplayerA.png");
