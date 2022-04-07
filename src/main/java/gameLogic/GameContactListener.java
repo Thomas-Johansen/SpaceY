@@ -22,21 +22,19 @@ public class GameContactListener implements ContactListener {
 		Fixture fixA = contact.getFixtureA();
 		Fixture fixB = contact.getFixtureB();
 		
-		//if(fixA.getUserData() != null && fixB.getUserData() != null) {
-			if (fixA.getBody().getUserData() =="head" && fixB.getBody().getUserData() instanceof Cube) {
+			if (fixA.getUserData() =="head" && fixB.getUserData() instanceof Cube) {
 				Player player = (Player) fixA.getBody().getUserData();
 				Cube cube = (Cube) fixB.getBody().getUserData();
 				Gdx.app.log("Player", "Hit in head");
 				player.onHeadHit();
 			}
 			
-			if (fixB.getBody().getUserData() == "head" && fixA.getBody().getUserData() instanceof Cube) {
+			if (fixB.getUserData() == "head" && fixA.getUserData() instanceof Cube) {
 				Player player = (Player) fixB.getBody().getUserData();
 				Cube cube = (Cube) fixA.getBody().getUserData();
 				Gdx.app.log("Player", "Hit in head");
 				player.onHeadHit();
 			}
-		//}
 		
 		
 		

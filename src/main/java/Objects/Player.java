@@ -37,11 +37,11 @@ public class Player extends Actor {
 		poly.setAsBox(6 / PlatformGame.PPM, 16 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
 		fixture = Box2DBody.createFixture(fixtureDef);
-		fixture.setUserData(this);
+		Box2DBody.setUserData(this);
 		
 		//Sensor for head collision detection
 		EdgeShape head = new EdgeShape();
-		head.set(new Vector2(-2 / PlatformGame.PPM, 8 / PlatformGame.PPM), new Vector2(2 / PlatformGame.PPM, 8 / PlatformGame.PPM));
+		head.set(new Vector2(-2 / PlatformGame.PPM, 20 / PlatformGame.PPM), new Vector2(2 / PlatformGame.PPM, 20 / PlatformGame.PPM));
 		fixtureDef.shape = head;
 		fixtureDef.isSensor = true;
 		Box2DBody.createFixture(fixtureDef).setUserData("head");
