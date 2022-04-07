@@ -2,8 +2,9 @@ package screens;
 
 
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
-import Objects.Alien;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -33,6 +34,7 @@ import Objects.Player;
 import Objects.Enemy;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
+import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
 import inf112.skeleton.app.PlatformGame;
 import scenes.Hud;
@@ -58,7 +60,8 @@ public class GameScreen implements Screen {
 	
 	//GameLogic
 	public InputHandler input;
-	public  World savepoint;
+	public GravityHandler gravity;
+	public World savepoint;
 	
 	//Test camera
 	private float yAxisCamera;
@@ -89,6 +92,7 @@ public class GameScreen implements Screen {
 		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
 		//GameLogic
 		input = new InputHandler();
+		gravity = new GravityHandler();
 		
 		//cam
 		yAxisCamera = player1.Box2DBody.getPosition().y;
@@ -109,16 +113,17 @@ public class GameScreen implements Screen {
 			 * The idea being that each map will have a predefined area the player must reach to complete that map
 			 * */
 		} else
-		
-		world = InputHandler.input(deltaTime, player1, player2, world);
-		
+			
+		input.input(deltaTime, player1, world, gravity);
+		//input.input(deltaTime, player1, player2, world, gravity);
+		gravity.update(player1);
 
 		
 		world.step(1/60f, 6, 2);
 		
-		player1.update(deltaTime);
-		player2.update(deltaTime);
-		cube.update(deltaTime);
+		player1.update(deltaTime,gravity);
+		player2.update(deltaTime,gravity);
+		cube.update(deltaTime,gravity);
 		
 		//Kamera følger bakerste spiller
 		if (player1.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
@@ -140,22 +145,22 @@ public class GameScreen implements Screen {
 		}
 		
 		//Kamera rotasjon test
-		switch (InputHandler.gravityDirection) {
-		case 0:
+		switch (gravity.playerGravity) {
+		case DOWN:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			break;
-		case 1:
+		case UP:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(180);
 			break;
-		case 2:
+		case LEFT:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(90);
 			break;
-		case 3:
+		case RIGHT:
 			gamecam.up.set(0,1,0);
 			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(270);

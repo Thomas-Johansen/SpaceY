@@ -22,17 +22,33 @@ public class GameContactListener implements ContactListener {
 		Fixture fixA = contact.getFixtureA();
 		Fixture fixB = contact.getFixtureB();
 		
-		if (fixA.getUserData() == "head" || fixB.getUserData() == "head") {
+			if (fixA.getUserData() =="head" && fixB.getUserData() instanceof Cube) {
+				Player player = (Player) fixA.getBody().getUserData();
+				Cube cube = (Cube) fixB.getBody().getUserData();
+				Gdx.app.log("Player", "Hit in head");
+				player.onHeadHit();
+			}
+			
+			if (fixB.getUserData() == "head" && fixA.getUserData() instanceof Cube) {
+				Player player = (Player) fixB.getBody().getUserData();
+				Cube cube = (Cube) fixA.getBody().getUserData();
+				Gdx.app.log("Player", "Hit in head");
+				player.onHeadHit();
+			}
+		
+		
+		
+		/*
+		if ("head".equals(fixA.getUserData()) || "head".equals(fixB.getUserData())) {
 			Fixture head = fixA.getUserData() == "head" ? fixA : fixB;
 			Fixture object = head == fixA ? fixB : fixA;
 			//Checks if the head has collided with a cube spesifically
 			if(object.getUserData() != null &&  Cube.class.isAssignableFrom(object.getUserData().getClass())) {
 				System.out.println("Player has died");
-				//At the moment, getting a box on the head only prints player has died, as an actual death mechanic is not yet implemented.
-				
+				System.out.println((Player)head.getUserData());
 			}
 		}
-
+		*/
 	}
 
 	@Override
