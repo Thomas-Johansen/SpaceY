@@ -29,3 +29,4 @@ Digitalt
 **Deltagelse:** Thomas L, Thomas J, Daniel  
 
 **Diskusjon og progresjon under møte**  
+MainMenuScreen er nå oppdatert med nye knapper (singleplayer, multiplayer og exit). Problemet med resizing av MainMenuScreen fikset etter og ha satt MainMenuScrren til en fixed size. Enemies har delevis blitt implementert (en god del som mangler, men et godt utgangspunkt). Ellers har kode blitt flyttet og ryddet på (egen klasse for gravity etc…).
