@@ -97,14 +97,18 @@ Arbeidsoppgaver:
 
 ## Oblig2  
 
-**B11: **  
+**B11: Som spiller ønsker jeg at.**
 
 Akseptansekriterie for B11:  
+- BlaBla
 
 Arbeidsoppgaver: 
+- BlaBla
 
-**B12: **  
+**B11: Som spiller ønsker jeg at.**
 
-Akseptansekriterie for B12:  
+Akseptansekriterie for B12: 
+- BlaBla 
 
 Arbeidsoppgaver: 
+- BlaBla
