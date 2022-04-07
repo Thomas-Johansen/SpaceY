@@ -95,20 +95,13 @@ Arbeidsoppgaver:
 - Legge til elementer på spillbrett som kan dyttes av spiller.
 - Legge til at elementer tar skade av spiller.  
 
-## Oblig2  
+## Oblig3  
 
-**B11: Som spiller ønsker jeg at.**
+**B11: Som spiller ønsker jeg at det lyd/musikk i spillet.**
 
 Akseptansekriterie for B11:  
-- BlaBla
+- De ulike delene av spillet har musikk
+- Lydeffkter når spiller utfører forskjellige oppgaver
 
 Arbeidsoppgaver: 
-- BlaBla
-
-**B11: Som spiller ønsker jeg at.**
-
-Akseptansekriterie for B12: 
-- BlaBla 
-
-Arbeidsoppgaver: 
-- BlaBla
+- Implementere lydeffkter og musikk på de ulike gameScreenene
