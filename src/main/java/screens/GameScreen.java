@@ -2,6 +2,9 @@ package screens;
 
 
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -66,6 +69,8 @@ public class GameScreen implements Screen {
 	
 	public GameScreen(PlatformGame game) {
 		this.game = game;
+		Gdx.graphics.setResizable(true);
+		
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
 		hud = new Hud(game.batch);

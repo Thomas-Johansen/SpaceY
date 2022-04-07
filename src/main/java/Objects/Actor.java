@@ -29,7 +29,7 @@ public abstract class Actor extends Sprite {
 		this.world = world;
 		this.texture = texture;
 		actorAttributes(spawn);
-		setBounds(0, 0, 14 / PlatformGame.PPM, 20 / PlatformGame.PPM);
+		setBounds(0, 0, 32 / PlatformGame.PPM, 32 / PlatformGame.PPM);
 		setRegion(texture);
 	}
 	

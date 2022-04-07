@@ -9,6 +9,7 @@ public class Main {
         
         cfg.setTitle("SpaceY");
         cfg.setWindowedMode(PlatformGame.V_Width, PlatformGame.V_Height);
+        cfg.setResizable(false);
         new Lwjgl3Application(new PlatformGame(), cfg);
     }
 }

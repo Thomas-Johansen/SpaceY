@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.EdgeShape;
+import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
@@ -17,9 +18,10 @@ import inf112.skeleton.app.PlatformGame;
 
 public class Player extends Actor {
 	public Life life;
+	protected Fixture fixture;
 
 	public Player(World world, Vector2 spawn) {
-		super(world, new Texture("src/main/resources/assets/mairo.png"), spawn);
+		super(world, new Texture("src/main/resources/assets/ObjectArt/Elon.png"), spawn);
 		this.life = Life.ALIVE;
 	}
 	//Overriding actor attributes since i only, for now, want the player to have a "head"
@@ -32,14 +34,16 @@ public class Player extends Actor {
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(6 / PlatformGame.PPM, 6 / PlatformGame.PPM);
+		poly.setAsBox(6 / PlatformGame.PPM, 16 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
-		Box2DBody.createFixture(fixtureDef);
+		fixture = Box2DBody.createFixture(fixtureDef);
+		fixture.setUserData(this);
 		
 		//Sensor for head collision detection
 		EdgeShape head = new EdgeShape();
-		head.set(new Vector2(-2 / PlatformGame.PPM, 7 / PlatformGame.PPM), new Vector2(2 / PlatformGame.PPM, 7 / PlatformGame.PPM));
+		head.set(new Vector2(-2 / PlatformGame.PPM, 8 / PlatformGame.PPM), new Vector2(2 / PlatformGame.PPM, 8 / PlatformGame.PPM));
 		fixtureDef.shape = head;
+		fixtureDef.isSensor = true;
 		Box2DBody.createFixture(fixtureDef).setUserData("head");
 	}
 
