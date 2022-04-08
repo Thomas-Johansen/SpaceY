@@ -1,40 +1,31 @@
 package Objects;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Vector;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.World;
 
-import inf112.skeleton.app.PlatformGame;
-import screens.GameScreen;
+import gameLogic.GravityHandler;
 
-public abstract class Enemy extends Sprite{
-    public Texture texture;
-    public World world;
-    public Body Box2DBody;
-    protected Fixture fixture;
+public class Enemy extends Actor {
 
-    public Enemy(World world, Texture texture, Vector2 spawn) {
-        this.world = world;
-        this.texture = texture;
-        defineEnemy(spawn);
-        setBounds(0, 0, 14 / PlatformGame.PPM, 20 / PlatformGame.PPM);
-        setRegion(texture);
-    }
+	/**
+	 * This class mainly serves as a middle point for spesific enemies and actors.
+	 * Allowing the ContactListener to check if a fixture is an enemy instead of checking for each spesific type of enemy 
+	 * */
+	public Enemy(World world, Texture texture, Vector2 spawn) {
+		super(world, texture, spawn);
+	}
 
+	@Override
+	public void actorAttributes(Vector2 spawn) {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public void defineEnemy(Vector2 spawn) {
-        BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(spawn);
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-        Box2DBody = world.createBody(bodyDef);
+	@Override
+	public void update(float deltaTime, GravityHandler gravity) {
+		// TODO Auto-generated method stub
+		
+	}
 
-        FixtureDef fixtureDef = new FixtureDef();
-        PolygonShape poly = new PolygonShape();
-        poly.setAsBox(6 / PlatformGame.PPM, 6 / PlatformGame.PPM);
-        fixtureDef.shape = poly;
-        fixture = Box2DBody.createFixture(fixtureDef);
-    }
 }
