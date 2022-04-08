@@ -5,12 +5,14 @@ Join Elon Musk as he tests out SpaceY<sup>2</sup> latest invention, gravity shif
 Entering the brand-new testing facility, it is your job to guide Elon trough the various test chambers, switching gravity to navigate, solve puzzles and defeat enemies. 
 
 Or play the multiplayer mode, where you and a friend square off against each other in an arena style gamemode, trying to outsmart and end eachother.   
-(To be implemented)   
+   
 
 
 
-Current controls: Use WAD to move Player 1 and the arrow keys to move player 2.  
-Use G to switch gravity, circulating between Down, Up, Left, Right 
+Current controls: Use WAD to move Player 1 and the arrow keys to change gravity for the player.  
+Temporary: Use IJKL to change the world gravity  
+
+For multiplayer: The arrow keys move Player 2
 
 
 
@@ -39,9 +41,8 @@ Testing gjøres ved å kjøre src/test/java/AppTest.java som JUnit test.
 ##### Map laboratory assets:
 ###### *https://exceptrea.itch.io/2d-platformer-tileset-laboratory*
 
-Mario character png is form a simple "Mario bit png" search on google, and will be changed for future releases
-
-Cube asset created by Thomas.S.Johansen
+##### Other  
+Cube and Player asset created by Thomas.S.Johansen  
 
 ##### MainMenuScreen buttons:  
 Artwork by Thomas Lande
