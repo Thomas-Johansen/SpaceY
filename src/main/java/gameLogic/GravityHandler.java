@@ -6,7 +6,6 @@ import com.badlogic.gdx.physics.box2d.World;
 import Objects.Actor;
 import Objects.Player;
 import enums.Gravity;
-import inf112.skeleton.app.PlatformGame;
 
 public class GravityHandler {
 	public Gravity worldGravity;
