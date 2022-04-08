@@ -3,7 +3,6 @@ package Objects;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
@@ -11,18 +10,14 @@ import com.badlogic.gdx.physics.box2d.World;
 import gameLogic.GravityHandler;
 import inf112.skeleton.app.PlatformGame;
 
-/**
- * A simple cube that the player can move
- * 
- * */
-public class Cube extends Actor {
+public class Alien extends Enemy {
 
-	public Cube(World world, Vector2 spawn) {
-		super(world, new Texture("src/main/resources/assets/ObjectArt/Cube.png"), spawn);
-		Box2DBody.setUserData(this);
-	}
-	
-	@Override
+    public Alien(World world, Vector2 spawn) {
+        super(world,new Texture("src/main/resources/assets/ObjectArt/Alien.png"),spawn);
+        Box2DBody.setUserData(this);
+    }
+
+    @Override
     public void actorAttributes(Vector2 spawn) {
         BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(spawn);
@@ -31,7 +26,7 @@ public class Cube extends Actor {
 
         FixtureDef fixtureDef = new FixtureDef();
         PolygonShape poly = new PolygonShape();
-        poly.setAsBox(16 / PlatformGame.PPM, 16 / PlatformGame.PPM);
+        poly.setAsBox(10 / PlatformGame.PPM, 12 / PlatformGame.PPM);
         fixtureDef.shape = poly;
         Box2DBody.createFixture(fixtureDef);
     }
