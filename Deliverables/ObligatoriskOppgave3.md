@@ -14,7 +14,7 @@ Intro/handling til spill er beskrevet i README.md
 Møtereferat finner du her: [Møtereferat](Møtereferat.md)
 
 ### Klassediagram
-Klassedigram for prosjekt finner du her: [Klassedigram](Diagramavmain.png)
+Klassedigram for prosjekt finner du her: [Klassedigram](Diagramavmain_Oblig3.png)
 
 ### Project board
 Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf112.22v.libgdx-template/-/boards)  
