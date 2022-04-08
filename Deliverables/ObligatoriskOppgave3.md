@@ -37,17 +37,28 @@ Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøte
 ## Oppsummering (prosjekt-retrospektiv)  
 
 **Forandringer/fremgang fra sist innlevering**  
+- MainMenuScreen oppdatert med nye knapper og fikset.  
+- Grunnleggende implementasjon av singeplayer og multiplayer.  
+- Grunnleggende versjon av enemy som kan drepe spiller.  
+- Hud er oppdatert og fungerende.
+- Rydding og flytting av kode til eksterne klasser.  
 
-**Vurdering av MPV kravene**  
+**Vurdering av MVP kravene**  
+Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forrige er ferdig). Poeng har vi enda ikke implementert ettersom at vi ikke er sikkre på om vi skal basere spillet rundt poeng. Nye kart og forskjellige lvls vil bli implementert når alt det grunnleggende er ferdig.
 
 **Forbedringspunkter**  
 
-1)  
+1) Vi har enda ikke laget sikkelige tester. Til neste innlevering skal vi få laget flere.  
 
-2)  
-
-3)   
+2) Dokumentasjon av kode
+  
 
 **Implementasjoner som ikke ble klare til denne innleveringen**  
+- Mangelvare på ordentlige tester. 
+- Vi fikk stort sett unnagjort det meste som var planlagt til denne obligen, men mye er vedlig grunnleggende og i en tidlig implementasjonsfase.
    
 **Implementasjoner vi ønsker skal være klare til neste innlevering**   
+- Flere tester.
+- Spawne entities via tiled.
+- Bygge videre enemy AI.
+- Ordentlige fungerende kart / lvls med hensikt. 
