@@ -18,8 +18,6 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
-import enums.Life;
-import Objects.Enemy;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
@@ -40,8 +38,7 @@ public class Multiplayer implements Screen {
 	private Box2DDebugRenderer b2dr;
 	private Player player1;
 	private Player player2;
-	private Enemy enemy;
-	
+	private Alien enemy;
 	private Cube cube;
 	
 	//GameLogic
@@ -91,17 +88,16 @@ public class Multiplayer implements Screen {
 	
 	public void update(float deltaTime) {
 		//Cases for å skjekke om en av spillerne har vunnet
-		if (player1.life == Life.DEAD){
-			
+		if (!player1.isAlive()){
 		}
-		if (player1.life == Life.DEAD){
-			
+		if (!player2.isAlive()){
 		}
 			
 		input.input(deltaTime, player1, player2, world, gravity);
 		world.step(1/60f, 6, 2);
 		player1.update(deltaTime,gravity);
 		player2.update(deltaTime,gravity);
+		enemy.update(deltaTime,gravity);
 		cube.update(deltaTime,gravity);
 		
 		//Kamera følger bakerste spiller
@@ -127,35 +123,22 @@ public class Multiplayer implements Screen {
 		switch (gravity.playerGravity) {
 		case DOWN:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			break;
 		case UP:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(180);
 			break;
 		case LEFT:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(90);
 			break;
 		case RIGHT:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(270);
 			break;
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		gamecam.update();
 		renderer.setView(gamecam);
 	}
@@ -178,6 +161,7 @@ public class Multiplayer implements Screen {
         game.batch.begin();
         player1.draw(game.batch);
         player2.draw(game.batch);
+        enemy.draw(game.batch);
         cube.draw(game.batch);
         game.batch.end();
 	}
@@ -215,5 +199,4 @@ public class Multiplayer implements Screen {
 		world.dispose();
 		b2dr.dispose();	
 	}
-
 }

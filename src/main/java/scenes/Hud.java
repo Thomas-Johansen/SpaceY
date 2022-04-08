@@ -11,30 +11,28 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import enums.Gravity;
+import gameLogic.GravityHandler;
 import inf112.skeleton.app.PlatformGame;
 
 public class Hud {
 	//Hud skal "stå stille" på skjermen sammenlignet med resten av spillet, så trenger egen viewport
 	public Stage stage;
 	private Viewport viewport;
+	private String player;
+	private String world;
+	private String console;
 	
-	/*
-	 * Tester hud elementer som gir mening for type super mario, der man har en score, og begrenset tid på å nå mål.
-	 * Endrer til mer spesifikt for vårt spill når vi vet hva vi vil ha og ikke ha.
-	 */
-	private Integer worldTimer;
-	private float timeCount; //Countdown ikkje implimentert endå.
-	private Integer score;
-	
-	Label countdownLabel;
-	Label scoreLabel;
-	Label timeLabel;
-	Label scoreNameLabel;
+	Label playerGravityLabel;
+	Label worldGravityLabel;
+	Label playerGravity;
+	Label worldGravity;
+	Label gameConsole;
 	
 	public Hud(SpriteBatch sprite) {
-		worldTimer = 100;
-		timeCount = 0;
-		score = 0;
+		player = "Down";
+		world = "Down";
+		console = "Test text som blir lengre og lengre og lengre";
 		
 		viewport = new FitViewport(PlatformGame.V_Width, PlatformGame.V_Height, new OrthographicCamera());
 		stage = new Stage(viewport, sprite);
@@ -44,17 +42,32 @@ public class Hud {
 		table.setFillParent(true);
 		//Gir table elementene font og farge
 		LabelStyle font = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
-		countdownLabel = new Label(String.format("%03d", worldTimer), font);
-		scoreLabel = new Label(String.format("%06d", score), font);
-		timeLabel = new Label("TIME", font);
-		scoreNameLabel = new Label("Score", font);
+		playerGravityLabel = new Label("Player", font);
+		worldGravityLabel = new Label("World", font);
+		playerGravity = new Label(player, font);
+		worldGravity = new Label(world, font);
+		gameConsole = new Label(console,font);
+		
 		//Orienterer hud elementer
-		table.add(scoreNameLabel).expandX().padTop(10);
-		table.add(timeLabel).expandX().padTop(10);
+		table.add(playerGravityLabel).expandX().padTop(10);
+		table.add(worldGravityLabel).expandX().padTop(10);
 		table.row();
-		table.add(scoreLabel).expandX();
-		table.add(countdownLabel).expandX();
+		table.add(playerGravity).expandX();
+		table.add(worldGravity).expandX();
+
+		//Console for å sende tekst til spilleren ingame
+		Table consoleTable = new Table();
+		consoleTable.setFillParent(true);
+		consoleTable.center();
+		consoleTable.add(gameConsole).padBottom(150);
 		
 		stage.addActor(table);
+		stage.addActor(consoleTable);
+	}
+	
+	public void update(GravityHandler gravity, String message) {
+		playerGravity.setText(Gravity.convertGravity(gravity.playerGravity));
+		worldGravity.setText(Gravity.convertGravity(gravity.worldGravity));
+		gameConsole.setText(message);
 	}
 }

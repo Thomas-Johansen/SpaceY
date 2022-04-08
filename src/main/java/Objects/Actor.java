@@ -22,7 +22,7 @@ public abstract class Actor extends Sprite {
 	final double PI = 3.1415;
 	public World world;
 	public Body Box2DBody;
-	private Texture texture;
+	public Texture texture;
 	protected Fixture fixture;
 	
 	public Actor(World world, Texture texture, Vector2 spawn) {
@@ -33,46 +33,8 @@ public abstract class Actor extends Sprite {
 		setRegion(texture);
 	}
 	
-	public void actorAttributes(Vector2 spawn) {
-		BodyDef bodyDef = new BodyDef();
-		bodyDef.position.set(spawn);  
-		bodyDef.type = BodyDef.BodyType.DynamicBody;
-		Box2DBody = world.createBody(bodyDef);
-		
-		FixtureDef fixtureDef = new FixtureDef();
-		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(6 / PlatformGame.PPM, 6 / PlatformGame.PPM);
-		fixtureDef.shape = poly;
-		fixture = Box2DBody.createFixture(fixtureDef);
-	}
+	public abstract void actorAttributes(Vector2 spawn) ;
 	
-	public void update(float deltaTime, GravityHandler gravity) {
-		//Texture & Box2D Object position og rotation varierer basert på gravitasjons-retningen
-		Gravity switchGrav;
-		if (gravity.playerToggle) switchGrav = gravity.playerGravity; else switchGrav = gravity.worldGravity;
-		switch (switchGrav) {
-		case DOWN:
-			setRotation(0);
-			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
-			Box2DBody.setTransform(Box2DBody.getPosition(), 0);
-			break;
-		case UP:
-			setRotation(180);
-			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 2);
-			Box2DBody.setTransform(Box2DBody.getPosition(), (float) PI);
-			break;
-		case LEFT:
-			setRotation(270);
-			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 3 );
-			Box2DBody.setTransform(Box2DBody.getPosition(), (float) ((3*PI)/2));
-			break;
-		case RIGHT:
-			setRotation(90);
-			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 3 );
-			Box2DBody.setTransform(Box2DBody.getPosition(), (float) (PI/2));
-			break;
-		}	
-	}
-	
-	 
+	public abstract void update(float deltaTime, GravityHandler gravity) ;
+
 }
