@@ -71,8 +71,8 @@ public class InputHandler {
 	 * */
 	
 	public void tempGravityChange(GravityHandler gravity, World world){
-		if(Gdx.input.isKeyJustPressed(Input.Keys.K)) gravity.setWorldGravity(Gravity.UP, world);
-		if(Gdx.input.isKeyJustPressed(Input.Keys.I)) gravity.setWorldGravity(Gravity.DOWN, world);
+		if(Gdx.input.isKeyJustPressed(Input.Keys.I)) gravity.setWorldGravity(Gravity.UP, world);
+		if(Gdx.input.isKeyJustPressed(Input.Keys.K)) gravity.setWorldGravity(Gravity.DOWN, world);
 		if(Gdx.input.isKeyJustPressed(Input.Keys.J)) gravity.setWorldGravity(Gravity.LEFT, world);
 		if(Gdx.input.isKeyJustPressed(Input.Keys.L)) gravity.setWorldGravity(Gravity.RIGHT, world);
 	}

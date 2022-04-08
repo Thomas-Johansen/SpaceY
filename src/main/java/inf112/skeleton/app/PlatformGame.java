@@ -12,8 +12,8 @@ public class PlatformGame extends Game {
 	public SpriteBatch batch;
 	
 	//Definerer høyde og bredde for spillvindu.
-	public static final int V_Width = 500;
-	public static final int V_Height = 308;
+	public static final int V_Width = 600;
+	public static final int V_Height = 370;
 	/*Definerer pixels per "meter" for Box2D scaling. ¨
 	 * Å redusere detta tallet fører til at avstadner blir større, og objecter bever seg saktere
 	 * Økning gir omvendt effekt.

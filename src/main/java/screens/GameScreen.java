@@ -1,9 +1,7 @@
 package screens;
 
-
-
-
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -19,7 +17,6 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
-import Objects.Enemy;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
@@ -37,12 +34,13 @@ public class GameScreen implements Screen {
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
 	
-	//Box2d variabler
-	private  World world;
-	private Box2DDebugRenderer b2dr;
-	private  Player player1;
-	private Enemy enemy;
+	private String consoleOutput;
 	
+	//Box2d variabler
+	private World world;
+	private Box2DDebugRenderer b2dr;
+	private Player player1;
+	private Alien enemy;
 	private Cube cube;
 	
 	//GameLogic
@@ -68,13 +66,12 @@ public class GameScreen implements Screen {
 		gamecam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
 		
 		//Box2D
-		world = new World(new Vector2(0, (float) -9.81), true);
+		world = new World(new Vector2(0, (float) -9.81), false);
 		b2dr = new Box2DDebugRenderer();
 		new Box2DCreator(world, map);
 		world.setContactListener(new GameContactListener());
 		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
-		//enemy = new Enemy(world, new Texture(""));
 		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
 		//GameLogic
 		input = new InputHandler();
@@ -90,15 +87,23 @@ public class GameScreen implements Screen {
 		
 	}
 	
-	public void update(float deltaTime) {
+	public void update(float deltaTime) { 
 		if (player1.Box2DBody.getPosition().x > 1260 / PlatformGame.PPM && player1.Box2DBody.getPosition().y < 64 / PlatformGame.PPM) {
-			System.out.println("Level complete");
-			game.setScreen(new MainMenuScreen(game));
+			consoleOutput = "Level Complete, press enter to continue";
+			hud.update(gravity, consoleOutput);
+			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
+
+			
 			/*Testcase for completing a level, 
 			 * in this case reaching the nuclear colored square at the far right of the map takes you back to the main menu
 			 * The idea being that each map will have a predefined area the player must reach to complete that map
 			 * */
-		} else
+		} else if (!player1.isAlive()) {
+			consoleOutput = "Player Died, press enter to continue";
+			hud.update(gravity, consoleOutput);
+			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
+		}else
+		
 			
 		input.input(deltaTime, player1, world, gravity);
 		gravity.update(player1);
@@ -107,6 +112,7 @@ public class GameScreen implements Screen {
 		world.step(1/60f, 6, 2);
 		
 		player1.update(deltaTime,gravity);
+		enemy.update(deltaTime,gravity);
 		cube.update(deltaTime,gravity);
 		
 		//Kamera skal i egen klasse
@@ -127,35 +133,23 @@ public class GameScreen implements Screen {
 		switch (gravity.playerGravity) {
 		case DOWN:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			break;
 		case UP:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(180);
 			break;
 		case LEFT:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(90);
 			break;
 		case RIGHT:
 			gamecam.up.set(0,1,0);
-			//gamecam.direction.set(0, 0, 1);
 			gamecam.rotate(270);
 			break;
 		}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		hud.update(gravity, consoleOutput);
 		gamecam.update();
 		renderer.setView(gamecam);
 	}
@@ -177,6 +171,7 @@ public class GameScreen implements Screen {
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player1.draw(game.batch);
+        enemy.draw(game.batch);
         cube.draw(game.batch);
         game.batch.end();
         
@@ -193,8 +188,7 @@ public class GameScreen implements Screen {
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 
 	@Override
