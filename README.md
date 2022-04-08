@@ -27,7 +27,10 @@ Kjør Main.java
 Testing gjøres ved å kjøre src/test/java/AppTest.java som JUnit test.   
    
 **Kjøring av spillet gjennom kommandolinjen**
-   
+
+**Kjøring av spillet gjennom Mac Intellij**
+Man må gå I "Edit config" så trykke på modify options og trykke på "Add VM options". Etterpå man man taste inn kommandoen
+-XstartOnFirstThread I argument tekst boksen, så skal spillet være fullt mulig å kjøre på Mac.
 
 # Credits
 
