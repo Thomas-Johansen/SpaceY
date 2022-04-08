@@ -8,8 +8,8 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
 import Objects.Cube;
+import Objects.Enemy;
 import Objects.Player;
-import enums.Life;
 
 /**
  * This class handles events when two specific objects touch in the Box2D world
@@ -22,33 +22,33 @@ public class GameContactListener implements ContactListener {
 		Fixture fixA = contact.getFixtureA();
 		Fixture fixB = contact.getFixtureB();
 		
-			if (fixA.getUserData() =="head" && fixB.getUserData() instanceof Cube) {
+			//Player head hit by cube
+			if (fixA.getUserData() =="head" && fixB.getBody().getUserData() instanceof Cube) {
 				Player player = (Player) fixA.getBody().getUserData();
-				Cube cube = (Cube) fixB.getBody().getUserData();
 				Gdx.app.log("Player", "Hit in head");
 				player.onHeadHit();
 			}
 			
-			if (fixB.getUserData() == "head" && fixA.getUserData() instanceof Cube) {
+			if (fixB.getUserData() == "head" && fixA.getBody().getUserData() instanceof Cube) {
 				Player player = (Player) fixB.getBody().getUserData();
-				Cube cube = (Cube) fixA.getBody().getUserData();
 				Gdx.app.log("Player", "Hit in head");
 				player.onHeadHit();
 			}
 		
-		
-		
-		/*
-		if ("head".equals(fixA.getUserData()) || "head".equals(fixB.getUserData())) {
-			Fixture head = fixA.getUserData() == "head" ? fixA : fixB;
-			Fixture object = head == fixA ? fixB : fixA;
-			//Checks if the head has collided with a cube spesifically
-			if(object.getUserData() != null &&  Cube.class.isAssignableFrom(object.getUserData().getClass())) {
-				System.out.println("Player has died");
-				System.out.println((Player)head.getUserData());
+			//Player hit by alien
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Enemy) {
+				Player player = (Player) fixA.getBody().getUserData();
+				Gdx.app.log("Player", "Hit by Enemy");
+				player.onHeadHit();
 			}
-		}
-		*/
+			
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Enemy) {
+				Player player = (Player) fixB.getBody().getUserData();
+				Gdx.app.log("Player", "Hit by Enemy");
+				player.onHeadHit();
+			}
+		
+		
 	}
 
 	@Override
