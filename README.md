@@ -10,6 +10,7 @@ Or play the multiplayer mode, where you and a friend square off against each oth
 
 
 Current controls: Use WAD to move Player 1 and the arrow keys to change gravity for the player.  
+Use Escape to exit game  
 Temporary: Use IJKL to change the world gravity  
 
 For multiplayer: The arrow keys move Player 2
