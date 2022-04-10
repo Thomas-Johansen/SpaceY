@@ -30,8 +30,10 @@ public class AppTest {
 	}
 
 	/**
-	 * Simple test case to see if a test can start the application
-	 * 
+	 * Test for running the entire application via tests
+	 * Moves the player inn 3 directions.
+	 * Then tests the player controled gravity movement
+	 * Then extits the application
 	 */
 	@Test
 	void test1() throws AWTException, InterruptedException {
@@ -52,23 +54,45 @@ public class AppTest {
 	        	public void run() {
 	        	   
 	     	       System.out.println("Start Test:");
+	     	       //Movement test singleplayer
 	     	       robot.delay(5000);
-	     	       robot.keyPress(71);
-	     	       robot.delay(50);
-	     	       robot.keyRelease(71);
+	     	       robot.keyPress(87);
+	     	       robot.delay(500);
+	     	       robot.keyRelease(87);
 	     	       robot.delay(2000);
-	     	       robot.keyPress(71);
-	     	       robot.delay(50);
-	     	       robot.keyRelease(71);
+	     	       robot.keyPress(65);
+	     	       robot.delay(500);
+	     	       robot.keyRelease(65);
 	     	       robot.delay(2000);
-	     	       robot.keyPress(71);
-	     	       robot.delay(50);
-	     	       robot.keyRelease(71);
+	     	       robot.keyPress(68);
+	     	       robot.delay(500);
+	     	       robot.keyRelease(68);
 	     	       robot.delay(2000);
-	     	       robot.keyPress(71);
+	     	       
+	     	       //Gravity turn singleplayer
+	     	       robot.keyPress(KeyEvent.VK_UP);
 	     	       robot.delay(50);
-	     	       robot.keyRelease(71);
+	     	       robot.keyRelease(KeyEvent.VK_UP);
+	     	      robot.delay(2000);
+	     	       robot.keyPress(KeyEvent.VK_LEFT);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(KeyEvent.VK_LEFT);
+	     	      robot.delay(2000);
+	     	       robot.keyPress(KeyEvent.VK_RIGHT);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(KeyEvent.VK_RIGHT);
+	     	      robot.delay(2000);
+	     	       robot.keyPress(KeyEvent.VK_DOWN);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(KeyEvent.VK_DOWN);
+	     	      robot.delay(2000);
+
 	     	       System.out.println("Stop Test:");
+	     	      robot.keyPress(27);
+	     	       robot.delay(50);
+	     	       robot.keyRelease(27);
+	     	      
+
 	        	}
 	        };
 	       test.start();

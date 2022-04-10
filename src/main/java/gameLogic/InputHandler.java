@@ -31,6 +31,10 @@ public class InputHandler {
 		if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) gravity.setPlayerGravity(Gravity.LEFT, player1);
 		if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) gravity.setPlayerGravity(Gravity.RIGHT, player1);
 		
+		if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+			Gdx.app.exit();
+		}
+		
 		//Temp
 		tempGravityChange( gravity, world);
 	}
