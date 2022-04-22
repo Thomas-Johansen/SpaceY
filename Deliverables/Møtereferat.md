@@ -44,11 +44,11 @@ Kamera
 Spawna via tiled kart  
 Mulighet te å bytta/ha flere nivå på singleplayer  
 Spillobject:  
-	Knapp som åpner dår når trykket på  
-	Dør  
-	Gravity Shift Plater   
-	Flere enemies?  
-	Poeng objekter for multiplayer  
+	<li>Knapp som åpner dår når trykket på  <li/>
+	<li>Dør  <li/>
+	<li>Gravity Shift Plater   <li/>
+	<li>Flere enemies?  <li/>
+	<li>Poeng objekter for multiplayer  <li/>
 Level design  
   
 Daniel tok på seg å lage tester.
