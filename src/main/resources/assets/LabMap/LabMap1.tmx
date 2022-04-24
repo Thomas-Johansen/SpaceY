@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="22">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="80" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="25">
  <tileset firstgid="1" source="Background.tsx"/>
  <tileset firstgid="2401" source="LabAssets1.tsx"/>
  <layer id="3" name="Background" width="80" height="30">
@@ -118,5 +118,21 @@
   <object id="17" x="1280" y="0" height="288"/>
   <object id="18" x="1280" y="320" height="128"/>
  </objectgroup>
- <objectgroup id="9" name="Entities"/>
+ <objectgroup id="9" name="Entities">
+  <object id="22" x="464" y="240" width="32" height="32">
+   <properties>
+    <property name="Name" value="Cube"/>
+   </properties>
+  </object>
+  <object id="23" x="528" y="240" width="32" height="32">
+   <properties>
+    <property name="Name" value="Alien"/>
+   </properties>
+  </object>
+  <object id="24" x="96" y="400" width="16" height="32">
+   <properties>
+    <property name="Name" value="Player"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
