@@ -14,6 +14,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import Objects.Actor;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
@@ -39,9 +40,8 @@ public class GameScreen implements Screen {
 	//Box2d variabler
 	private World world;
 	private Box2DDebugRenderer b2dr;
+	private Box2DCreator mapGen;
 	private Player player1;
-	private Alien enemy;
-	private Cube cube;
 	
 	//GameLogic
 	public InputHandler input;
@@ -68,11 +68,10 @@ public class GameScreen implements Screen {
 		//Box2D
 		world = new World(new Vector2(0, (float) -9.81), false);
 		b2dr = new Box2DDebugRenderer();
-		new Box2DCreator(world, map);
+		mapGen = new Box2DCreator(world, map);
+		player1 = mapGen.player1;
 		world.setContactListener(new GameContactListener());
-		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
-		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
-		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
+
 		//GameLogic
 		input = new InputHandler();
 		gravity = new GravityHandler();
@@ -104,16 +103,15 @@ public class GameScreen implements Screen {
 			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
 		}else
 		
-			
 		input.input(deltaTime, player1, world, gravity);
 		gravity.update(player1);
-
-		
 		world.step(1/60f, 6, 2);
 		
 		player1.update(deltaTime,gravity);
-		enemy.update(deltaTime,gravity);
-		cube.update(deltaTime,gravity);
+		for(Actor o : mapGen.mapObjects) {
+			o.update(deltaTime,gravity);
+		}
+		
 		
 		//Kamera skal i egen klasse
 		gamecam.position.x = player1.Box2DBody.getPosition().x;
@@ -148,7 +146,6 @@ public class GameScreen implements Screen {
 			break;
 		}
 		
-		
 		hud.update(gravity, consoleOutput);
 		gamecam.update();
 		renderer.setView(gamecam);
@@ -157,25 +154,22 @@ public class GameScreen implements Screen {
 	@Override
 	public void render(float delta) {
 		update(delta);
-		
 		Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
-		
         renderer.render();
         
         //Viser linjer rundt Box2D render, skal fjernes når spillet er ferdig
         b2dr.render(world, gamecam.combined);
         
         
-        //Texture render test for spiller
+        //Texture render
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         player1.draw(game.batch);
-        enemy.draw(game.batch);
-        cube.draw(game.batch);
+        for(Actor o : mapGen.mapObjects) {
+			o.draw(game.batch);
+		}
         game.batch.end();
-        
-        
         hud.stage.draw();
 	}
 
