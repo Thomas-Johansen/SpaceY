@@ -57,7 +57,6 @@ Level design
   
 Daniel tok på seg å lage tester.
 Thomas J ser for seg å fikse spawning via Tiled, level bytting og Kamera.
-De manglende spillobjektene vil bli fordelt basert på hvordan de ulike medlemmene ligger an.  
-Må høre med Thomas L hva han vil gjøre.  
+Hadde et kort møte med Thomas L senere på kvelden, han tok på seg å jobbe med de manglede objektene  
   
 Level design blir sannsynligvis på felles når alt annet er ferdig.
