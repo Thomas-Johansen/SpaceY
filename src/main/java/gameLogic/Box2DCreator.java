@@ -17,10 +17,12 @@ import Objects.Actor;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
+import Objects.Text;
 import inf112.skeleton.app.PlatformGame;
 
 public class Box2DCreator {
 	public ArrayList<Actor> mapObjects;
+	public ArrayList<Text> textObjects;
 	public Player player1;
 	public Player player2;
 	public Box2DCreator(World world, TiledMap map) {
@@ -31,6 +33,7 @@ public class Box2DCreator {
 				FixtureDef fixture = new FixtureDef();
 				Body body;
 				mapObjects = new ArrayList<>();
+				textObjects = new ArrayList<>();
 				
 				
 				//Static Ground
@@ -66,6 +69,11 @@ public class Box2DCreator {
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
 						mapObjects.add(new Alien(world, spawn));
+						break;
+					case "Text":
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						textObjects.add(new Text(world, ((RectangleMapObject) object).getRectangle(), (String)object.getProperties().get("Text")));
 						break;
 					default: 
 						break;

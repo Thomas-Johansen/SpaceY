@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Actor;
 import Objects.Player;
+import Objects.Text;
 import gameLogic.Box2DCreator;
 import gameLogic.CameraHandler;
 import gameLogic.GameContactListener;
@@ -103,6 +104,12 @@ public class GameScreen implements Screen {
 		player1.update(deltaTime,gravity);
 		for(Actor o : mapGen.mapObjects) {
 			o.update(deltaTime,gravity);
+		}
+		
+		//Updates text output
+		consoleOutput = "";
+		for (Text text : mapGen.textObjects) {
+			if (text.isActive) consoleOutput = text.text;
 		}
 		
 		

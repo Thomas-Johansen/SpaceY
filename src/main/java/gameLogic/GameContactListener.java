@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import Objects.Cube;
 import Objects.Enemy;
 import Objects.Player;
+import Objects.Text;
 
 /**
  * This class handles events when two specific objects touch in the Box2D world
@@ -47,12 +48,33 @@ public class GameContactListener implements ContactListener {
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();
 			}
+			
+			//Player inside text object
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Text) {
+				Text text = (Text) fixB.getBody().getUserData();
+				text.isActive = true;
+			}
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Text) {
+				Text text = (Text) fixA.getBody().getUserData();
+				text.isActive = true;
+			}
 		
 		
 	}
 
 	@Override
 	public void endContact(Contact contact) {
+		Fixture fixA = contact.getFixtureA();
+		Fixture fixB = contact.getFixtureB();
+		//Player exit text object
+		if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Text) {
+			Text text = (Text) fixB.getBody().getUserData();
+			text.isActive = false;
+		}
+		if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Text) {
+			Text text = (Text) fixA.getBody().getUserData();
+			text.isActive = false;
+		}
 
 	}
 
