@@ -3,6 +3,7 @@ package gameLogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import Objects.Player;
+import enums.Gravity;
 import inf112.skeleton.app.PlatformGame;
 
 public class CameraHandler  {
@@ -16,9 +17,10 @@ public class CameraHandler  {
 	
 	
 	public OrthographicCamera Update(OrthographicCamera camera, Player player, GravityHandler gravity) {
-		
+		Gravity switchGrav; 
+		if (gravity.playerToggle) switchGrav = gravity.playerGravity; else switchGrav = gravity.worldGravity;
 		//Rotation
-		switch (gravity.playerGravity) {
+		switch (switchGrav) {
 		case DOWN:
 			camera.up.set(0,1,0);
 			break;

@@ -21,6 +21,7 @@ public class GravityHandler {
 		public void setWorldGravity(Gravity gravity, World world) {
 			worldGravity = gravity;
 			world.setGravity(getGravityVector(worldGravity));
+			if(!playerToggle) playerGravity = worldGravity;
 		}
 		public void setPlayerGravity(Gravity gravity, Player player) {
 			playerGravity = gravity;

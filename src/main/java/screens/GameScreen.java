@@ -29,12 +29,11 @@ public class GameScreen implements Screen {
 	private OrthographicCamera gamecam;
 	private Viewport gamePort;
 	private Hud hud;
-	
 	private TmxMapLoader maploader;
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
-	
 	private String consoleOutput;
+	private int currentLevel;
 	
 	//Box2d variabler
 	private World world;
@@ -56,17 +55,10 @@ public class GameScreen implements Screen {
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
 		hud = new Hud(game.batch);
-		
-		maploader = new TmxMapLoader();
-		map = maploader.load("src/main/resources/assets/LabMap/LabMap1.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map, 1 / PlatformGame.PPM);
-		gamecam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
-		
+		currentLevel = 1;
+
 		//Box2D
-		world = new World(new Vector2(0, (float) -9.81), false);
-		b2dr = new Box2DDebugRenderer();
-		mapGen = new Box2DCreator(world, map);
-		player1 = mapGen.player1;
+		switchLevel(currentLevel);
 		world.setContactListener(new GameContactListener());
 
 		//GameLogic
@@ -75,6 +67,20 @@ public class GameScreen implements Screen {
 		camera = new CameraHandler(player1);
 
 	}
+	
+	public void switchLevel(int level) {
+		maploader = new TmxMapLoader();
+		map = maploader.load("src/main/resources/assets/LabMap/LabMap" + level + ".tmx");
+		renderer = new OrthogonalTiledMapRenderer(map, 1 / PlatformGame.PPM);
+		world = new World(new Vector2(0, (float) -9.81), false);
+		b2dr = new Box2DDebugRenderer();
+		mapGen = new Box2DCreator(world, map);
+		player1 = mapGen.player1;
+	}
+	
+	
+	
+	
 
 	@Override
 	public void show() {

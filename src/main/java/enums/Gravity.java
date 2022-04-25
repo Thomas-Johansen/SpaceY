@@ -11,11 +11,11 @@ public enum Gravity {
 		case DOWN:
 			return "Down";
 		case UP:
-			return "UP";
+			return "Up";
 		case LEFT:
-			return "LEFT";
+			return "Left";
 		case RIGHT:
-			return "RIGHT";
+			return "Right";
 		default:
 			return "Down";		
 		}
