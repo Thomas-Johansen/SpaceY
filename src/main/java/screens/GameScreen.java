@@ -15,10 +15,9 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Actor;
-import Objects.Alien;
-import Objects.Cube;
 import Objects.Player;
 import gameLogic.Box2DCreator;
+import gameLogic.CameraHandler;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
@@ -44,14 +43,12 @@ public class GameScreen implements Screen {
 	private Player player1;
 	
 	//GameLogic
-	public InputHandler input;
-	public GravityHandler gravity;
-	public World savepoint;
+	private InputHandler input;
+	private GravityHandler gravity;
+	private CameraHandler camera;
 	
-	//Test camera
-	private float yAxisCamera;
-	
-	
+
+
 	public GameScreen(PlatformGame game) {
 		this.game = game;
 		Gdx.graphics.setResizable(true);
@@ -75,9 +72,8 @@ public class GameScreen implements Screen {
 		//GameLogic
 		input = new InputHandler();
 		gravity = new GravityHandler();
-		
-		//cam
-		yAxisCamera = player1.Box2DBody.getPosition().y;
+		camera = new CameraHandler(player1);
+
 	}
 
 	@Override
@@ -113,39 +109,7 @@ public class GameScreen implements Screen {
 		}
 		
 		
-		//Kamera skal i egen klasse
-		gamecam.position.x = player1.Box2DBody.getPosition().x;
-		
-		
-		//Kamera beveger seg opp i inkrementer på 200 pixler
-		if (player1.Box2DBody.getPosition().y < yAxisCamera - (200 / PlatformGame.PPM)) {
-			yAxisCamera -= (200 / PlatformGame.PPM);
-			gamecam.position.y = yAxisCamera;
-		}
-		if (player1.Box2DBody.getPosition().y > yAxisCamera + (200 / PlatformGame.PPM)) {
-			yAxisCamera += (200 / PlatformGame.PPM);
-			gamecam.position.y = yAxisCamera;
-		}
-		
-		//Kamera rotasjon test
-		switch (gravity.playerGravity) {
-		case DOWN:
-			gamecam.up.set(0,1,0);
-			break;
-		case UP:
-			gamecam.up.set(0,1,0);
-			gamecam.rotate(180);
-			break;
-		case LEFT:
-			gamecam.up.set(0,1,0);
-			gamecam.rotate(90);
-			break;
-		case RIGHT:
-			gamecam.up.set(0,1,0);
-			gamecam.rotate(270);
-			break;
-		}
-		
+		gamecam = camera.Update(gamecam, player1, gravity);
 		hud.update(gravity, consoleOutput);
 		gamecam.update();
 		renderer.setView(gamecam);
@@ -177,7 +141,6 @@ public class GameScreen implements Screen {
 	public void resize(int width, int height) {
 		gamePort.update(width,height);
 		gamecam.update();
-		
 	}
 
 	@Override
