@@ -20,11 +20,15 @@ import inf112.skeleton.app.PlatformGame;
 
 public class Player extends Actor {
 	public Life life;
+	public boolean hasWon;
+	public int points;
 	protected Fixture fixture;
 
 	public Player(World world, Vector2 spawn) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Elon.png"), spawn);
 		this.life = Life.ALIVE;
+		this.hasWon = false;
+		this.points = 0;
 		Box2DBody.setUserData(this);
 	}
 	

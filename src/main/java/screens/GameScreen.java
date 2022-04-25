@@ -65,7 +65,6 @@ public class GameScreen implements Screen {
 		input = new InputHandler();
 		gravity = new GravityHandler();
 		camera = new CameraHandler(player1);
-
 	}
 	
 	public void switchLevel(int level) {
@@ -78,9 +77,6 @@ public class GameScreen implements Screen {
 		player1 = mapGen.player1;
 	}
 	
-	
-	
-	
 
 	@Override
 	public void show() {
@@ -89,21 +85,16 @@ public class GameScreen implements Screen {
 	}
 	
 	public void update(float deltaTime) { 
-		if (player1.Box2DBody.getPosition().x > 1260 / PlatformGame.PPM && player1.Box2DBody.getPosition().y < 64 / PlatformGame.PPM) {
+		if (player1.hasWon) {
 			consoleOutput = "Level Complete, press enter to continue";
 			hud.update(gravity, consoleOutput);
-			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
-
-			
-			/*Testcase for completing a level, 
-			 * in this case reaching the nuclear colored square at the far right of the map takes you back to the main menu
-			 * The idea being that each map will have a predefined area the player must reach to complete that map
-			 * */
+			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) switchLevel(currentLevel + 1);
 		} else if (!player1.isAlive()) {
 			consoleOutput = "Player Died, press enter to continue";
 			hud.update(gravity, consoleOutput);
-			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
-		}else
+			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) switchLevel(currentLevel);
+		}else if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new MainMenuScreen(game));
+		 else {
 		
 		input.input(deltaTime, player1, world, gravity);
 		gravity.update(player1);
@@ -119,6 +110,7 @@ public class GameScreen implements Screen {
 		hud.update(gravity, consoleOutput);
 		gamecam.update();
 		renderer.setView(gamecam);
+		}
 	}
 	
 	@Override
