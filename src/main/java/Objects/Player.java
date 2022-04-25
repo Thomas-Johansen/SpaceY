@@ -69,12 +69,12 @@ public class Player extends Actor {
 			break;
 		case LEFT:
 			setRotation(270);
-			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 3 );
+			setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 2 );
 			Box2DBody.setTransform(Box2DBody.getPosition(), (float) ((3*PI)/2));
 			break;
 		case RIGHT:
 			setRotation(90);
-			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 3 );
+			setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
 			Box2DBody.setTransform(Box2DBody.getPosition(), (float) (PI/2));
 			break;
 		}	
