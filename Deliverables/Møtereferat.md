@@ -60,3 +60,7 @@ Thomas J ser for seg å fikse spawning via Tiled, level bytting og Kamera.
 Hadde et kort møte med Thomas L senere på kvelden, han tok på seg å jobbe med de manglede objektene  
   
 Level design blir sannsynligvis på felles når alt annet er ferdig.
+
+### Møte - 26/04/2022  
+**Deltagelse:** Daniel, Thomas J, Thomas L  
+
