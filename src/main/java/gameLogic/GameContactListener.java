@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import Objects.Cube;
 import Objects.Enemy;
 import Objects.Player;
+import Objects.PressurePad;
 
 /**
  * This class handles events when two specific objects touch in the Box2D world
@@ -43,6 +44,19 @@ public class GameContactListener implements ContactListener {
 			}
 			
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Enemy) {
+				Player player = (Player) fixB.getBody().getUserData();
+				Gdx.app.log("Player", "Hit by Enemy");
+				player.onHeadHit();
+			}
+			
+			//Player steps on PressurePad
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof PressurePad) {
+				Player player = (Player) fixA.getBody().getUserData();
+				Gdx.app.log("Player", "Hit by Enemy");
+				player.onHeadHit();
+			}
+			
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof PressurePad) {
 				Player player = (Player) fixB.getBody().getUserData();
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();

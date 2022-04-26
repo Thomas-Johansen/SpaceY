@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
+import Objects.PressurePad;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
@@ -42,6 +43,7 @@ public class GameScreen implements Screen {
 	private Player player1;
 	private Alien enemy;
 	private Cube cube;
+	private PressurePad pad;
 	
 	//GameLogic
 	public InputHandler input;
@@ -73,6 +75,7 @@ public class GameScreen implements Screen {
 		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
+		pad = new PressurePad(world, new Vector2(400 / PlatformGame.PPM, 35 / PlatformGame.PPM));
 		//GameLogic
 		input = new InputHandler();
 		gravity = new GravityHandler();
@@ -114,6 +117,7 @@ public class GameScreen implements Screen {
 		player1.update(deltaTime,gravity);
 		enemy.update(deltaTime,gravity);
 		cube.update(deltaTime,gravity);
+		pad.update(deltaTime,gravity);
 		
 		//Kamera skal i egen klasse
 		gamecam.position.x = player1.Box2DBody.getPosition().x;
@@ -173,6 +177,7 @@ public class GameScreen implements Screen {
         player1.draw(game.batch);
         enemy.draw(game.batch);
         cube.draw(game.batch);
+        pad.draw(game.batch);
         game.batch.end();
         
         
