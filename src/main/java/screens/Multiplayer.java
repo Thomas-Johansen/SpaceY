@@ -21,6 +21,7 @@ import Objects.Cube;
 import Objects.Player;
 import SpaceY.PlatformGame;
 import gameLogic.Box2DCreator;
+import gameLogic.CameraHandler;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
@@ -44,7 +45,7 @@ public class Multiplayer implements Screen {
 	//GameLogic
 	public InputHandler input;
 	public GravityHandler gravity;
-	public World savepoint;
+	private CameraHandler camera;
 	
 	//Test camera
 	private float yAxisCamera;
@@ -70,6 +71,7 @@ public class Multiplayer implements Screen {
 		//GameLogic
 		input = new InputHandler();
 		gravity = new GravityHandler();
+		camera = new CameraHandler(player1);
 		
 		//cam
 		yAxisCamera = player1.Box2DBody.getPosition().y;
@@ -90,51 +92,16 @@ public class Multiplayer implements Screen {
 			
 		input.input(deltaTime, player1, player2, world, gravity);
 		world.step(1/60f, 6, 2);
+		
 		player1.update(deltaTime,gravity);
 		player2.update(deltaTime,gravity);
 		for(Actor o : mapGen.mapObjects) {
 			o.update(deltaTime,gravity);
 		}
 		
-		//Kamera følger bakerste spiller
-		if (player1.Box2DBody.getPosition().x < player2.Box2DBody.getPosition().x) {
-			gamecam.position.x = player1.Box2DBody.getPosition().x;
-		}
-		else {
-			gamecam.position.x = player2.Box2DBody.getPosition().x;
-		}
 		
 		
-		//Kamera beveger seg opp i inkrementer på 200 pixler
-		if (player1.Box2DBody.getPosition().y < yAxisCamera - (200 / PlatformGame.PPM)) {
-			yAxisCamera -= (200 / PlatformGame.PPM);
-			gamecam.position.y = yAxisCamera;
-		}
-		if (player1.Box2DBody.getPosition().y > yAxisCamera + (200 / PlatformGame.PPM)) {
-			yAxisCamera += (200 / PlatformGame.PPM);
-			gamecam.position.y = yAxisCamera;
-		}
-		
-		//Kamera rotasjon test
-		switch (gravity.playerGravity) {
-		case DOWN:
-			gamecam.up.set(0,1,0);
-			break;
-		case UP:
-			gamecam.up.set(0,1,0);
-			gamecam.rotate(180);
-			break;
-		case LEFT:
-			gamecam.up.set(0,1,0);
-			gamecam.rotate(90);
-			break;
-		case RIGHT:
-			gamecam.up.set(0,1,0);
-			gamecam.rotate(270);
-			break;
-		}
-		
-
+		gamecam = camera.Update(gamecam, player1, player2, gravity);
 		gamecam.update();
 		renderer.setView(gamecam);
 	}

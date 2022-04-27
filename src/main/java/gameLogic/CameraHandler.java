@@ -1,5 +1,6 @@
 package gameLogic;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import Objects.Player;
@@ -37,8 +38,6 @@ public class CameraHandler  {
 			camera.rotate(270);
 			break;
 		}
-		
-		
 		//Position
 		switch (gravity.playerGravity) {
 		case DOWN:
@@ -66,6 +65,18 @@ public class CameraHandler  {
 			break;
 		}
 		return camera;
+	}
+	
+	//Multiplayer camera
+	public OrthographicCamera Update(OrthographicCamera camera, Player player, Player player2, GravityHandler gravity) {
+		camera.position.x = (player.getX() + player2.getX()) / 2;
+		camera.position.y = (player.getY() + player2.getY()) / 2;
+		
+		float playerDistance = (Math.abs(player.getX()- player2.getX()));
+		if (playerDistance > (400 / PlatformGame.PPM)) {
+			camera.zoom =  playerDistance / (400 / PlatformGame.PPM);
+		} else camera.zoom = 1;
+		return camera;	
 	}
 	
 }
