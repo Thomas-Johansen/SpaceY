@@ -64,7 +64,7 @@ public class Box2DCreator {
 					case "Player2": 
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
-						player1 = (new Player(world, spawn, 2));
+						player2 = (new Player(world, spawn, 2));
 						break;
 					case "Cube": 
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
