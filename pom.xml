@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- FIXME - set group id -->
-	<groupId>Gruppe4-Team2</groupId>
+	<groupId>AlleGodeTingErTre</groupId>
 	<!-- FIXME - set artifact name -->
 	<artifactId>gdx-app</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<!-- FIXME - set app name -->
-	<name>mvn-app</name>
+	<name>SpaceY</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
