@@ -8,7 +8,7 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.Texture;
 
-import inf112.skeleton.app.PlatformGame;
+import SpaceY.PlatformGame;
 
 public class MainMenuScreen implements Screen {
 	

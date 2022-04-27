@@ -18,7 +18,7 @@ import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
 import Objects.Text;
-import inf112.skeleton.app.PlatformGame;
+import SpaceY.PlatformGame;
 
 public class Box2DCreator {
 	public ArrayList<Actor> mapObjects;

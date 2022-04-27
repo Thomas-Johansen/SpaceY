@@ -13,10 +13,10 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import SpaceY.PlatformGame;
 import enums.Gravity;
 import enums.Life;
 import gameLogic.GravityHandler;
-import inf112.skeleton.app.PlatformGame;
 
 public class Player extends Actor {
 	public Life life;

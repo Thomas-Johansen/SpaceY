@@ -7,6 +7,7 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
+import Objects.Alien;
 import Objects.Cube;
 import Objects.Enemy;
 import Objects.Player;
@@ -58,7 +59,7 @@ public class GameContactListener implements ContactListener {
 				Text text = (Text) fixA.getBody().getUserData();
 				text.isActive = true;
 			}
-		
+			
 		
 	}
 

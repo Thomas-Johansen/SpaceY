@@ -11,9 +11,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import SpaceY.PlatformGame;
 import enums.Gravity;
 import gameLogic.GravityHandler;
-import inf112.skeleton.app.PlatformGame;
 
 public class Hud {
 	//Hud skal "stå stille" på skjermen sammenlignet med resten av spillet, så trenger egen viewport

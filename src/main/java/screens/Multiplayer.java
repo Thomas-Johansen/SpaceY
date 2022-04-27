@@ -18,11 +18,11 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Player;
+import SpaceY.PlatformGame;
 import gameLogic.Box2DCreator;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
-import inf112.skeleton.app.PlatformGame;
 
 public class Multiplayer implements Screen {
 	private PlatformGame game;

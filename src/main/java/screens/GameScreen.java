@@ -17,12 +17,12 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import Objects.Actor;
 import Objects.Player;
 import Objects.Text;
+import SpaceY.PlatformGame;
 import gameLogic.Box2DCreator;
 import gameLogic.CameraHandler;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
-import inf112.skeleton.app.PlatformGame;
 import scenes.Hud;
 
 public class GameScreen implements Screen {
@@ -52,6 +52,20 @@ public class GameScreen implements Screen {
 	public GameScreen(PlatformGame game) {
 		this.game = game;
 		Gdx.graphics.setResizable(true);
+		
+		Vector2 test = new Vector2(1,0);
+		System.out.println(test.x);
+		System.out.println(test.y);
+		System.out.println(test);
+		test.x *= -1;
+		System.out.println(test.x);
+		System.out.println(test.y);
+		System.out.println(test);
+		test.setAngleDeg(0);
+		System.out.println(test.x);
+		System.out.println(test.y);
+		System.out.println(test);
+		
 		
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);

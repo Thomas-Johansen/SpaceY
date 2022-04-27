@@ -8,8 +8,8 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import SpaceY.PlatformGame;
 import gameLogic.GravityHandler;
-import inf112.skeleton.app.PlatformGame;
 
 /**
  * A simple cube that the player can move

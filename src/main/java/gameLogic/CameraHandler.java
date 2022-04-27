@@ -3,8 +3,8 @@ package gameLogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import Objects.Player;
+import SpaceY.PlatformGame;
 import enums.Gravity;
-import inf112.skeleton.app.PlatformGame;
 
 public class CameraHandler  {
 	private float xAxis;
