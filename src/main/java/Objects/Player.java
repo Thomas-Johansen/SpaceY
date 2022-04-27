@@ -27,8 +27,9 @@ public class Player extends Actor {
 		this.life = Life.ALIVE;
 		Box2DBody.setUserData(this);
 	}
-	
-	
+
+
+
 	@Override
 	public void actorAttributes(Vector2 spawn) {
 		BodyDef bodyDef = new BodyDef();

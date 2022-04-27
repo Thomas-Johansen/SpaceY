@@ -10,8 +10,8 @@ public class Enemy extends Actor {
 
 	/**
 	 * This class mainly serves as a middle point for spesific enemies and actors.
-	 * Allowing the ContactListener to check if a fixture is an enemy instead of checking for each spesific type of enemy 
-	 * */
+	 * Allowing the ContactListener to check if a fixture is an enemy instead of checking for each spesific type of enemy
+	 */
 	public Enemy(World world, Texture texture, Vector2 spawn) {
 		super(world, texture, spawn);
 	}
@@ -19,13 +19,12 @@ public class Enemy extends Actor {
 	@Override
 	public void actorAttributes(Vector2 spawn) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void update(float deltaTime, GravityHandler gravity) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 }

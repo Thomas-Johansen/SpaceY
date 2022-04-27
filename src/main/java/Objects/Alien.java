@@ -10,11 +10,17 @@ import com.badlogic.gdx.physics.box2d.World;
 import gameLogic.GravityHandler;
 import inf112.skeleton.app.PlatformGame;
 
-public class Alien extends Enemy {
+import javax.swing.*;
 
+public class Alien extends Enemy {
+	public Vector2 velocity;
+	public Vector2 velocity2;
     public Alien(World world, Vector2 spawn) {
         super(world,new Texture("src/main/resources/assets/ObjectArt/Alien.png"),spawn);
         Box2DBody.setUserData(this);
+		velocity = new Vector2((float) 0.5,0);
+		velocity2 = new Vector2( 0, (float) 0.5);
+
     }
 
     @Override
@@ -39,22 +45,27 @@ public class Alien extends Enemy {
     				setRotation(0);
     				setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
     				Box2DBody.setTransform(Box2DBody.getPosition(), 0);
+					if (!gravity.isMovingMax(this)) Box2DBody.applyLinearImpulse(velocity,Box2DBody.getWorldCenter(),true);
     				break;
     			case UP:
     				setRotation(180);
     				setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 2);
     				Box2DBody.setTransform(Box2DBody.getPosition(), (float) PI);
+					if (!gravity.isMovingMax(this)) Box2DBody.applyLinearImpulse(velocity,Box2DBody.getWorldCenter(),true);
     				break;
     			case LEFT:
     				setRotation(270);
     				setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 3 );
     				Box2DBody.setTransform(Box2DBody.getPosition(), (float) ((3*PI)/2));
+					if (!gravity.isMovingMax(this)) Box2DBody.applyLinearImpulse(velocity2,Box2DBody.getWorldCenter(),true);
     				break;
     			case RIGHT:
     				setRotation(90);
     				setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 3 );
     				Box2DBody.setTransform(Box2DBody.getPosition(), (float) (PI/2));
+					if (!gravity.isMovingMax(this)) Box2DBody.applyLinearImpulse(velocity2,Box2DBody.getWorldCenter(),true);
     				break;
-    			}	
+    			}
     }
+
 }

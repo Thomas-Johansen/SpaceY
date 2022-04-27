@@ -24,7 +24,6 @@ public class SpawnTest {
             assertTrue(player1.isAlive());
             player1.onHeadHit();
             assertFalse(player1.isAlive());
-            //
         });
     }
 }
