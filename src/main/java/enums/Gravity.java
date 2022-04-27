@@ -20,5 +20,19 @@ public enum Gravity {
 			return "Down";		
 		}
 	}
+	public static Gravity convertString(String gravity) {
+		switch(gravity) {
+		case "Down":
+			return DOWN;
+		case "Up":
+			return UP;
+		case "Left":
+			return LEFT;
+		case "Right":
+			return RIGHT;
+		default:
+			return DOWN;		
+		}
+	}
 }
 

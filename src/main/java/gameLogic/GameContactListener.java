@@ -10,8 +10,10 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Enemy;
+import Objects.GravityPad;
 import Objects.Player;
 import Objects.Text;
+import enums.Gravity;
 
 /**
  * This class handles events when two specific objects touch in the Box2D world
@@ -60,6 +62,17 @@ public class GameContactListener implements ContactListener {
 				text.isActive = true;
 			}
 			
+			//Player steps on gravity pad
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof GravityPad) {
+				GravityPad gravity = (GravityPad) fixB.getBody().getUserData();
+				Gdx.app.log("Gravity", Gravity.convertGravity(gravity.padDirection));
+				gravity.isPressed = true;
+			}
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Text) {
+				GravityPad gravity = (GravityPad) fixA.getBody().getUserData();
+				Gdx.app.log("Gravity", Gravity.convertGravity(gravity.padDirection));
+				gravity.isPressed = true;
+			}
 		
 	}
 
@@ -75,6 +88,17 @@ public class GameContactListener implements ContactListener {
 		if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Text) {
 			Text text = (Text) fixA.getBody().getUserData();
 			text.isActive = false;
+		}
+		
+		
+		//Player steps off gravity pad
+		if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof GravityPad) {
+			GravityPad gravity = (GravityPad) fixB.getBody().getUserData();
+			gravity.isPressed = false;
+		}
+		if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Text) {
+			GravityPad gravity = (GravityPad) fixA.getBody().getUserData();
+			gravity.isPressed = false;
 		}
 
 	}

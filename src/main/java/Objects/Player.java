@@ -24,13 +24,18 @@ public class Player extends Actor {
 	public int points;
 	protected Fixture fixture;
 
-	public Player(World world, Vector2 spawn) {
-		super(world, new Texture("src/main/resources/assets/ObjectArt/Elon.png"), spawn);
+	public Player(World world, Vector2 spawn, int number) {
+		super(world, getPlayerTexture(number) , spawn);
 		this.life = Life.ALIVE;
 		this.hasWon = false;
 		this.points = 0;
 		Box2DBody.setUserData(this);
 	}
+	
+	private static Texture getPlayerTexture(int i){
+		if (i == 1) return new Texture("src/main/resources/assets/ObjectArt/Elon.png");	
+		return new Texture("src/main/resources/assets/ObjectArt/Elon2.png");
+	} 
 	
 	
 	@Override

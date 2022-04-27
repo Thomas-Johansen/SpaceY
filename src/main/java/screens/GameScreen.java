@@ -53,20 +53,6 @@ public class GameScreen implements Screen {
 		this.game = game;
 		Gdx.graphics.setResizable(true);
 		
-		Vector2 test = new Vector2(1,0);
-		System.out.println(test.x);
-		System.out.println(test.y);
-		System.out.println(test);
-		test.x *= -1;
-		System.out.println(test.x);
-		System.out.println(test.y);
-		System.out.println(test);
-		test.setAngleDeg(0);
-		System.out.println(test.x);
-		System.out.println(test.y);
-		System.out.println(test);
-		
-		
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
 		hud = new Hud(game.batch);

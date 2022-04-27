@@ -16,6 +16,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import Objects.Actor;
 import Objects.Alien;
 import Objects.Cube;
+import Objects.GravityPad;
 import Objects.Player;
 import Objects.Text;
 import SpaceY.PlatformGame;
@@ -58,7 +59,12 @@ public class Box2DCreator {
 					case "Player": 
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
-						player1 = (new Player(world, spawn));
+						player1 = (new Player(world, spawn, 1));
+						break;
+					case "Player2": 
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						player1 = (new Player(world, spawn, 2));
 						break;
 					case "Cube": 
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
@@ -74,6 +80,11 @@ public class Box2DCreator {
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
 						textObjects.add(new Text(world, ((RectangleMapObject) object).getRectangle(), (String)object.getProperties().get("Text")));
+						break;
+					case "Gravity": 
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						mapObjects.add(new GravityPad(world, spawn, (String)object.getProperties().get("Gravity")));
 						break;
 					default: 
 						break;

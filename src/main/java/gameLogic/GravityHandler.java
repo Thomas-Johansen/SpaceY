@@ -39,6 +39,7 @@ public class GravityHandler {
 			if (playerToggle) {
 				player.Box2DBody.applyLinearImpulse((getGravityVector(playerGravity)).scl((float) 0.016), player.Box2DBody.getWorldCenter(), true);
 			}
+			
 		}
 		
 		
