@@ -72,10 +72,12 @@ public class CameraHandler  {
 		camera.position.x = (player.getX() + player2.getX()) / 2;
 		camera.position.y = (player.getY() + player2.getY()) / 2;
 		
-		float playerDistance = (Math.abs(player.getX()- player2.getX()));
+		//float playerDistance = (Math.abs(player.getX()- player2.getX()));
+		double playerDistance = Math.sqrt(Math.pow(player.getX()- player2.getX(),2) + Math.pow(player.getY()- player2.getY(),2));
 		if (playerDistance > (400 / PlatformGame.PPM)) {
-			camera.zoom =  playerDistance / (400 / PlatformGame.PPM);
+			camera.zoom =  (float) (playerDistance / (400 / PlatformGame.PPM));
 		} else camera.zoom = 1;
+		if (camera.zoom > 3.2) camera.zoom = (float) 3.2; 
 		return camera;	
 	}
 	
