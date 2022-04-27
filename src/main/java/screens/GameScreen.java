@@ -101,13 +101,17 @@ public class GameScreen implements Screen {
 			 * in this case reaching the nuclear colored square at the far right of the map takes you back to the main menu
 			 * The idea being that each map will have a predefined area the player must reach to complete that map
 			 * */
+		} else if (!player1.notActive()) {
+			consoleOutput = "Pressure Pad has been steped on and is now active";
+			hud.update(gravity, consoleOutput);
+			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
+		
 		} else if (!player1.isAlive()) {
 			consoleOutput = "Player Died, press enter to continue";
 			hud.update(gravity, consoleOutput);
 			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
-		}else
 		
-			
+		} else
 		input.input(deltaTime, player1, world, gravity);
 		gravity.update(player1);
 

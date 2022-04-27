@@ -1,5 +1,6 @@
 package Objects;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -15,16 +16,20 @@ import com.badlogic.gdx.physics.box2d.World;
 
 import enums.Gravity;
 import enums.Life;
+import enums.PadSensor;
 import gameLogic.GravityHandler;
 import inf112.skeleton.app.PlatformGame;
 
 public class Player extends Actor {
+	
 	public Life life;
+	public PadSensor sensor;
 	protected Fixture fixture;
 
 	public Player(World world, Vector2 spawn) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Elon.png"), spawn);
 		this.life = Life.ALIVE;
+		this.sensor = PadSensor.notActive;
 		Box2DBody.setUserData(this);
 	}
 	
@@ -80,7 +85,7 @@ public class Player extends Actor {
 		}	
 	}
 
-	public Boolean isAlive() {
+	public boolean isAlive() {
 		if (life == Life.ALIVE) {
 			return true;
 		}
@@ -90,5 +95,15 @@ public class Player extends Actor {
 		life = Life.DEAD;
 	}
 	
+	public boolean notActive() {
+		if (sensor == PadSensor.notActive) {
+			return true;
+		}
+		System.out.println("YoYo");
+		return false;
+	}
+	public void activated() {
+		sensor = PadSensor.Active;
+	}
 	
 }

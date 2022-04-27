@@ -8,6 +8,8 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import enums.Life;
+import enums.PadSensor;
 import gameLogic.GravityHandler;
 import inf112.skeleton.app.PlatformGame;
 
@@ -17,6 +19,7 @@ import inf112.skeleton.app.PlatformGame;
  * */
 public class PressurePad extends Actor {
 
+	
 	public PressurePad(World world, Vector2 spawn) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Cube.png"), spawn);
 		Box2DBody.setUserData(this);
@@ -63,4 +66,5 @@ public class PressurePad extends Actor {
     				break;
     			}	
     }
+     
 }
