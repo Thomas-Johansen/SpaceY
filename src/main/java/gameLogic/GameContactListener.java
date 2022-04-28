@@ -111,7 +111,7 @@ public class GameContactListener implements ContactListener {
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Goal) {
 				Player player = (Player) fixB.getBody().getUserData();
 				player.hasWon = true;
-
+			}
 			
 			//Player hit coin
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Coin) {
@@ -126,8 +126,7 @@ public class GameContactListener implements ContactListener {
 				Player player = (Player) fixB.getBody().getUserData();
 				player.points += 1;
 				coin.activated();
-			}
-		
+			}	
 	}
 
 	@Override
