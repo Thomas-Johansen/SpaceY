@@ -32,3 +32,32 @@ Digitalt
 
 **Diskusjon og progresjon under møte**  
 MainMenuScreen er nå oppdatert med nye knapper (singleplayer, multiplayer og exit). Problemet med resizing av MainMenuScreen fikset etter og ha satt MainMenuScrren til en fixed size. Enemies har delevis blitt implementert (en god del som mangler, men et godt utgangspunkt). Ellers har noe kode blitt flyttet på til eksterne klasser og noe av tilesettet blitt oppdatert. Vider mot innlevering trengs det og finpusses på noe kode samt oppdatere tekstdokumentet for oblig 3
+
+
+### Møte - 19/04/2022 og 21/04/2022 avlyst grunnet andre innleveringer  
+  
+### Møte - 22/04/2022  
+**Deltagelse:** Daniel, Thomas J  
+Diskuterte fordeling av oppgaver for siste uken, de vkktigste gjennverende oppgavene ble oppsumert til:  
+Tester  
+Kamera  
+Spawna via tiled kart  
+Mulighet te å bytta/ha flere nivå på singleplayer  
+Spillobject:  
+<ol>
+	<li>Knapp som åpner dår når trykket på</li>
+	<li>Dør</li>
+	<li>Gravity Shift Plater</li>
+	<li>Flere enemies?</li>
+	<li>Poeng objekter for multiplayer</li>
+<ol/>  
+
+  
+Level design  
+  
+Daniel tok på seg å lage tester.
+Thomas J ser for seg å fikse spawning via Tiled, level bytting og Kamera.
+De manglende spillobjektene vil bli fordelt basert på hvordan de ulike medlemmene ligger an.  
+Må høre med Thomas L hva han vil gjøre.  
+  
+Level design blir sannsynligvis på felles når alt annet er ferdig.

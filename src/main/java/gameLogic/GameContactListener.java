@@ -1,5 +1,6 @@
 package gameLogic;
 
+import Objects.Alien;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
