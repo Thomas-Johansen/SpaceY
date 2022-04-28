@@ -104,6 +104,8 @@ public class GameScreen implements Screen {
 		player1.update(deltaTime,gravity);
 		for(Actor o : mapGen.mapObjects) {
 			o.update(deltaTime,gravity);
+			if(o.Box2DBody.getLinearVelocity().x > 4) o.Box2DBody.setLinearVelocity(4, o.Box2DBody.getLinearVelocity().y);
+			if(o.Box2DBody.getLinearVelocity().y > 4) o.Box2DBody.setLinearVelocity(o.Box2DBody.getLinearVelocity().x, 4);
 		}
 		
 		//Updates text output

@@ -34,7 +34,10 @@ public class InputHandler {
 		if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
 			Gdx.app.exit();
 		}
-		
+		//Setter maks fallhastighet for spiller
+		if(player1.Box2DBody.getLinearVelocity().x > 4) player1.Box2DBody.setLinearVelocity(4, player1.Box2DBody.getLinearVelocity().y);
+		if(player1.Box2DBody.getLinearVelocity().y > 4) player1.Box2DBody.setLinearVelocity(player1.Box2DBody.getLinearVelocity().x, 4);
+
 		//Temp
 		tempGravityChange( gravity, world);
 	}
