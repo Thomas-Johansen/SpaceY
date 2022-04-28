@@ -91,6 +91,12 @@ public class Box2DCreator {
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
 						mapObjects.add(new PressurePlate(world, spawn, (int) object.getProperties().get("ID")));
+						break;
+					case "Door": 
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						mapObjects.add(new PressurePlate(world, spawn, (int) object.getProperties().get("ID")));
+						break;
 					default: 
 						break;
 					}

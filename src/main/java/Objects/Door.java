@@ -15,8 +15,9 @@ import gameLogic.GravityHandler;
 public class Door extends Actor {
 	private int ID;
 
-	public Door(World world, Texture texture, Vector2 spawn) {
-		super(world, texture, spawn);
+	public Door(World world, Vector2 spawn, int ID) {
+		super(world, new Texture("src/main/resources/assets/ObjectArt/Door.png"), spawn);
+		this.ID = ID;
 
 	}
 
@@ -40,6 +41,16 @@ public class Door extends Actor {
 
 	@Override
 	public void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) {
+		boolean buttonPressed = true;
+		for (Actor o : mapObjects) {
+			if (o instanceof PressurePlate && ((PressurePlate) o).padID == ID) {
+				PressurePlate i = (PressurePlate) o;
+				if (!i.isActive) buttonPressed = false;
+			}
+		}
+		if (buttonPressed == true) {
+			System.out.println("Door opened");
+		}
 		
 		
 	}

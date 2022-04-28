@@ -71,8 +71,6 @@ public class Multiplayer implements Screen {
 		gravity = new GravityHandler();
 		camera = new CameraHandler(player1);
 		
-		//cam
-		yAxisCamera = player1.Box2DBody.getPosition().y;
 	}
 
 	@Override
