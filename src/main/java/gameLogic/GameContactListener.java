@@ -1,5 +1,6 @@
 package gameLogic;
 
+import Objects.Alien;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
@@ -46,6 +47,17 @@ public class GameContactListener implements ContactListener {
 				Player player = (Player) fixB.getBody().getUserData();
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();
+			}
+			if (fixA.getBody().getUserData() instanceof Alien) {
+				Alien alien = (Alien) fixA.getBody().getUserData();
+				alien.velocity.rotateDeg(180);
+				alien.velocity2.rotateDeg(180);
+
+			}
+			if (fixB.getBody().getUserData() instanceof Alien) {
+				Alien alien = (Alien) fixB.getBody().getUserData();
+				alien.velocity.rotateDeg(180);
+				alien.velocity2.rotateDeg(180);
 			}
 		
 		

@@ -72,7 +72,7 @@ public class GameScreen implements Screen {
 		world.setContactListener(new GameContactListener());
 		player1 = new Player(world, new Vector2(100 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
-		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
+		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 35/PlatformGame.PPM));
 		//GameLogic
 		input = new InputHandler();
 		gravity = new GravityHandler();
