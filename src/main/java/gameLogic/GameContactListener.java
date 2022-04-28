@@ -100,6 +100,23 @@ public class GameContactListener implements ContactListener {
 				plate.weight += 1;
 			}
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			//Player reaches level goal
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Goal) {
 				Player player = (Player) fixA.getBody().getUserData();
