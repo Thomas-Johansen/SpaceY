@@ -125,3 +125,12 @@ Akseptansekriterie for B13:
 
 Arbeidsoppgaver: 
 - Implementere muligheten til å spawne objekter via Tiled
+
+**B14: Som spiller ønsker jeg at det er en score i mulitplayer som sier noe om hvem som leder.**
+
+Akseptansekriterie for B14:  
+- Score oppdaterer seg når spiller interakter med andre objekter
+
+Arbeidsoppgaver: 
+- Implementere en en egen hud for mulitplayer
+- Implementere et coin objekt som spillere kan plukke opp
