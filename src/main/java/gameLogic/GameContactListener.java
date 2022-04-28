@@ -1,6 +1,8 @@
 package gameLogic;
 
 import Objects.Alien;
+import Objects.Coin;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
@@ -97,6 +99,21 @@ public class GameContactListener implements ContactListener {
 			if ((fixB.getBody().getUserData() instanceof Player || fixB.getBody().getUserData() instanceof Cube) && fixA.getBody().getUserData() instanceof PressurePlate) {
 				PressurePlate plate = (PressurePlate) fixA.getBody().getUserData();
 				plate.weight += 1;
+			}
+			
+			//Player hit coin
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Coin) {
+				Coin coin = (Coin) fixB.getBody().getUserData();
+				Player player = (Player) fixA.getBody().getUserData();
+				player.points += 1;
+				coin.activated();
+			}
+			
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Coin) {
+				Coin coin = (Coin) fixA.getBody().getUserData();
+				Player player = (Player) fixB.getBody().getUserData();
+				player.points += 1;
+				coin.activated();
 			}
 		
 	}

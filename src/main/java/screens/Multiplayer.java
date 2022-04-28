@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Actor;
 import Objects.Alien;
+import Objects.Coin;
 import Objects.Cube;
 import Objects.Player;
 import SpaceY.PlatformGame;
@@ -26,11 +27,15 @@ import gameLogic.CameraHandler;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
+import scenes.Hud;
+import scenes.HudM;
 
 public class Multiplayer implements Screen {
 	private PlatformGame game;
 	private OrthographicCamera gamecam;
 	private Viewport gamePort;
+	private HudM hudm;
+	private String consoleOutput;
 	
 	private TmxMapLoader maploader;
 	private TiledMap map;
@@ -48,13 +53,13 @@ public class Multiplayer implements Screen {
 	public GravityHandler gravity;
 	private CameraHandler camera;
 	
-	
 	public Multiplayer(PlatformGame game) {
 		this.game = game;
 		Gdx.graphics.setResizable(true);
 		
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
+		hudm = new HudM(game.batch);
 		
 		maploader = new TmxMapLoader();
 		map = maploader.load("src/main/resources/assets/LabMap/Multiplayer.tmx");
@@ -99,8 +104,7 @@ public class Multiplayer implements Screen {
 			o.checkMaxSpeed();
 		}
 		
-		
-		
+		hudm.update(player1, player2, consoleOutput);
 		gamecam = camera.Update(gamecam, player1, player2, gravity);
 		gamecam.update();
 		renderer.setView(gamecam);
@@ -126,6 +130,7 @@ public class Multiplayer implements Screen {
         player1.draw(game.batch);
         player2.draw(game.batch);
         game.batch.end();
+        hudm.stage.draw();
 	}
 
 	@Override
