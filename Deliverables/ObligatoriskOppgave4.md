@@ -46,7 +46,10 @@ Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøte
 - Nytt spillobjekt lagt til (GravityPad: Sensor som forandrer retningen på gravitasjonen).  
 - Flere og bedre tester har blitt laget.  
 - Spillobjekt kan nå spawnes på kartet via Tiled.
-- Ny pixelart på kartene.    
+- Ny pixelart på kartene. 
+
+**Hvordan har prosjektet gått**   
+Med tanke på at vi bare er tre på gruppen er vi alt i alt fornøyd med sluttresultatet og arbeidet undervesi.
 
 **Vurdering av MVP kravene**  
 Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forrige er ferdig). Vi har valgt å ikke ha med poeng ettersom at vi ikke ønsker å basere spillet rundt poeng. Nye kart og forskjellige lvls var noe vi ikke rakk å starte ordentlig på.
