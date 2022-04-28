@@ -26,7 +26,7 @@ Pga lite tid mellom oblig2 og oblig3 har det skjedd lite foradringer i gruppen o
 **Roller i teamet** - Rollene i teamet funger i stor grad på samme måte som tidligere. Det har sjkedd en liten forandring i rollene ettersom vi nærmer oss slutten av prosjektet. Thomas J har tatt på seg en liten rolle som teamleder og tar for seg oppgaven om å holde flyten i laget. Thomas J har god oversikt over koden og kan derfor lage en strukturet plan for hva som må gjøres samt fordel ut oppgaver enklere. Daniel har også påtatt seg ansvar for testing av kode.  
 
 **Erfaringer så langt**  
-Den grunnleggende strukturen av prosjektet og koden er nå på plass. Med dette i boks har vi erfart at vider arbeid og fordeling av oppgaver er enklere. Vi har finnet en god flyt og med en oversikt over oppgaver i project board er det enkel å plukke det man måtte ønske å jobbe med. Vi har også funnet ut at fysiske gruppemøter er foretrukket ovenfor digitale. Fysisk oppmøte føles mer ordentlig ut samtidig som det hjelper på gruppedynamikken og se hverandre ansikt til ansikt.  
+  
 
 **Gruppedynamikken**  
 Gruppen kommer godt overens. Vi har enda ikke møtt på noen enorme utfordringer innad i gruppen. Det som kan være verdt å nevne er at vi har mistet et gruppemedlem. Et mindre medlem i gruppen øker arbeidsmengden ovenfor resten. Så langt har dette godt fint og blitt håndtert på en god måte av gruppen.
