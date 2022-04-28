@@ -1,5 +1,8 @@
 package Objects;
 
+import java.util.ArrayList;
+
+import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -17,13 +20,11 @@ import inf112.skeleton.app.PlatformGame;
  * A simple cube that the player can move
  * 
  * */
-public class PressurePad extends Actor {
-
-	public PadSensor sensor;
+public class Door extends Actor {
 	
-	public PressurePad(World world, Vector2 spawn) {
+	
+	public Door(World world, Vector2 spawn) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Cube.png"), spawn);
-		this.sensor = PadSensor.notActive;
 		Box2DBody.setUserData(this);
 	}
 	
@@ -36,9 +37,8 @@ public class PressurePad extends Actor {
 
         FixtureDef fixtureDef = new FixtureDef();
         PolygonShape poly = new PolygonShape();
-        poly.setAsBox(16 / PlatformGame.PPM, 6 / PlatformGame.PPM);
+        poly.setAsBox(16 / PlatformGame.PPM, 70 / PlatformGame.PPM);
         fixtureDef.shape = poly;
-        fixtureDef.isSensor = true;
         Box2DBody.createFixture(fixtureDef);
     }
     
@@ -69,15 +69,4 @@ public class PressurePad extends Actor {
     			}	
     }
     
-	public boolean notActive() {
-		if (sensor == PadSensor.notActive) {
-			return true;
-		}
-		return false;
-	}
-	public void activated() {
-		sensor = PadSensor.Active;
-		System.out.println("Pressure Pad has been activated");
-		
-	}
 }

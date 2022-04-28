@@ -23,13 +23,13 @@ import inf112.skeleton.app.PlatformGame;
 public class Player extends Actor {
 	
 	public Life life;
-	public PadSensor sensor;
+	//public PadSensor sensor;
 	protected Fixture fixture;
 
 	public Player(World world, Vector2 spawn) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Elon.png"), spawn);
 		this.life = Life.ALIVE;
-		this.sensor = PadSensor.notActive;
+		//this.sensor = PadSensor.notActive;
 		Box2DBody.setUserData(this);
 	}
 	
@@ -44,7 +44,7 @@ public class Player extends Actor {
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(6 / PlatformGame.PPM, 16 / PlatformGame.PPM);
+		poly.setAsBox(6 / PlatformGame.PPM, 16 / PlatformGame.PPM);		
 		fixtureDef.shape = poly;
 		fixture = Box2DBody.createFixture(fixtureDef);
 		
@@ -93,17 +93,6 @@ public class Player extends Actor {
 	}
 	public void onHeadHit() {
 		life = Life.DEAD;
-	}
-	
-	public boolean notActive() {
-		if (sensor == PadSensor.notActive) {
-			return true;
-		}
-		System.out.println("YoYo");
-		return false;
-	}
-	public void activated() {
-		sensor = PadSensor.Active;
 	}
 	
 }

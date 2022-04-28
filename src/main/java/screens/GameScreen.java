@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Alien;
 import Objects.Cube;
+import Objects.Door;
 import Objects.Player;
 import Objects.PressurePad;
 import gameLogic.Box2DCreator;
@@ -44,6 +45,7 @@ public class GameScreen implements Screen {
 	private Alien enemy;
 	private Cube cube;
 	private PressurePad pad;
+	private Door door;
 	
 	//GameLogic
 	public InputHandler input;
@@ -76,6 +78,7 @@ public class GameScreen implements Screen {
 		cube = new Cube(world, new Vector2(500 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		enemy = new Alien(world, new Vector2(300/ PlatformGame.PPM, 100/PlatformGame.PPM));
 		pad = new PressurePad(world, new Vector2(400 / PlatformGame.PPM, 35 / PlatformGame.PPM));
+		door = new Door(world, new Vector2(750 / PlatformGame.PPM, 100 / PlatformGame.PPM));
 		//GameLogic
 		input = new InputHandler();
 		gravity = new GravityHandler();
@@ -101,11 +104,6 @@ public class GameScreen implements Screen {
 			 * in this case reaching the nuclear colored square at the far right of the map takes you back to the main menu
 			 * The idea being that each map will have a predefined area the player must reach to complete that map
 			 * */
-		} else if (!player1.notActive()) {
-			consoleOutput = "Pressure Pad has been steped on and is now active";
-			hud.update(gravity, consoleOutput);
-			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
-		
 		} else if (!player1.isAlive()) {
 			consoleOutput = "Player Died, press enter to continue";
 			hud.update(gravity, consoleOutput);
@@ -122,6 +120,7 @@ public class GameScreen implements Screen {
 		enemy.update(deltaTime,gravity);
 		cube.update(deltaTime,gravity);
 		pad.update(deltaTime,gravity);
+		door.update(deltaTime,gravity);
 		
 		//Kamera skal i egen klasse
 		gamecam.position.x = player1.Box2DBody.getPosition().x;
@@ -182,6 +181,7 @@ public class GameScreen implements Screen {
         enemy.draw(game.batch);
         cube.draw(game.batch);
         pad.draw(game.batch);
+        door.draw(game.batch);
         game.batch.end();
         
         

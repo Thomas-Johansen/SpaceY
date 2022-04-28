@@ -20,7 +20,6 @@ public class PlatformGame extends Game {
 	 * */
 	public static final float PPM = 100;
 	
-	
 
 	@Override
 	public void create() {

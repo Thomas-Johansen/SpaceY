@@ -51,15 +51,15 @@ public class GameContactListener implements ContactListener {
 			
 			//Player steps on PressurePad
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof PressurePad) {
-				Player player = (Player) fixA.getBody().getUserData();
+				PressurePad pad = (PressurePad) fixB.getBody().getUserData();
 				Gdx.app.log("Player", "Activated Pressure Pad");
-				player.activated();
+				pad.activated();
 			}
 			
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof PressurePad) {
-				Player player = (Player) fixB.getBody().getUserData();
+				PressurePad pad = (PressurePad) fixB.getBody().getUserData();
 				Gdx.app.log("Player", "Activated Pressure Pad");
-				player.activated();
+				pad.activated();
 			}
 		
 		
