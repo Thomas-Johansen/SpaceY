@@ -52,6 +52,20 @@ public class GameContactListener implements ContactListener {
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();
 			}
+
+			//Alien collide with wall
+		    if (fixA.getBody().getUserData() instanceof Alien) {
+				Alien alien = (Alien) fixA.getBody().getUserData();
+				alien.velocity.rotateDeg(180);
+				alien.velocity2.rotateDeg(180);
+
+			}
+			if (fixB.getBody().getUserData() instanceof Alien) {
+				Alien alien = (Alien) fixB.getBody().getUserData();
+				alien.velocity.rotateDeg(180);
+				alien.velocity2.rotateDeg(180);
+			}
+
 			
 			//Player inside text object
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Text) {

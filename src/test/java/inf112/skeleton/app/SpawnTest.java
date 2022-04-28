@@ -20,7 +20,7 @@ public class SpawnTest {
     void playerSpawnTest() {
         Thread test1= new Thread(() -> {
             System.out.println("Start test");
-            Player player1 = new Player(new World(new Vector2(0,0), false), new Vector2(0,0));
+            Player player1 = new Player(new World(new Vector2(0,0), false), new Vector2(0,0), 1);
             assertTrue(player1.isAlive());
             player1.onHeadHit();
             assertFalse(player1.isAlive());
