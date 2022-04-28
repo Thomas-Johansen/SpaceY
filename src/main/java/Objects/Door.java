@@ -17,6 +17,7 @@ public class Door extends Actor {
 
 	public Door(World world, Vector2 spawn, int ID) {
 		super(world, new Texture("src/main/resources/assets/ObjectArt/Door.png"), spawn);
+		setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2);
 		this.ID = ID;
 
 	}
@@ -31,9 +32,8 @@ public class Door extends Actor {
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(16/ PlatformGame.PPM, 8 / PlatformGame.PPM);
+		poly.setAsBox(8/ PlatformGame.PPM, 16 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
-		fixtureDef.isSensor = true;
 		fixture = Box2DBody.createFixture(fixtureDef);
 		
 		
@@ -49,10 +49,8 @@ public class Door extends Actor {
 			}
 		}
 		if (buttonPressed == true) {
-			System.out.println("Door opened");
-		}
-		
-		
+		fixture.setSensor(true);
+		} else fixture.setSensor(false) ;
 	}
 
 }

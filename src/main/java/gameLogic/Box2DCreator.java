@@ -16,6 +16,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import Objects.Actor;
 import Objects.Alien;
 import Objects.Cube;
+import Objects.Door;
 import Objects.GravityPad;
 import Objects.Player;
 import Objects.PressurePlate;
@@ -95,7 +96,7 @@ public class Box2DCreator {
 					case "Door": 
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
-						mapObjects.add(new PressurePlate(world, spawn, (int) object.getProperties().get("ID")));
+						mapObjects.add(new Door(world, spawn, (int) object.getProperties().get("ID")));
 						break;
 					default: 
 						break;

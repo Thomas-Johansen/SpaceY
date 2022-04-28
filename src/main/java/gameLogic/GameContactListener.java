@@ -74,12 +74,12 @@ public class GameContactListener implements ContactListener {
 				gravity.isPressed = true;
 			}
 			
-			//Player steps on PressurePlate
-			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof PressurePlate) {
+			//Object steps on PressurePlate
+			if ((fixA.getBody().getUserData() instanceof Player || fixA.getBody().getUserData() instanceof Cube) && fixB.getBody().getUserData() instanceof PressurePlate) {
 				PressurePlate plate = (PressurePlate) fixB.getBody().getUserData();
 				plate.weight += 1;
 			}
-			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof PressurePlate) {
+			if ((fixB.getBody().getUserData() instanceof Player || fixB.getBody().getUserData() instanceof Cube) && fixA.getBody().getUserData() instanceof PressurePlate) {
 				PressurePlate plate = (PressurePlate) fixA.getBody().getUserData();
 				plate.weight += 1;
 			}
@@ -110,7 +110,18 @@ public class GameContactListener implements ContactListener {
 			GravityPad gravity = (GravityPad) fixA.getBody().getUserData();
 			gravity.isPressed = false;
 		}
-
+		
+		
+		//Object steps off PressurePlate
+		if ((fixA.getBody().getUserData() instanceof Player || fixA.getBody().getUserData() instanceof Cube) && fixB.getBody().getUserData() instanceof PressurePlate) {
+			PressurePlate plate = (PressurePlate) fixB.getBody().getUserData();
+			plate.weight -= 1;
+		}
+		if ((fixB.getBody().getUserData() instanceof Player || fixB.getBody().getUserData() instanceof Cube) && fixA.getBody().getUserData() instanceof PressurePlate) {
+			PressurePlate plate = (PressurePlate) fixA.getBody().getUserData();
+			plate.weight -= 1;
+		}
+		
 	}
 
 	@Override
