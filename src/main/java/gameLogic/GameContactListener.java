@@ -101,6 +101,17 @@ public class GameContactListener implements ContactListener {
 				PressurePlate plate = (PressurePlate) fixA.getBody().getUserData();
 				plate.weight += 1;
 			}
+
+			//Player reaches level goal
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Goal) {
+				Player player = (Player) fixA.getBody().getUserData();
+				player.hasWon = true;
+			}
+			
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Goal) {
+				Player player = (Player) fixB.getBody().getUserData();
+				player.hasWon = true;
+
 			
 			//Player hit coin
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Coin) {
