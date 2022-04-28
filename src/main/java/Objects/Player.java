@@ -1,5 +1,7 @@
 package Objects;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -48,7 +50,7 @@ public class Player extends Actor {
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(6 / PlatformGame.PPM, 16 / PlatformGame.PPM);
+		poly.setAsBox(6 / PlatformGame.PPM, 14 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
 		fixture = Box2DBody.createFixture(fixtureDef);
 		
@@ -61,7 +63,7 @@ public class Player extends Actor {
 		Box2DBody.createFixture(fixtureDef).setUserData("head");
 	}
 	@Override
-	public void update(float deltaTime, GravityHandler gravity) {
+	public void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) {
 		//Texture & Box2D Object position og rotation varierer basert på gravitasjons-retningen
 		Gravity switchGrav;
 		if (gravity.playerToggle) switchGrav = gravity.playerGravity; else switchGrav = gravity.worldGravity;

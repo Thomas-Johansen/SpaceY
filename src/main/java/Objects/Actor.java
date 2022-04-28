@@ -1,5 +1,7 @@
 package Objects;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -35,7 +37,7 @@ public abstract class Actor extends Sprite {
 	
 	public abstract void actorAttributes(Vector2 spawn) ;
 	
-	public abstract void update(float deltaTime, GravityHandler gravity) ;
+	public abstract void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) ;
 	
 	
 	public void checkMaxSpeed() {

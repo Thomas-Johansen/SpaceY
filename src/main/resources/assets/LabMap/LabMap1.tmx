@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="150" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="59">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="150" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="60">
  <tileset firstgid="1" source="Background.tsx"/>
  <tileset firstgid="2401" source="LabAssets1.tsx"/>
  <tileset firstgid="4561" source="SpaceBack2.tsx"/>
@@ -220,6 +220,12 @@
    <properties>
     <property name="Gravity" value="Left"/>
     <property name="Name" value="Gravity"/>
+   </properties>
+  </object>
+  <object id="59" x="2272" y="544" width="32" height="32">
+   <properties>
+    <property name="ID" type="int" value="1"/>
+    <property name="Name" value="Pad"/>
    </properties>
   </object>
  </objectgroup>

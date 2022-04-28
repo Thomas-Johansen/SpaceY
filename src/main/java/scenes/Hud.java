@@ -32,7 +32,7 @@ public class Hud {
 	public Hud(SpriteBatch sprite) {
 		player = "Down";
 		world = "Down";
-		console = "Test text som blir lengre og lengre og lengre";
+		console = "";
 		
 		viewport = new FitViewport(PlatformGame.V_Width, PlatformGame.V_Height, new OrthographicCamera());
 		stage = new Stage(viewport, sprite);

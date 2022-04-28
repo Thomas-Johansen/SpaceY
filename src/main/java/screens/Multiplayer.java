@@ -48,9 +48,6 @@ public class Multiplayer implements Screen {
 	public GravityHandler gravity;
 	private CameraHandler camera;
 	
-	//Test camera
-	private float yAxisCamera;
-	
 	
 	public Multiplayer(PlatformGame game) {
 		this.game = game;
@@ -95,12 +92,12 @@ public class Multiplayer implements Screen {
 		input.input(deltaTime, player1, player2, world, gravity);
 		world.step(1/60f, 6, 2);
 		
-		player1.update(deltaTime,gravity);
+		player1.update(deltaTime,gravity,mapGen.mapObjects);
 		player1.checkMaxSpeed();
-		player2.update(deltaTime,gravity);
+		player2.update(deltaTime,gravity,mapGen.mapObjects);
 		player2.checkMaxSpeed();
 		for(Actor o : mapGen.mapObjects) {
-			o.update(deltaTime,gravity);
+			o.update(deltaTime,gravity,mapGen.mapObjects);
 			o.checkMaxSpeed();
 		}
 		

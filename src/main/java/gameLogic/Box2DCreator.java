@@ -18,6 +18,7 @@ import Objects.Alien;
 import Objects.Cube;
 import Objects.GravityPad;
 import Objects.Player;
+import Objects.PressurePlate;
 import Objects.Text;
 import SpaceY.PlatformGame;
 
@@ -86,6 +87,10 @@ public class Box2DCreator {
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
 						mapObjects.add(new GravityPad(world, spawn, (String)object.getProperties().get("Gravity")));
 						break;
+					case "Pad": 
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						mapObjects.add(new PressurePlate(world, spawn, (int) object.getProperties().get("ID")));
 					default: 
 						break;
 					}

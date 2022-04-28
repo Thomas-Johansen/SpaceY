@@ -16,7 +16,13 @@ public class CameraHandler  {
 		yAxis = player.getY(); //+ 200 / PlatformGame.PPM;
 	}
 	
-	
+	/**
+	 * Camera for singleplayer. <br>
+	 * Uses current gravity to update the angle of the camera. <br>
+	 * For x axis, the camera follows the player. <br>
+	 * For y axis, the camera keeps the player within the center of the window, but does not follow pixel by pixel. <br>
+	 * Known bugs: May cause nausea. <br>
+	 * */
 	public OrthographicCamera Update(OrthographicCamera camera, Player player, GravityHandler gravity) {
 		Gravity switchGrav; 
 		if (gravity.playerToggle) switchGrav = gravity.playerGravity; else switchGrav = gravity.worldGravity;
@@ -68,14 +74,16 @@ public class CameraHandler  {
 		return camera;
 	}
 	
-	//Multiplayer camera
+	/**
+	 * Camera for multiplayer, bases zoom on player distance to eachother <br>
+	 * Known bug: Some positions of the player characters can lead to them not being in frame. <br>
+	 * */
 	public OrthographicCamera Update(OrthographicCamera camera, Player player, Player player2, GravityHandler gravity) {
 		camera.position.x = (player.getX() + player2.getX()) / 2;
 		camera.position.y = (player.getY() + player2.getY()) / 2;
 		
 		float playerDistanceX = (Math.abs(player.getX()- player2.getX()));
 		float playerDistanceY = (Math.abs(player.getY()- player2.getY()));
-		//double playerDistance = Math.sqrt(Math.pow(player.getX()- player2.getX(),2) + Math.pow(player.getY()- player2.getY(),2));
 		if (playerDistanceY > (300 / PlatformGame.PPM)) {
 			camera.zoom =  (playerDistanceY / (300 / PlatformGame.PPM));
 		} else if (playerDistanceX > (400 / PlatformGame.PPM)){

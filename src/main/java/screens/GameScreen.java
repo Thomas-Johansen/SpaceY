@@ -101,10 +101,10 @@ public class GameScreen implements Screen {
 		gravity.update(player1);
 		world.step(1/60f, 6, 2);
 		
-		player1.update(deltaTime,gravity);
+		player1.update(deltaTime,gravity, mapGen.mapObjects);
 		player1.checkMaxSpeed();
 		for(Actor o : mapGen.mapObjects) {
-			o.update(deltaTime,gravity);
+			o.update(deltaTime,gravity,mapGen.mapObjects);
 			o.checkMaxSpeed();
 		}
 		

@@ -1,5 +1,7 @@
 package Objects;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -37,7 +39,7 @@ public class Cube extends Actor {
     }
     
     @Override
-    public void update(float deltaTime, GravityHandler gravity) {
+    public void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) {
     	//Texture & Box2D Object position og rotation varierer basert på gravitasjons-retningen
     			switch (gravity.worldGravity) {
     			case DOWN:
