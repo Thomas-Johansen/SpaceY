@@ -12,6 +12,7 @@ import enums.Life;
 import enums.PadSensor;
 import gameLogic.GravityHandler;
 import inf112.skeleton.app.PlatformGame;
+import scenes.Hud;
 
 /**
  * A simple cube that the player can move
@@ -78,6 +79,7 @@ public class PressurePad extends Actor {
 	public void activated() {
 		sensor = PadSensor.Active;
 		System.out.println("Pressure Pad has been activated");
+		Hud.addScore(1);
 		
 	}
 }

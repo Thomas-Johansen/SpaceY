@@ -22,16 +22,20 @@ public class Hud {
 	private String player;
 	private String world;
 	private String console;
+	private static Integer score;
 	
 	Label playerGravityLabel;
 	Label worldGravityLabel;
 	Label playerGravity;
 	Label worldGravity;
 	Label gameConsole;
+	Label scoreLabel;
+	static Label scoreCount;
 	
 	public Hud(SpriteBatch sprite) {
 		player = "Down";
 		world = "Down";
+		score = 0;
 		console = "Test text som blir lengre og lengre og lengre";
 		
 		viewport = new FitViewport(PlatformGame.V_Width, PlatformGame.V_Height, new OrthographicCamera());
@@ -44,6 +48,8 @@ public class Hud {
 		LabelStyle font = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
 		playerGravityLabel = new Label("Player", font);
 		worldGravityLabel = new Label("World", font);
+		scoreLabel = new Label("Score", font);
+		scoreCount = new Label(String.format("%03d", score),  font);
 		playerGravity = new Label(player, font);
 		worldGravity = new Label(world, font);
 		gameConsole = new Label(console,font);
@@ -51,9 +57,11 @@ public class Hud {
 		//Orienterer hud elementer
 		table.add(playerGravityLabel).expandX().padTop(10);
 		table.add(worldGravityLabel).expandX().padTop(10);
+		table.add(scoreLabel).expandX().padTop(5);
 		table.row();
 		table.add(playerGravity).expandX();
 		table.add(worldGravity).expandX();
+		table.add(scoreCount).expandX();
 
 		//Console for å sende tekst til spilleren ingame
 		Table consoleTable = new Table();
@@ -69,5 +77,10 @@ public class Hud {
 		playerGravity.setText(Gravity.convertGravity(gravity.playerGravity));
 		worldGravity.setText(Gravity.convertGravity(gravity.worldGravity));
 		gameConsole.setText(message);
+	}
+	
+	public static void addScore(int value) {
+		score += value;
+		scoreCount.setText(String.format("%03d", score));
 	}
 }
