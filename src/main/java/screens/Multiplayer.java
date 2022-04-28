@@ -94,9 +94,12 @@ public class Multiplayer implements Screen {
 		world.step(1/60f, 6, 2);
 		
 		player1.update(deltaTime,gravity);
+		player1.checkMaxSpeed();
 		player2.update(deltaTime,gravity);
+		player2.checkMaxSpeed();
 		for(Actor o : mapGen.mapObjects) {
 			o.update(deltaTime,gravity);
+			o.checkMaxSpeed();
 		}
 		
 		

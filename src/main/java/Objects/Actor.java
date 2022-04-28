@@ -36,5 +36,14 @@ public abstract class Actor extends Sprite {
 	public abstract void actorAttributes(Vector2 spawn) ;
 	
 	public abstract void update(float deltaTime, GravityHandler gravity) ;
+	
+	
+	public void checkMaxSpeed() {
+		int max = 4;
+				if(Box2DBody.getLinearVelocity().x > max) Box2DBody.setLinearVelocity(max, Box2DBody.getLinearVelocity().y);
+				if(Box2DBody.getLinearVelocity().x < -max)Box2DBody.setLinearVelocity(-max, Box2DBody.getLinearVelocity().y);
+				if(Box2DBody.getLinearVelocity().y > max) Box2DBody.setLinearVelocity(Box2DBody.getLinearVelocity().x, max);
+				if(Box2DBody.getLinearVelocity().y < -max) Box2DBody.setLinearVelocity(Box2DBody.getLinearVelocity().x, -max);
+	}
 
 }
