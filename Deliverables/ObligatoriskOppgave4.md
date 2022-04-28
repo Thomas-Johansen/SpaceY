@@ -23,7 +23,7 @@ Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf1
 
 Pga lite tid mellom oblig2 og oblig3 har det skjedd lite foradringer i gruppen og på fremgangsmetodene. Derfor vil deler av svarene under vil være like svarene fra oblig2.  
 
-**Roller i teamet** - ingen forandring  
+**Roller i teamet** - Rollene i teamet funger i stor grad på samme måte som tidligere. Det har sjkedd en liten forandring i rollene ettersom vi nærmer oss slutten av prosjektet. Thomas J har tatt på seg en liten rolle som teamleder og tar for seg oppgaven om å holde flyten i laget. Thomas J har god oversikt over koden og kan derfor lage en strukturet plan for hva som må gjøres samt fordel ut oppgaver enklere. Daniel har også påtatt seg ansvar for testing av kode.  
 
 **Erfaringer så langt**  
 Den grunnleggende strukturen av prosjektet og koden er nå på plass. Med dette i boks har vi erfart at vider arbeid og fordeling av oppgaver er enklere. Vi har finnet en god flyt og med en oversikt over oppgaver i project board er det enkel å plukke det man måtte ønske å jobbe med. Vi har også funnet ut at fysiske gruppemøter er foretrukket ovenfor digitale. Fysisk oppmøte føles mer ordentlig ut samtidig som det hjelper på gruppedynamikken og se hverandre ansikt til ansikt.  
@@ -37,28 +37,22 @@ Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøte
 ## Oppsummering (prosjekt-retrospektiv)  
 
 **Forandringer/fremgang fra sist innlevering**  
-- MainMenuScreen oppdatert med nye knapper og fikset.  
-- Grunnleggende implementasjon av singeplayer og multiplayer.  
-- Grunnleggende versjon av enemy som kan drepe spiller.  
-- Hud er oppdatert og fungerende.
-- Rydding og flytting av kode til eksterne klasser.  
+- EnemyAI er implementert (Alien beveger seg frem og tilbake).  
+- Tutorial bane er laget som går igjennom hvordan spille fungerer.  
+- Nytt spillobjekt lagt til (GravityPad: Sensor som forandrer retningen på gravitasjonen).  
+- Flere og bedre tester har blitt laget.  
+- Spillobjekt kan nå spawnes på kartet via Tiled.
+- Ny pixelart på kartene.    
 
 **Vurdering av MVP kravene**  
-Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forrige er ferdig). Poeng har vi enda ikke implementert ettersom at vi ikke er sikkre på om vi skal basere spillet rundt poeng. Nye kart og forskjellige lvls vil bli implementert når alt det grunnleggende er ferdig.
+Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forrige er ferdig). Vi har valgt å ikke ha med poeng ettersom at vi ikke ønsker å basere spillet rundt poeng. Nye kart og forskjellige lvls var noe vi ikke rakk å starte ordentlig på.
 
 **Forbedringspunkter**  
 
-1) Vi har enda ikke laget sikkelige tester. Til neste innlevering skal vi få laget flere.  
+1) 
 
-2) Dokumentasjon av kode
+2) 
   
 
-**Implementasjoner som ikke ble klare til denne innleveringen**  
-- Mangelvare på ordentlige tester. 
-- Vi fikk stort sett unnagjort det meste som var planlagt til denne obligen, men mye er vedlig grunnleggende og i en tidlig implementasjonsfase.
-   
-**Implementasjoner vi ønsker skal være klare til neste innlevering**   
-- Flere tester.
-- Spawne entities via tiled.
-- Bygge videre enemy AI.
-- Ordentlige fungerende kart / lvls med hensikt. 
+**Implementasjoner som vi ikke ble ferdig med**  
+- 
