@@ -53,6 +53,8 @@ Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forri
 
 2) 
   
+**Stretch Goal**  
+Gjennom prosjektet og utviklingen av spillet har vi hatt som formål å ha gravitasjoen som stretch goal. Tanken bak spillet var å lage et puzzle game
 
 **Implementasjoner som vi ikke ble ferdig med**  
 - 
