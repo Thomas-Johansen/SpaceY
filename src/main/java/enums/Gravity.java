@@ -11,13 +11,27 @@ public enum Gravity {
 		case DOWN:
 			return "Down";
 		case UP:
-			return "UP";
+			return "Up";
 		case LEFT:
-			return "LEFT";
+			return "Left";
 		case RIGHT:
-			return "RIGHT";
+			return "Right";
 		default:
 			return "Down";		
+		}
+	}
+	public static Gravity convertString(String gravity) {
+		switch(gravity) {
+		case "Down":
+			return DOWN;
+		case "Up":
+			return UP;
+		case "Left":
+			return LEFT;
+		case "Right":
+			return RIGHT;
+		default:
+			return DOWN;		
 		}
 	}
 }

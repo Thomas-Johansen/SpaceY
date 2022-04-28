@@ -1,5 +1,7 @@
 package Objects;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -13,10 +15,10 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import SpaceY.PlatformGame;
 import enums.Gravity;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
-import inf112.skeleton.app.PlatformGame;
 
 public abstract class Actor extends Sprite {
 	final double PI = 3.1415;
@@ -35,6 +37,15 @@ public abstract class Actor extends Sprite {
 	
 	public abstract void actorAttributes(Vector2 spawn) ;
 	
-	public abstract void update(float deltaTime, GravityHandler gravity) ;
+	public abstract void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) ;
+	
+	
+	public void checkMaxSpeed() {
+		int max = 4;
+				if(Box2DBody.getLinearVelocity().x > max) Box2DBody.setLinearVelocity(max, Box2DBody.getLinearVelocity().y);
+				if(Box2DBody.getLinearVelocity().x < -max)Box2DBody.setLinearVelocity(-max, Box2DBody.getLinearVelocity().y);
+				if(Box2DBody.getLinearVelocity().y > max) Box2DBody.setLinearVelocity(Box2DBody.getLinearVelocity().x, max);
+				if(Box2DBody.getLinearVelocity().y < -max) Box2DBody.setLinearVelocity(Box2DBody.getLinearVelocity().x, -max);
+	}
 
 }
