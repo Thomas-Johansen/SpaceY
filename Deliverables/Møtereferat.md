@@ -38,6 +38,8 @@ MainMenuScreen er nå oppdatert med nye knapper (singleplayer, multiplayer og ex
   
 ### Møte - 22/04/2022  
 **Deltagelse:** Daniel, Thomas J  
+
+**Diskusjon og progresjon under møte**  
 Diskuterte fordeling av oppgaver for siste uken, de vkktigste gjennverende oppgavene ble oppsumert til:  
 Tester  
 Kamera  
@@ -62,5 +64,20 @@ Hadde et kort møte med Thomas L senere på kvelden, han tok på seg å jobbe me
 Level design blir sannsynligvis på felles når alt annet er ferdig.
 
 ### Møte - 26/04/2022  
+**Deltagelse:** Daniel, Thomas J, Thomas L 
+
+**Diskusjon og progresjon under møte**  
+Spillobjekter kan nå spawnes vi Tield. Den første banene/lvlen er ferdig med tutorial på hvordan spille fungerer. Tester for noen av spilleobjekten er også på plass.  
+
+### Møte - 27/04/2022  
+Digitalt   
 **Deltagelse:** Daniel, Thomas J, Thomas L  
 
+**Diskusjon og progresjon under møte**  
+EnemyAI er nå implementert. Alien beveger seg frem og tilbake ettersom når den kolliderer med et objekt. Ailen hvil også rotere og bevege seg på vegger og i tak ettersom at gravitasjoen forandrer seg. PressurePad sensor objektet er laget, men ikke ferdig implementert.   
+
+### Møte - 28/04/2022  
+Digitalt   
+**Deltagelse:** Daniel, Thomas J, Thomas L  
+
+**Diskusjon og progresjon under møte**  
