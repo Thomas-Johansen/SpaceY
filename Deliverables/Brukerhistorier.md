@@ -117,3 +117,11 @@ Akseptansekriterie for B12:
 Arbeidsoppgaver: 
 - Implementere en enemyAI hvor Ailen beveger seg frem og tilbake.
 - Sørge for at Alien snur retning ettersom den kolliderer med objekter.
+
+**B13: Som utvikler ønsker jeg å kunne spawne spillobjekter på kartet via Tiled.**
+
+Akseptansekriterie for B13:  
+- Spillobjekter kan plasserers på kartet via Tiled (Ikke spawne objekter med kode)
+
+Arbeidsoppgaver: 
+- Implementere muligheten til å spawne objekter via Tiled
