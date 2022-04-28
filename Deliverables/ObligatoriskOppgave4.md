@@ -32,24 +32,22 @@ Pga lite tid mellom oblig2 og oblig3 har det skjedd lite foradringer i gruppen o
 
 - Vi har gjennom prosjektet valgt å ikke ha faste roller, men heller fokkusere på en gjevn fordeling av oppgaver. Måten dette ble gjennomført på har i stor grad vært bra utenom en litt ujevn fordelig av selve kodingen.  
 
-**Gruppedynamikken**  
-Gruppen kommer godt overens. Vi har enda ikke møtt på noen enorme utfordringer innad i gruppen. Det som kan være verdt å nevne er at vi har mistet et gruppemedlem. Et mindre medlem i gruppen øker arbeidsmengden ovenfor resten. Så langt har dette godt fint og blitt håndtert på en god måte av gruppen.
-
-**Kommunikasjonen i gruppen**  
-Alt i alt er det god kommunikasjon i gruppen. Gruppen har to fysiske gruppemøter i uken (tirsdag og torsdag). Under de fysiske møtene legger vi frem ting vi har jobbet med samt foreslår nye ting vi kan jobbe med videre. Utenom de fysiske gruppemøtene foregår kommunikasjonen over discord. Her legger vi ofte ut statuser på det vi jobber med samt planlegger de fysiske gruppemøtene.  
+**Gruppedynamikken og kommunikasjon i gruppen**  
+Gruppedynamikken har i liten grad forandret seg gjennom prosjektet. kommunikasjonen har også vært god både over Discord og på de fysike møtene.  
 
 ## Oppsummering (prosjekt-retrospektiv)  
 
 **Forandringer/fremgang fra sist innlevering**  
 - EnemyAI er implementert (Alien beveger seg frem og tilbake).  
 - Tutorial bane er laget som går igjennom hvordan spille fungerer.  
+- Oppdatert kart for multiplayer.
 - Nytt spillobjekt lagt til (GravityPad: Sensor som forandrer retningen på gravitasjonen).  
 - Flere og bedre tester har blitt laget.  
 - Spillobjekt kan nå spawnes på kartet via Tiled.
 - Ny pixelart på kartene. 
 
 **Hvordan har prosjektet gått**   
-Med tanke på at vi bare er tre på gruppen er vi alt i alt fornøyd med sluttresultatet og arbeidet undervesi.
+Med tanke på at vi er et lite team på tre er vi fornøyd med sluttresultatet på spillet og fremgangen underveis.
 
 **Vurdering av MVP kravene**  
 Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forrige er ferdig). Vi har valgt å ikke ha med poeng ettersom at vi ikke ønsker å basere spillet rundt poeng. Nye kart og forskjellige lvls var noe vi ikke rakk å starte ordentlig på.
