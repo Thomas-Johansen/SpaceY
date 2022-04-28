@@ -1,5 +1,7 @@
 package Objects;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -7,8 +9,8 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+import SpaceY.PlatformGame;
 import gameLogic.GravityHandler;
-import inf112.skeleton.app.PlatformGame;
 
 import javax.swing.*;
 
@@ -38,7 +40,7 @@ public class Alien extends Enemy {
     }
     
     @Override
-    public void update(float deltaTime, GravityHandler gravity) {
+    public void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) {
     	//Texture & Box2D Object position og rotation varierer basert på gravitasjons-retningen
     			switch (gravity.worldGravity) {
     			case DOWN:
@@ -55,13 +57,13 @@ public class Alien extends Enemy {
     				break;
     			case LEFT:
     				setRotation(270);
-    				setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 3 );
+    				setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y + getHeight() / 2 );
     				Box2DBody.setTransform(Box2DBody.getPosition(), (float) ((3*PI)/2));
 					if (!gravity.isMovingMax(this)) Box2DBody.applyLinearImpulse(velocity2,Box2DBody.getWorldCenter(),true);
     				break;
     			case RIGHT:
     				setRotation(90);
-    				setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 3 );
+    				setPosition(Box2DBody.getPosition().x + getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2 );
     				Box2DBody.setTransform(Box2DBody.getPosition(), (float) (PI/2));
 					if (!gravity.isMovingMax(this)) Box2DBody.applyLinearImpulse(velocity2,Box2DBody.getWorldCenter(),true);
     				break;
