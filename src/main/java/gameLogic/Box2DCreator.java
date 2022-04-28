@@ -15,6 +15,7 @@ import com.badlogic.gdx.physics.box2d.World;
 
 import Objects.Actor;
 import Objects.Alien;
+import Objects.Coin;
 import Objects.Cube;
 import Objects.Door;
 import Objects.Goal;
@@ -103,6 +104,11 @@ public class Box2DCreator {
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
 						mapObjects.add(new Goal(world, spawn));
+						break;
+					case "Coin": 
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						mapObjects.add(new Coin(world, spawn));
 						break;
 					default: 
 						break;

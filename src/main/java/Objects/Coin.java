@@ -23,7 +23,7 @@ import scenes.HudM;
 public class Coin extends Actor {
 	
 	public Coin(World world, Vector2 spawn) {
-		super(world, new Texture("src/main/resources/assets/ObjectArt/Cube.png"), spawn);
+		super(world, new Texture("src/main/resources/assets/ObjectArt/Coin.png"), spawn);
 		setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2);
 		Box2DBody.setUserData(this);
 	}
