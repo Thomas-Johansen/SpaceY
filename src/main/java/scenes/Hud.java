@@ -67,6 +67,13 @@ public class Hud {
 	
 	public void update(GravityHandler gravity, String message) {
 		playerGravity.setText(Gravity.convertGravity(gravity.playerGravity));
+		if (gravity.playerToggle) {
+			playerGravity.setColor(Color.YELLOW);
+			playerGravityLabel.setColor(Color.YELLOW);
+		} else {
+			playerGravity.setColor(Color.WHITE);
+			playerGravityLabel.setColor(Color.WHITE);
+		}
 		worldGravity.setText(Gravity.convertGravity(gravity.worldGravity));
 		gameConsole.setText(message);
 	}

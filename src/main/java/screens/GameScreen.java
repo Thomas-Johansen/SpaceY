@@ -134,10 +134,10 @@ public class GameScreen implements Screen {
         //Texture render
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
-        player1.draw(game.batch);
         for(Actor o : mapGen.mapObjects) {
 			o.draw(game.batch);
 		}
+        player1.draw(game.batch);
         game.batch.end();
         hud.stage.draw();
 	}

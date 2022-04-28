@@ -117,14 +117,14 @@ public class Multiplayer implements Screen {
         b2dr.render(world, gamecam.combined);
         
         
-        //Texture render test for spiller
+   
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
-        player1.draw(game.batch);
-        player2.draw(game.batch);
         for(Actor o : mapGen.mapObjects) {
 			o.draw(game.batch);
 		}
+        player1.draw(game.batch);
+        player2.draw(game.batch);
         game.batch.end();
 	}
 
