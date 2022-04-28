@@ -108,4 +108,12 @@ Arbeidsoppgaver:
 
 ## Oblig4  
 
+**B12: Som spiller ønsker jeg at det enemies har en from for bevegelse.**
 
+Akseptansekriterie for B12:  
+- Alien har en AI som gjør at den flytter på seg.  
+- Alien kan kolliderer med objektene på karten og bevege seg i hendhold. 
+
+Arbeidsoppgaver: 
+- Implementere en enemyAI hvor Ailen beveger seg frem og tilbake.
+- Sørge for at Alien snur retning ettersom den kolliderer med objekter.
