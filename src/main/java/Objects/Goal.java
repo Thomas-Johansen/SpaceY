@@ -12,14 +12,15 @@ import com.badlogic.gdx.physics.box2d.World;
 import SpaceY.PlatformGame;
 import gameLogic.GravityHandler;
 
-public class Door extends Actor {
-	private int ID;
+public class Goal extends Actor {
 
-	public Door(World world, Vector2 spawn, int ID) {
-		super(world, new Texture("src/main/resources/assets/ObjectArt/Door.png"), spawn);
-		setPosition(Box2DBody.getPosition().x - getWidth() / 2, Box2DBody.getPosition().y - getHeight() / 2);
-		this.ID = ID;
-
+	/**
+	 * Goal register for each level
+	 * */
+	public Goal(World world, Vector2 spawn) {
+		super(world, new Texture("src/main/resources/assets/ObjectArt/Elon.png"), spawn);
+		setAlpha(0);
+		Box2DBody.setUserData(this);
 	}
 
 	@Override
@@ -32,30 +33,16 @@ public class Door extends Actor {
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(16/ PlatformGame.PPM, 16 / PlatformGame.PPM);
+		poly.setAsBox(64/ PlatformGame.PPM, 64 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
+		fixtureDef.isSensor = true;
 		fixture = Box2DBody.createFixture(fixtureDef);
-		
-		
 	}
 
 	@Override
 	public void update(float deltaTime, GravityHandler gravity, ArrayList<Actor> mapObjects) {
-		boolean buttonPressed = true;
-		for (Actor o : mapObjects) {
-			if (o instanceof PressurePlate && ((PressurePlate) o).padID == ID) {
-				PressurePlate i = (PressurePlate) o;
-				if (!i.isActive) buttonPressed = false;
-			}
-		}
-		if (buttonPressed == true) {
-		fixture.setSensor(true);
-		setAlpha(0);
-		} else { 
-			fixture.setSensor(false);
-			setAlpha(1);
-			}
-		System.out.println(buttonPressed);
+
+		
 	}
 
 }

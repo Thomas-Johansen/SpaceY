@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 
 import Objects.Cube;
 import Objects.Enemy;
+import Objects.Goal;
 import Objects.GravityPad;
 import Objects.Player;
 import Objects.PressurePlate;
@@ -97,6 +98,17 @@ public class GameContactListener implements ContactListener {
 			if ((fixB.getBody().getUserData() instanceof Player || fixB.getBody().getUserData() instanceof Cube) && fixA.getBody().getUserData() instanceof PressurePlate) {
 				PressurePlate plate = (PressurePlate) fixA.getBody().getUserData();
 				plate.weight += 1;
+			}
+			
+			//Player reaches level goal
+			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Goal) {
+				Player player = (Player) fixA.getBody().getUserData();
+				player.hasWon = true;
+			}
+			
+			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Goal) {
+				Player player = (Player) fixB.getBody().getUserData();
+				player.hasWon = true;
 			}
 		
 	}

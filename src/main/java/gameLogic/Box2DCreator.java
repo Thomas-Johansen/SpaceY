@@ -17,6 +17,7 @@ import Objects.Actor;
 import Objects.Alien;
 import Objects.Cube;
 import Objects.Door;
+import Objects.Goal;
 import Objects.GravityPad;
 import Objects.Player;
 import Objects.PressurePlate;
@@ -97,6 +98,11 @@ public class Box2DCreator {
 						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
 						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
 						mapObjects.add(new Door(world, spawn, (int) object.getProperties().get("ID")));
+						break;
+					case "Goal": 
+						spawn.x = object.getRectangle().getX() / PlatformGame.PPM;
+						spawn.y = object.getRectangle().getY() / PlatformGame.PPM;
+						mapObjects.add(new Goal(world, spawn));
 						break;
 					default: 
 						break;
