@@ -38,7 +38,7 @@ public class Coin extends Actor {
 
         FixtureDef fixtureDef = new FixtureDef();
         PolygonShape poly = new PolygonShape();
-        poly.setAsBox(16 / PlatformGame.PPM, 6 / PlatformGame.PPM);
+        poly.setAsBox(10 / PlatformGame.PPM, 10 / PlatformGame.PPM);
         fixtureDef.shape = poly;
         fixtureDef.isSensor = true;
         fixture = Box2DBody.createFixture(fixtureDef);
