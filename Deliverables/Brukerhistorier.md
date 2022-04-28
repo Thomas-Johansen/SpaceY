@@ -105,3 +105,7 @@ Akseptansekriterie for B11:
 
 Arbeidsoppgaver: 
 - Implementere lydeffkter og musikk på de ulike gameScreenene
+
+## Oblig4  
+
+
