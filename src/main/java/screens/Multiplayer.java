@@ -3,6 +3,7 @@ package screens;
 
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -89,6 +90,7 @@ public class Multiplayer implements Screen {
 		}
 		if (!player2.isAlive()){
 		}
+		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new MainMenuScreen(game));
 			
 		input.input(deltaTime, player1, player2, world, gravity);
 		world.step(1/60f, 6, 2);
