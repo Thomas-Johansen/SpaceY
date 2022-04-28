@@ -32,7 +32,7 @@ public class Door extends Actor {
 		
 		FixtureDef fixtureDef = new FixtureDef();
 		PolygonShape poly = new PolygonShape();
-		poly.setAsBox(8/ PlatformGame.PPM, 16 / PlatformGame.PPM);
+		poly.setAsBox(16/ PlatformGame.PPM, 16 / PlatformGame.PPM);
 		fixtureDef.shape = poly;
 		fixture = Box2DBody.createFixture(fixtureDef);
 		
@@ -50,7 +50,11 @@ public class Door extends Actor {
 		}
 		if (buttonPressed == true) {
 		fixture.setSensor(true);
-		} else fixture.setSensor(false) ;
+		setAlpha(0);
+		} else { 
+			fixture.setSensor(false);
+			setAlpha(1);
+			}
 	}
 
 }
