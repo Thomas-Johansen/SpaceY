@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 
 import Objects.Cube;
 import Objects.Enemy;
+import Objects.Goal;
 import Objects.GravityPad;
 import Objects.Player;
 import Objects.PressurePlate;

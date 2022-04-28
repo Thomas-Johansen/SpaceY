@@ -57,7 +57,7 @@ public class GameScreen implements Screen {
 		gamecam = new OrthographicCamera();
 		gamePort = new FitViewport(PlatformGame.V_Width / PlatformGame.PPM, PlatformGame.V_Height / PlatformGame.PPM, gamecam);
 		hud = new Hud(game.batch);
-		currentLevel = 2;
+		currentLevel = 1;
 
 		//Box2D
 		switchLevel(currentLevel);
