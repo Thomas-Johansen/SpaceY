@@ -63,7 +63,7 @@ public class GameContactListener implements ContactListener {
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Enemy) {
 				Player player = (Player) fixA.getBody().getUserData();
 				Enemy enemy = (Enemy)    fixB.getBody().getUserData();
-				if(!enemy.alive) {
+				if(enemy.alive) {
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();
 				}
@@ -72,7 +72,7 @@ public class GameContactListener implements ContactListener {
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Enemy) {
 				Player player = (Player) fixB.getBody().getUserData();
 				Enemy enemy = (Enemy)    fixA.getBody().getUserData();
-				if(!enemy.alive) {
+				if(enemy.alive) {
 					Gdx.app.log("Player", "Hit by Enemy");
 					player.onHeadHit();
 				}
