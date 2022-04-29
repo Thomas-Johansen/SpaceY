@@ -1,5 +1,6 @@
 package gameLogic;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -9,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import Objects.Alien;
 import Objects.Coin;
 import Objects.Cube;
+import Objects.Enemy;
 import Objects.Goal;
 import Objects.GravityPad;
 import Objects.Player;
@@ -26,16 +28,6 @@ public class GameContactListener implements ContactListener {
 		Fixture fixA = contact.getFixtureA();
 		Fixture fixB = contact.getFixtureB();
 		
-			//Player head hit by cube
-			if (fixA.getUserData() =="head" && fixB.getBody().getUserData() instanceof Cube) {
-				Player player = (Player) fixA.getBody().getUserData();
-				player.onHeadHit();
-			}
-			
-			if (fixB.getUserData() == "head" && fixA.getBody().getUserData() instanceof Cube) {
-				Player player = (Player) fixB.getBody().getUserData();
-				player.onHeadHit();
-			}
 			
 			//Player head hit by player (Multiplayer)
 			if (fixA.getUserData() =="head" && fixB.getBody().getUserData() instanceof Player) {
@@ -66,13 +58,12 @@ public class GameContactListener implements ContactListener {
 				alien.onHeadHit();
 			}
 			
-			
-		/*
+		
 			//Player hit by alien
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Enemy) {
 				Player player = (Player) fixA.getBody().getUserData();
 				Enemy enemy = (Enemy)    fixB.getBody().getUserData();
-				if(!enemy.delete) {
+				if(!enemy.alive) {
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();
 				}
@@ -81,11 +72,11 @@ public class GameContactListener implements ContactListener {
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Enemy) {
 				Player player = (Player) fixB.getBody().getUserData();
 				Enemy enemy = (Enemy)    fixA.getBody().getUserData();
-				if(!enemy.delete) {
+				if(!enemy.alive) {
 					Gdx.app.log("Player", "Hit by Enemy");
 					player.onHeadHit();
 				}
-			} */
+			}
 
 			//Alien collide with wall
 		    if (fixA.getBody().getUserData() instanceof Alien) {

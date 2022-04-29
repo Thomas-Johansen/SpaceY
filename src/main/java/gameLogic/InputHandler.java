@@ -8,6 +8,12 @@ import Objects.Player;
 import enums.Gravity;
 
 public class InputHandler {
+	public boolean levelChanged;
+	public int level;
+	public InputHandler() {
+		levelChanged = false;
+		level = 1;
+	}
 	
 	
 	
@@ -32,10 +38,24 @@ public class InputHandler {
 		if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) gravity.setPlayerGravity(Gravity.LEFT, player1);
 		if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) gravity.setPlayerGravity(Gravity.RIGHT, player1);
 		
+		//Level change
+		if(Gdx.input.isKeyJustPressed(Input.Keys.NUM_1)) {
+			levelChanged = true;
+			level = 1;
+		}
+		if(Gdx.input.isKeyJustPressed(Input.Keys.NUM_2)) {
+			levelChanged = true;
+			level = 2;
+		}
+		if(Gdx.input.isKeyJustPressed(Input.Keys.NUM_3)) {
+			levelChanged = true;
+			level = 3;
+		}
+		if(Gdx.input.isKeyJustPressed(Input.Keys.NUM_4)) {
+			levelChanged = true;
+			level = 4;
+		}
 
-
-		//Temp
-		tempGravityChange( gravity, world);
 	}
 	
 	//Input for multiplayer
@@ -63,21 +83,8 @@ public class InputHandler {
 		if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && !gravity.isMovingMax(player2)) {
 			player2.Box2DBody.applyLinearImpulse(gravity.getLeft(), player2.Box2DBody.getWorldCenter(), true);
 		}
+
 		
-		//Temp
-		tempGravityChange( gravity, world);
-		
-	}
-	
-	/**
-	 * Temporary method for changing world gravity for testing purposes
-	 * */
-	
-	public void tempGravityChange(GravityHandler gravity, World world){
-		if(Gdx.input.isKeyJustPressed(Input.Keys.I)) gravity.setWorldGravity(Gravity.UP, world);
-		if(Gdx.input.isKeyJustPressed(Input.Keys.K)) gravity.setWorldGravity(Gravity.DOWN, world);
-		if(Gdx.input.isKeyJustPressed(Input.Keys.J)) gravity.setWorldGravity(Gravity.LEFT, world);
-		if(Gdx.input.isKeyJustPressed(Input.Keys.L)) gravity.setWorldGravity(Gravity.RIGHT, world);
 	}
 
 }
