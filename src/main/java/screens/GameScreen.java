@@ -96,7 +96,11 @@ public class GameScreen implements Screen {
 			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) switchLevel(currentLevel);
 		}else if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new MainMenuScreen(game));
 		 else {
-		if (input.levelChanged) switchLevel(input.level);
+		if (input.levelChanged) {
+			currentLevel = input.level;
+			switchLevel(input.level);
+			
+		} 
 			 
 		input.input(deltaTime, player1, world, gravity);
 		gravity.update(player1);
