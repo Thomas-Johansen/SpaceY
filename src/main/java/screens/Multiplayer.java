@@ -32,7 +32,7 @@ public class Multiplayer implements Screen {
 	private Viewport gamePort;
 	private HudM hudm;
 	private String consoleOutput;
-	
+	private boolean hasStarted;
 	private TmxMapLoader maploader;
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
@@ -66,6 +66,7 @@ public class Multiplayer implements Screen {
 		world.setContactListener(new GameContactListener());
 		player1 = mapGen.player1;
 		player2 = mapGen.player2;
+		hasStarted = false;
 
 		//GameLogic
 		input = new InputHandler();
@@ -81,12 +82,25 @@ public class Multiplayer implements Screen {
 	}
 	
 	public void update(float deltaTime) {
+		consoleOutput = "";
 		//Cases for å skjekke om en av spillerne har vunnet
-		if (!player1.isAlive()){
+		if(!hasStarted) {
+			consoleOutput = "First player to 15 points win, jump on the others head to steal 1";
+			hudm.update(player1, player2, consoleOutput);
+			if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) hasStarted = true;
 		}
-		if (!player2.isAlive()){
+		else if (player1.hasWon){
+			consoleOutput = "Player 1 wins!";
+			hudm.update(player1, player2, consoleOutput);
+			if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
 		}
-		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new MainMenuScreen(game));
+		else if (player2.hasWon){
+			consoleOutput = "Player 2 wins!";
+			hudm.update(player1, player2, consoleOutput);
+			if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) game.setScreen(new MainMenuScreen(game));
+		}
+		else if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new MainMenuScreen(game));
+		else {
 			
 		input.input(deltaTime, player1, player2, world, gravity);
 		world.step(1/60f, 6, 2);
@@ -104,6 +118,7 @@ public class Multiplayer implements Screen {
 		gamecam = camera.Update(gamecam, player1, player2, gravity);
 		gamecam.update();
 		renderer.setView(gamecam);
+		}
 	}
 	
 	@Override
@@ -112,12 +127,7 @@ public class Multiplayer implements Screen {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
         renderer.render();
-        
-        //Viser linjer rundt Box2D render, skal fjernes når spillet er ferdig
-        b2dr.render(world, gamecam.combined);
-        
-        
-   
+ 
         game.batch.setProjectionMatrix(gamecam.combined);
         game.batch.begin();
         for(Actor o : mapGen.mapObjects) {

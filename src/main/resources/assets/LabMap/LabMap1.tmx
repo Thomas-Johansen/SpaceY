@@ -197,10 +197,5 @@
     <property name="Name" value="Goal"/>
    </properties>
   </object>
-  <object id="61" x="672" y="544" width="32" height="32">
-   <properties>
-    <property name="Name" value="Alien"/>
-   </properties>
-  </object>
  </objectgroup>
 </map>

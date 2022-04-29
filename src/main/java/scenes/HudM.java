@@ -41,8 +41,8 @@ public class HudM {
 		table.setFillParent(true);
 		//Gir table elementene font og farge
 		LabelStyle font = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
-		player1TxtLabel = new Label("Player1", font);
-		player2TxtLabel = new Label("Player2", font);
+		player1TxtLabel = new Label("Player 1", font);
+		player2TxtLabel = new Label("Player 2", font);
 		player1ScoreLabel = new Label(String.format("%03d", player1), font);
 		player2ScoreLabel = new Label(String.format("%03d", player2), font);
 		gameConsole = new Label(console,font);

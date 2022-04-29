@@ -85,6 +85,8 @@ public class Player extends Actor {
 			Box2DBody.setTransform(Box2DBody.getPosition(), (float) (PI/2));
 			break;
 		}	
+		
+		if (points >= 15) hasWon = true;
 	}
 
 	public Boolean isAlive() {
