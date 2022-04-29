@@ -1,5 +1,7 @@
 package screens;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -61,12 +63,6 @@ public class GameScreen implements Screen {
 
 		//Box2D
 		switchLevel(currentLevel);
-		world.setContactListener(new GameContactListener());
-
-		//GameLogic
-		input = new InputHandler();
-		gravity = new GravityHandler();
-		camera = new CameraHandler(player1);
 	}
 	
 	public void switchLevel(int level) {
@@ -77,6 +73,12 @@ public class GameScreen implements Screen {
 		b2dr = new Box2DDebugRenderer();
 		mapGen = new Box2DCreator(world, map);
 		player1 = mapGen.player1;
+		
+		//GameLogic
+		input = new InputHandler();
+		gravity = new GravityHandler();
+		camera = new CameraHandler(player1);
+		world.setContactListener(new GameContactListener());
 	}
 	
 
@@ -97,7 +99,7 @@ public class GameScreen implements Screen {
 			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) switchLevel(currentLevel);
 		}else if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) game.setScreen(new MainMenuScreen(game));
 		 else {
-		
+			 
 		input.input(deltaTime, player1, world, gravity);
 		gravity.update(player1);
 		world.step(1/60f, 6, 2);
@@ -122,6 +124,7 @@ public class GameScreen implements Screen {
 		renderer.setView(gamecam);
 		}
 	}
+
 	
 	@Override
 	public void render(float delta) {

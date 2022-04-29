@@ -41,7 +41,7 @@ public abstract class Actor extends Sprite {
 	
 	
 	public void checkMaxSpeed() {
-		int max = 4;
+		int max = 5;
 				if(Box2DBody.getLinearVelocity().x > max) Box2DBody.setLinearVelocity(max, Box2DBody.getLinearVelocity().y);
 				if(Box2DBody.getLinearVelocity().x < -max)Box2DBody.setLinearVelocity(-max, Box2DBody.getLinearVelocity().y);
 				if(Box2DBody.getLinearVelocity().y > max) Box2DBody.setLinearVelocity(Box2DBody.getLinearVelocity().x, max);

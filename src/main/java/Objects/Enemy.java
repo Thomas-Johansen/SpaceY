@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import gameLogic.GravityHandler;
 
 public class Enemy extends Actor {
+	public boolean alive;
 
 	/**
 	 * This class mainly serves as a middle point for spesific enemies and actors.

@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 
 import Objects.Actor;
+import Objects.Alien;
 import Objects.Player;
 import enums.Gravity;
 
@@ -151,18 +152,29 @@ public class GravityHandler {
 			}
 			return true;
 		}
+		
+		
+		/**
+		 * Sets the max non-falling speed an actor can accelerate to.
+		 * In the case of a player, we need to check if the player has own gravity turend on.
+		 * */
 		public Boolean isMovingMax(Actor actor) {
+			int speedlimit = 2;
+			if (actor instanceof Alien) speedlimit = 1;
 			Gravity switchGrav;
-			if (playerToggle) switchGrav = playerGravity; else switchGrav = worldGravity;
+			if(actor instanceof Player) {
+				if (playerToggle) switchGrav = playerGravity; else switchGrav = worldGravity;
+			} else switchGrav = worldGravity;
+			
 			switch(switchGrav) {
 			case DOWN:
 			case UP:
-				if (actor.Box2DBody.getLinearVelocity().x > 2 || actor.Box2DBody.getLinearVelocity().x < -2) {
+				if (actor.Box2DBody.getLinearVelocity().x > speedlimit || actor.Box2DBody.getLinearVelocity().x < -speedlimit) {
 					return true;
 				}
 			case LEFT:
 			case RIGHT:
-				if (actor.Box2DBody.getLinearVelocity().y > 2 || actor.Box2DBody.getLinearVelocity().y < -2) {
+				if (actor.Box2DBody.getLinearVelocity().y > speedlimit || actor.Box2DBody.getLinearVelocity().y < -speedlimit) {
 					return true;
 				}	
 			}

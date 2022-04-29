@@ -33,28 +33,63 @@ public class GameContactListener implements ContactListener {
 			//Player head hit by cube
 			if (fixA.getUserData() =="head" && fixB.getBody().getUserData() instanceof Cube) {
 				Player player = (Player) fixA.getBody().getUserData();
-				Gdx.app.log("Player", "Hit in head");
 				player.onHeadHit();
 			}
 			
 			if (fixB.getUserData() == "head" && fixA.getBody().getUserData() instanceof Cube) {
 				Player player = (Player) fixB.getBody().getUserData();
-				Gdx.app.log("Player", "Hit in head");
 				player.onHeadHit();
 			}
-		
+			
+			//Player head hit by player (Multiplayer)
+			if (fixA.getUserData() =="head" && fixB.getBody().getUserData() instanceof Player) {
+				Player player = (Player) fixA.getBody().getUserData();
+				Player player2 = (Player) fixB.getBody().getUserData();
+				if (player.points > 0) {
+					player.points -= 1;
+					player2.points += 1;
+				}
+			}
+			if (fixB.getUserData() == "head" && fixA.getBody().getUserData() instanceof Player) {
+				Player player = (Player) fixB.getBody().getUserData();
+				Player player2 = (Player) fixA.getBody().getUserData();
+				if (player.points > 0) {
+					player.points -= 1;
+					player2.points += 1;
+				}
+			}
+			
+			//Alien head hit by player
+			if (fixA.getUserData() =="alienHead" && fixB.getBody().getUserData() instanceof Player) {
+				Alien alien = (Alien) fixA.getBody().getUserData();
+				alien.onHeadHit();
+			}
+			
+			if (fixB.getUserData() == "alienHead" && fixA.getBody().getUserData() instanceof Player) {
+				Alien alien = (Alien) fixB.getBody().getUserData();
+				alien.onHeadHit();
+			}
+			
+			
+		/*
 			//Player hit by alien
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof Enemy) {
 				Player player = (Player) fixA.getBody().getUserData();
+				Enemy enemy = (Enemy)    fixB.getBody().getUserData();
+				if(!enemy.delete) {
 				Gdx.app.log("Player", "Hit by Enemy");
 				player.onHeadHit();
+				}
 			}
 			
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof Enemy) {
 				Player player = (Player) fixB.getBody().getUserData();
-				Gdx.app.log("Player", "Hit by Enemy");
-				player.onHeadHit();
-			}
+				Enemy enemy = (Enemy)    fixA.getBody().getUserData();
+				if(!enemy.delete) {
+					Gdx.app.log("Player", "Hit by Enemy");
+					player.onHeadHit();
+				}
+			} */
 
 			//Alien collide with wall
 		    if (fixA.getBody().getUserData() instanceof Alien) {
@@ -83,12 +118,10 @@ public class GameContactListener implements ContactListener {
 			//Player steps on gravity pad
 			if (fixA.getBody().getUserData() instanceof Player && fixB.getBody().getUserData() instanceof GravityPad) {
 				GravityPad gravity = (GravityPad) fixB.getBody().getUserData();
-				Gdx.app.log("Gravity", Gravity.convertGravity(gravity.padDirection));
 				gravity.isPressed = true;
 			}
 			if (fixB.getBody().getUserData() instanceof Player && fixA.getBody().getUserData() instanceof GravityPad) {
 				GravityPad gravity = (GravityPad) fixA.getBody().getUserData();
-				Gdx.app.log("Gravity", Gravity.convertGravity(gravity.padDirection));
 				gravity.isPressed = true;
 			}
 			

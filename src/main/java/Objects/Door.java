@@ -55,7 +55,6 @@ public class Door extends Actor {
 			fixture.setSensor(false);
 			setAlpha(1);
 			}
-		System.out.println(buttonPressed);
 	}
 
 }
