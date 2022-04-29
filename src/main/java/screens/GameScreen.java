@@ -136,8 +136,7 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
         renderer.render();
         
-        //Viser linjer rundt Box2D render, skal fjernes når spillet er ferdig
-        b2dr.render(world, gamecam.combined);
+
         
         
         //Texture render
