@@ -30,6 +30,8 @@ Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf1
 
 - Vi har gjennom prosjektet valgt å ikke ha faste roller, men heller fokkusere på en gjevn fordeling av oppgaver. Måten dette ble gjennomført på har i stor grad vært bra utenom en litt ujevn fordelig av selve kodingen.  
 
+- Gjennom prosjektet har vi ikke fulgt noen bestemt prosjektmetodikk. Fra Kanban har vi hentet "issues board". Her valgte vi brukt "Issues board" i Gitlab-prosjektet. Tanken bak dette var å samle mesteparten av prosjektet på et sted (gjør det mer oversiktlig). Issuue boardet ble brukt aktvit gjennom prosjektet hvor vi kunne plukke og dele ut oppgaver. Dette konseptet vil vi si var en stor suksess.
+
 **Gruppedynamikken og kommunikasjon i gruppen**  
 Gruppedynamikken har i liten grad forandret seg gjennom prosjektet. kommunikasjonen har også vært god både over Discord og på de fysike møtene.  
 
