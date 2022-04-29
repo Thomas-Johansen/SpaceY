@@ -65,18 +65,18 @@ Level design blir sannsynligvis på felles når alt annet er ferdig.
 **Deltagelse:** Daniel, Thomas J, Thomas L 
 
 **Diskusjon og progresjon under møte**  
-Spillobjekter kan nå spawnes vi Tield. Den første banene/lvlen er ferdig med tutorial på hvordan spille fungerer. Tester for noen av spilleobjekten er også på plass.  
+Spillobjekter kan nå spawnes vi Tiled. Den første banene/lvlen er ferdig med tutorial på hvordan spille fungerer. Tester for noen av spilleobjekten er også på plass.  
 
 ### Møte - 27/04/2022  
 Digitalt   
 **Deltagelse:** Daniel, Thomas J, Thomas L  
 
 **Diskusjon og progresjon under møte**  
-EnemyAI er nå implementert. Alien beveger seg frem og tilbake ettersom når den kolliderer med et objekt. Ailen hvil også rotere og bevege seg på vegger og i tak ettersom at gravitasjoen forandrer seg. PressurePad sensor objektet er laget, men ikke ferdig implementert.   
+EnemyAI er nå implementert. Alien beveger seg frem og tilbake ettersom når den kolliderer med et objekt. Ailen vil også rotere og bevege seg på vegger og i tak ettersom at gravitasjoen forandrer seg. PressurePad sensor objektet er laget, men ikke ferdig implementert.   
 
 ### Møte - 28/04/2022  
 Digitalt   
 **Deltagelse:** Daniel, Thomas J, Thomas L  
 
 **Diskusjon og progresjon under møte**  
-PressurePad som åpner dør har blitt implementert. Coin objekt er ferdig laget. Dette vil bli brukt i multiplayer hvor objektet er å smale flest coins. Huden til mulitplayer har da også blitt oppdatert med en oversikt over score. Videre arbeider vi opp mot siste innspurt av prosjekt innleverinegn og desgine av nye kart.
+PressurePad som åpner dør har blitt implementert. Coin objekt er ferdig laget. Dette vil bli brukt i multiplayer hvor objektet er å samle flest coins. HUDen til mulitplayer har da også blitt oppdatert med en oversikt over score. Videre arbeider vi opp mot siste innspurt av prosjekt innleverinegn og desgine av nye kart.
