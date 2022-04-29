@@ -1,23 +1,19 @@
 package gameLogic;
 
-import Objects.Alien;
-import Objects.Coin;
-
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
+import Objects.Alien;
+import Objects.Coin;
 import Objects.Cube;
-import Objects.Enemy;
 import Objects.Goal;
 import Objects.GravityPad;
 import Objects.Player;
 import Objects.PressurePlate;
 import Objects.Text;
-import enums.Gravity;
 
 /**
  * This class handles events when two specific objects touch in the Box2D world

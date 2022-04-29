@@ -12,8 +12,6 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Player;
-import enums.Gravity;
-import gameLogic.GravityHandler;
 import SpaceY.PlatformGame;
 
 public class HudM {

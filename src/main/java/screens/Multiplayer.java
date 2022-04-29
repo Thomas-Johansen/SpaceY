@@ -17,9 +17,6 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import Objects.Actor;
-import Objects.Alien;
-import Objects.Coin;
-import Objects.Cube;
 import Objects.Player;
 import SpaceY.PlatformGame;
 import gameLogic.Box2DCreator;
@@ -27,7 +24,6 @@ import gameLogic.CameraHandler;
 import gameLogic.GameContactListener;
 import gameLogic.GravityHandler;
 import gameLogic.InputHandler;
-import scenes.Hud;
 import scenes.HudM;
 
 public class Multiplayer implements Screen {
