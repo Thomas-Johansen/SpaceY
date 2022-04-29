@@ -19,9 +19,7 @@ Klassedigram for prosjekt finner du her: [Klassedigram](Diagramavmain_Oblig3.png
 ### Project board
 Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf112.22v.libgdx-template/-/boards)  
 
-## Deloppgave 1: Team og prosjekt  
-
-Pga lite tid mellom oblig2 og oblig3 har det skjedd lite foradringer i gruppen og på fremgangsmetodene. Derfor vil deler av svarene under vil være like svarene fra oblig2.  
+## Deloppgave 1: Team og prosjekt   
 
 **Roller i teamet** - Rollene i teamet funger i stor grad på samme måte som tidligere. Det har sjkedd en liten forandring i rollene ettersom vi nærmer oss slutten av prosjektet. Thomas J har tatt på seg en liten rolle som teamleder og tar for seg oppgaven om å holde flyten i laget. Thomas J har god oversikt over koden og kan derfor lage en strukturet plan for hva som må gjøres samt fordel ut oppgaver enklere. Daniel har også påtatt seg ansvar for testing av kode.  
 
@@ -50,10 +48,7 @@ Gruppedynamikken har i liten grad forandret seg gjennom prosjektet. kommunikasjo
 Med tanke på at vi er et lite team på tre er vi fornøyd med sluttresultatet på spillet og fremgangen underveis.
 
 **Vurdering av MVP kravene**  
-Alle MVP kravene er nå i boks utenom 4 (poeng) og 9 (nytt spillbrett når forrige er ferdig). Vi har valgt å ikke ha med poeng ettersom at vi ikke ønsker å basere spillet rundt poeng. Nye kart og forskjellige lvls var noe vi ikke rakk å starte ordentlig på.
+Alle MVP kravene er nå i boks!!!
   
 **Stretch Goal**  
-Gjennom prosjektet og utviklingen av spillet har vi hatt som formål å ha gravitasjoen som stretch goal. Tanken bak spillet var å lage et puzzle game hvor man må manipulere gravitasjoen i de ulike himmelretningen for å komme seg fra start til mål.
-
-**Implementasjoner som vi ikke ble ferdig med**  
-- 
+Gjennom prosjektet og utviklingen av spillet har vi hatt som formål å ha gravitasjoen som stretch goal. Tanken bak spillet var å lage et puzzle game hvor man må manipulere gravitasjoen i de ulike himmelretningen for å komme seg fra start til mål.  
