@@ -45,7 +45,10 @@ Gruppedynamikken har i liten grad forandret seg gjennom prosjektet. kommunikasjo
 - Ny pixelart på kartene. 
 
 **Hvordan har prosjektet gått**   
-Med tanke på at vi er et lite team på tre er vi fornøyd med sluttresultatet på spillet og fremgangen underveis.
+Med tanke på at vi er et lite team på tre er vi fornøyd med sluttresultatet på spillet og fremgangen underveis.  
+
+**Hva ville vi ha gjort annerledes**   
+- Vi skulle gjeren ha vært litt flere på gruppen :D  
 
 **Vurdering av MVP kravene**  
 Alle MVP kravene er nå i boks!!!
