@@ -79,3 +79,4 @@ Digitalt
 **Deltagelse:** Daniel, Thomas J, Thomas L  
 
 **Diskusjon og progresjon under møte**  
+PressurePad som åpner dør har blitt implementert. Coin objekt er ferdig laget. Dette vil bli brukt i multiplayer hvor objektet er å smale flest coins. Huden til mulitplayer har da også blitt oppdatert med en oversikt over score. Videre arbeider vi opp mot siste innspurt av prosjekt innleverinegn og desgine av nye kart.
