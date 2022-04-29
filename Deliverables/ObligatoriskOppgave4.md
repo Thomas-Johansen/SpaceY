@@ -24,7 +24,7 @@ Issues board fra git: [Project board](https://git.app.uib.no/group-4-team-2/inf1
 **Roller i teamet** - Rollene i teamet funger i stor grad på samme måte som tidligere. Det har sjkedd en liten forandring i rollene ettersom vi nærmer oss slutten av prosjektet. Thomas J har tatt på seg en liten rolle som teamleder og tar for seg oppgaven om å holde flyten i laget. Thomas J har god oversikt over koden og kan derfor lage en strukturet plan for hva som må gjøres samt fordel ut oppgaver enklere. Daniel har også påtatt seg ansvar for testing av kode.  
 
 **Erfaringer så langt**  
-- Thomas J har vært mest ivrig og stått for mesteparten av kodingen. Dette burde ha blitt mer gjevnt fordelt gjennom hele prosjektet ettersom at det ble vanskelig for Thomas L og Daniel og holde følge (Være up to date på koden).  
+- Thomas J har vært mest ivrig og stått for mesteparten av kodingen. Dette burde ha blitt mer gjevnt fordelt gjennom hele prosjektet ettersom at det ble vanskelig for Thomas L og Daniel og holde følge (Være up to date på koden). Vi jobbet en del med par programmering og fikk løst noen diverse ting som Alien AI samt det å fjerne fixture og texture når man tråkket på pressure plate. Så det å drive med par programmering ble ganske optimalt.
 
 - Ettersom at vi bare er tre på gruppen har arbeidsmengden per person vært høy. Her har vi erfart at en gjevn å god jobbing er essensiell. Såkalte skippertak har vært vanskelige pga den enorme arbeidsmengden per person.  
 
