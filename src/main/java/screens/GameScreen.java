@@ -63,6 +63,7 @@ public class GameScreen implements Screen {
 	}
 	
 	public void switchLevel(int level) {
+		if (level >= 5) game.setScreen(new MainMenuScreen(game));
 		maploader = new TmxMapLoader();
 		map = maploader.load("src/main/resources/assets/LabMap/LabMap" + level + ".tmx");
 		renderer = new OrthogonalTiledMapRenderer(map, 1 / PlatformGame.PPM);
