@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="42">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="43">
  <tileset firstgid="1" source="SpaceBack2.tsx"/>
  <tileset firstgid="3876" source="LabAssets1.tsx"/>
  <layer id="1" name="Background" width="60" height="60">
@@ -205,11 +205,6 @@
   <object id="8" x="0" y="928" width="960" height="32"/>
   <object id="16" x="32" y="592" width="128" height="32"/>
   <object id="18" x="32" y="400" width="128" height="32"/>
-  <object id="31" x="362.143" y="872.203" width="48" height="48">
-   <properties>
-    <property name="Name" value="Goal"/>
-   </properties>
-  </object>
   <object id="36" x="32" y="128" width="384" height="672"/>
   <object id="37" x="416" y="512" width="416" height="32"/>
   <object id="38" x="800" y="480" width="32" height="32"/>
@@ -239,6 +234,11 @@
   <object id="41" x="512.453" y="448.49" width="16" height="32">
    <properties>
     <property name="Name" value="Alien"/>
+   </properties>
+  </object>
+  <object id="42" x="340.557" y="873.002" width="48" height="48">
+   <properties>
+    <property name="Name" value="Goal"/>
    </properties>
   </object>
  </objectgroup>
