@@ -11,9 +11,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import SpaceY.PlatformGame;
 import enums.Gravity;
 import gameLogic.GravityHandler;
-import inf112.skeleton.app.PlatformGame;
 
 public class Hud {
 	//Hud skal "stå stille" på skjermen sammenlignet med resten av spillet, så trenger egen viewport
@@ -32,7 +32,7 @@ public class Hud {
 	public Hud(SpriteBatch sprite) {
 		player = "Down";
 		world = "Down";
-		console = "Test text som blir lengre og lengre og lengre";
+		console = "";
 		
 		viewport = new FitViewport(PlatformGame.V_Width, PlatformGame.V_Height, new OrthographicCamera());
 		stage = new Stage(viewport, sprite);
@@ -67,6 +67,13 @@ public class Hud {
 	
 	public void update(GravityHandler gravity, String message) {
 		playerGravity.setText(Gravity.convertGravity(gravity.playerGravity));
+		if (gravity.playerToggle) {
+			playerGravity.setColor(Color.YELLOW);
+			playerGravityLabel.setColor(Color.YELLOW);
+		} else {
+			playerGravity.setColor(Color.WHITE);
+			playerGravityLabel.setColor(Color.WHITE);
+		}
 		worldGravity.setText(Gravity.convertGravity(gravity.worldGravity));
 		gameConsole.setText(message);
 	}

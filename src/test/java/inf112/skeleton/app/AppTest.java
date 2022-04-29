@@ -1,18 +1,19 @@
 package inf112.skeleton.app;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+
+import SpaceY.PlatformGame;
+import SpaceY.TestGame;
 
 public class AppTest {
 	/**
@@ -88,9 +89,7 @@ public class AppTest {
 	     	      robot.delay(2000);
 
 	     	       System.out.println("Stop Test:");
-	     	      robot.keyPress(27);
-	     	       robot.delay(50);
-	     	       robot.keyRelease(27);
+	     	       Gdx.app.exit();
 	     	      
 
 	        	}
@@ -102,5 +101,4 @@ public class AppTest {
 	       test2.join();
 	    
 	}
-	
 }
