@@ -64,6 +64,7 @@ public class GameScreen implements Screen {
 	
 	public void switchLevel(int level) {
 		if (level >= 5) game.setScreen(new MainMenuScreen(game));
+		else {
 		maploader = new TmxMapLoader();
 		map = maploader.load("src/main/resources/assets/LabMap/LabMap" + level + ".tmx");
 		renderer = new OrthogonalTiledMapRenderer(map, 1 / PlatformGame.PPM);
@@ -77,6 +78,7 @@ public class GameScreen implements Screen {
 		gravity = new GravityHandler();
 		camera = new CameraHandler(player1);
 		world.setContactListener(new GameContactListener());
+		}
 	}
 	
 
@@ -90,7 +92,10 @@ public class GameScreen implements Screen {
 		if (player1.hasWon) {
 			consoleOutput = "Level Complete, press enter to continue";
 			hud.update(gravity, consoleOutput);
-			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) switchLevel(currentLevel + 1);
+			if(Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+				currentLevel += 1;
+				switchLevel(currentLevel);	
+			}
 		} else if (!player1.isAlive()) {
 			consoleOutput = "Player Died, press enter to continue";
 			hud.update(gravity, consoleOutput);
