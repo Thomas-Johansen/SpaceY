@@ -17,6 +17,17 @@ For multiplayer: The arrow keys move Player 2
 
 # Info 
 
+**What is this?**  
+This game was made as part of the Universitetet i Bergen: INF 112 Course  
+where students where tasked with working together in groups to develop  
+a 2D platformer game in java  
+This game was developed by:  
+Thomas Sandvik Johansen  
+Thomas Lande  
+Daniel Sandhaug  
+
+
+
 **Kjøring av spillet gjennom kommandolinjen**  
 Krever Java JDK 17 og maven installert.  
 Last ned zip fra Git, og extract på ønsket plassering.  
